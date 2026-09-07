@@ -1,0 +1,40 @@
+{
+  "name": "mlr",
+  "owner": {
+    "name": "MLR Consultores",
+    "email": "m.gomez@mlrconsultores.com"
+  },
+  "metadata": {
+    "description": "Marketplace interno de MLR Consultores. Estandar operativo de la firma, agentes de Odoo y skills de contenido y diseno. Instalacion una vez por persona; a partir de ahi solo se actualiza.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "mlr-orquestador",
+      "source": "./plugins/mlr-orquestador",
+      "version": "2.3.0",
+      "description": "Estandar operativo de MLR. Recupera contexto de cliente y directrices vigentes desde memoria en la nube al abrir cada sesion, enruta cada peticion al flujo especializado y aplica las normas de redaccion, identidad visual, diagramacion, video, animacion, entrega y archivo. Impide la respuesta generica.",
+      "author": {
+        "name": "MLR Consultores"
+      }
+    },
+    {
+      "name": "mlr-odoo",
+      "source": "./plugins/mlr-odoo",
+      "version": "1.2.0",
+      "description": "Agentes y flujo MLR para personalizacion de Odoo: reunir contexto, ejecutar cambios en campos, modelos, vistas y acciones, verificar en navegador con captura, e informe en espanol.",
+      "author": {
+        "name": "MLR Consultores"
+      }
+    },
+    {
+      "name": "mlr-design",
+      "source": "./plugins/mlr-design",
+      "version": "1.0.0",
+      "description": "Skills de contenido, marketing y diseno: investigacion y redaccion, analisis de anuncios de competencia, mejora de imagenes, investigacion de prospectos, pruebas de aplicaciones web y mas.",
+      "author": {
+        "name": "MLR Consultores"
+      }
+    }
+  ]
+}
