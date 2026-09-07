@@ -20,6 +20,8 @@ Lo esencial, para no tener que abrir el archivo en cada pieza:
 
 **Documentos formales.** Se construyen sobre la plantilla de Word del membrete, descargandola de la unidad compartida y escribiendo dentro. Nunca recreando el encabezado. Identificadores en `references/marca.md`.
 
+**Margenes del membrete.** La plantilla en crudo deja una banda vacia arriba y abajo. Aplicar siempre los valores corregidos de `references/margenes-membrete.md`: superior 3000 tw, inferior 2560 tw, laterales 1240 tw, encabezado a 0 y pie a 1901 tw. El encabezado a 0 es lo que pone la imagen del membrete a ras de hoja y elimina el exceso de espacio.
+
 **Presentaciones.** Tienen su propio patron de la firma. Cargar `mlr-presentaciones`.
 
 ## 2. Profundidad

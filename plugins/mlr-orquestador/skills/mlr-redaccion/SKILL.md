@@ -98,6 +98,7 @@ De forma programatica, nunca a ojo:
 - Cero nombres tecnicos perdidos: mismo metodo con identificadores de campo, modelo y archivo.
 - Cero diferencias en la zona validada por la persona.
 - Cero encabezados colgados en el PDF renderizado.
+- Margenes del membrete conforme a `mlr-identidad-visual/references/margenes-membrete.md`: sin banda vacia arriba y sin texto encimado con el logotipo o los datos de contacto impresos.
 - Cero coincidencias con la lista de patrones de IA: buscarlos uno por uno en el texto final.
 
 **Cuidado con los indices de elemento.** Si se borran parrafos durante el proceso, los indices se desplazan y una reescritura posterior puede sobrescribir el bloque equivocado. Localizar los bloques por su texto, no por su posicion. La verificacion de cifras es la red que detecta ese error.

@@ -1,6 +1,6 @@
 {
   "name": "mlr-orquestador",
-  "version": "2.4.0",
+  "version": "2.5.0",
   "description": "Estandar operativo de MLR Consultores. Recupera el contexto de cliente y las directrices vigentes desde memoria en la nube al iniciar cada sesion, enruta cada peticion al flujo especializado y aplica las normas de redaccion, identidad visual, diagramacion, entrega y archivo de la firma. Sustituye el comportamiento generico por el metodo MLR.",
   "author": {
     "name": "MLR Consultores"

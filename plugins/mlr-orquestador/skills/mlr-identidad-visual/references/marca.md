@@ -77,6 +77,10 @@ Pie de toda pieza formal:
 
 **No preguntar donde esta el membrete.** Estos identificadores son la respuesta. Todo documento formal se construye descargando la plantilla y escribiendo dentro, nunca recreando el encabezado.
 
+**Copia local de las plantillas:** `C:\Users\mgome\Claude\Projects\MLR Odoo\Plantillas\`.
+
+**Margenes.** La plantilla en crudo deja demasiado espacio arriba y abajo. Los valores corregidos, validados en produccion, estan en `margenes-membrete.md` y son de aplicacion obligatoria en todo documento formal.
+
 ## Estilo visual de la firma
 
 - Fondos en azul claro o blanco; bloques teal solidos.
