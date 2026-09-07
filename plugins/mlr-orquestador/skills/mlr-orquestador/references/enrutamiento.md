@@ -12,7 +12,9 @@ Nunca redactes un entregable sin `mlr-redaccion` cargada, ni siquiera un correo 
 
 ## Presentacion
 
-`mlr-identidad-visual` → `pptx`, o el tipo de artifact de presentacion si esta disponible.
+`mlr-presentaciones` → HTML autocontenido con el patron de la firma: barra con logotipo vectorial, menu de grupos, navegacion por teclado, barra de progreso y contador.
+
+Solo usar `pptx` cuando el cliente pida expresamente un archivo de PowerPoint editable.
 
 Una idea por lamina. El titular es la conclusion, no la etiqueta del tema.
 

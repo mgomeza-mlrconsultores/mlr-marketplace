@@ -7,7 +7,7 @@ description: Produce diagramas de proceso, flujo, arquitectura, modelo de datos,
 
 ## Punto de partida honesto
 
-Odoo **no publica** un estandar de diagramas de flujo. Su documentacion oficial es casi toda capturas de pantalla. Lo que si publica son reglas de nomenclatura y una identidad de marca. La convencion de abajo se deriva de ambas. **Al presentarla a un cliente, declararla como convencion de MLR alineada a la identidad de Odoo, nunca como estandar oficial de Odoo.**
+Odoo **no publica** un estandar de diagramas de flujo. Su documentacion oficial es casi toda capturas de pantalla. Lo que si publica son reglas de nomenclatura de contenido. La convencion de abajo toma esas reglas de nomenclatura y las combina con la paleta y la tipografia oficiales de MLR Consultores. **Al presentarla a un cliente, es la convencion de diagramacion de MLR, nunca un estandar de Odoo.**
 
 ## Herramienta por defecto: Mermaid
 
@@ -17,12 +17,12 @@ Encabeza todo diagrama con este bloque de tema:
 
 ```
 %%{init: {'theme':'base','themeVariables':{
-  'primaryColor':'#714B67',
+  'primaryColor':'#24606C',
   'primaryTextColor':'#ffffff',
-  'primaryBorderColor':'#5A3C53',
-  'secondaryColor':'#017E84',
-  'tertiaryColor':'#F5F3F4',
-  'lineColor':'#8F8F8F',
+  'primaryBorderColor':'#18454E',
+  'secondaryColor':'#452E27',
+  'tertiaryColor':'#E6F3FB',
+  'lineColor':'#6FA3AB',
   'fontFamily':'Inter, system-ui, sans-serif',
   'fontSize':'14px'
 }}}%%
@@ -32,17 +32,19 @@ Reserva **D2** para flujos con muchos carriles que Mermaid no sepa organizar; ex
 
 ## Convencion visual
 
-- **Morado `#714B67`**: nodos del proceso principal, el camino feliz.
-- **Verde azulado `#017E84`**: rutas alternativas y automatizaciones.
-- **Gris `#8F8F8F`**: estados terminales, pasos externos y sistemas de terceros.
-- **Relleno blanco o gris muy claro.** Sin degradados, sin sombras, sin volumen. Un diagrama tecnico no lleva efectos.
+- **Teal `#24606C`**: nodos del proceso principal, el camino feliz.
+- **Cafe `#452E27`**: rutas alternativas y automatizaciones.
+- **Teal medio `#6FA3AB`**: conectores y lineas.
+- **Azul claro `#E6F3FB`**: relleno de nodos secundarios, estados terminales y sistemas de terceros.
+- **Ambar `#C9772E`** solo para senalar el punto donde ocurre el problema en un diagrama de diagnostico. Un color de estado, no decorativo.
+- **Sin degradados, sin sombras, sin volumen.** Un diagrama tecnico no lleva efectos.
 - **Rectangulos de esquina suave** para acciones y documentos. **Rombos** para decisiones. **Cilindros** para almacenamiento.
 - **Inter** en todo el diagrama.
-- Maximo tres colores por diagrama.
+- Maximo tres colores por diagrama, mas el ambar cuando haga falta marcar la falla.
 
 ## Nomenclatura de nodos
 
-Derivada de las reglas de contenido de la documentacion oficial de Odoo:
+Derivada de las reglas de contenido de la documentacion oficial de Odoo, con la paleta de MLR:
 
 - **Modo imperativo y presente**: «Confirmar orden de venta», nunca «Confirmando la orden» ni «El usuario confirmara».
 - **Sin pronombres**, especialmente segunda persona.

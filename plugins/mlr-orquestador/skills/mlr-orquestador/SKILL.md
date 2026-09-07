@@ -29,7 +29,8 @@ Clasifica la peticion y carga las skills que le corresponden **antes de producir
 Tabla completa en `references/enrutamiento.md`. Resumen operativo:
 
 - **Texto que el cliente va a leer** (informe, memo, diagnostico, propuesta, correo, minuta) → `mlr-redaccion`, siempre, sin excepcion. Despues `docx` o `pdf`.
-- **Cualquier pieza visual** (presentacion, pagina, artifact, tablero, grafica) → `mlr-identidad-visual` antes de decidir un solo color. Luego `ui-ux-pro-max`, `artifact-design`, `dataviz` o `pptx` segun el medio.
+- **Presentacion o deck** → `mlr-presentaciones`, que tiene el patron HTML de la firma. Nunca improvises una estructura de deck.
+- **Otra pieza visual** (pagina, artifact, tablero, grafica) → `mlr-identidad-visual` antes de decidir un solo color. Luego `ui-ux-pro-max`, `artifact-design` o `dataviz` segun el medio.
 - **Diagrama** de proceso, flujo, arquitectura o modelo de datos → `mlr-diagramas-odoo`.
 - **Video** explicativo o animacion de datos → `mlr-video`.
 - **Animacion en web** → `mlr-animacion-web`.

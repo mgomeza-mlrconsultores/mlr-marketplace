@@ -7,13 +7,20 @@ description: Estandar visual de MLR Consultores para documentos, presentaciones,
 
 El criterio de aceptacion es que la pieza parezca hecha por un estudio de diseno, no por un asistente.
 
-## 1. Membrete y marca
+## 1. Marca
 
-**No preguntar donde esta el membrete.** Vive en la unidad compartida de la empresa en Google Drive, carpeta `MLR > Hoja Membretada`, y `references/marca.md` tiene los identificadores exactos de la carpeta y de los tres archivos.
+Los valores oficiales estan en `references/marca.md`: paleta, tipografia, reglas de logotipo, datos de membrete y estilo de la firma. **No preguntar por ellos ni inventarlos.**
 
-**Todo documento formal se construye sobre la plantilla, nunca recreando el encabezado.** Se descarga el archivo de membrete que corresponda al numero de paginas previsto, se escribe dentro respetando sus estilos y se guarda como archivo nuevo. La plantilla original no se toca.
+Lo esencial, para no tener que abrir el archivo en cada pieza:
 
-Para presentaciones, paginas y graficas, que no parten de un documento de Word, los tokens de color y tipografia se derivan de esa misma plantilla. Ver `references/marca.md`.
+- **Teal `#24606C`** dominante. **Cafe `#452E27`** solo como acento o palabra destacada. **Azul claro `#E6F3FB`** para fondos.
+- Titulares en **Oswald Bold**, cuerpo en **Inter Regular**.
+- Texto blanco sobre teal o cafe; gris carbon `#2B2B2B` o teal sobre fondo claro.
+- Solo colores institucionales. No recolorear fuera de la gama.
+
+**Documentos formales.** Se construyen sobre la plantilla de Word del membrete, descargandola de la unidad compartida y escribiendo dentro. Nunca recreando el encabezado. Identificadores en `references/marca.md`.
+
+**Presentaciones.** Tienen su propio patron de la firma. Cargar `mlr-presentaciones`.
 
 ## 2. Profundidad
 
