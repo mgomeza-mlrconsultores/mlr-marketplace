@@ -2,6 +2,14 @@
 
 Clasifica la peticion en una fila y carga TODO lo de su columna derecha, en ese orden.
 
+## Cotizacion y plan de implementacion de Odoo
+
+Propuesta economica, presupuesto, alcance, ruta por etapas, tareas, horas, precio por sede.
+
+`mlr-cotizacion` → al llegar a los entregables, `mlr-redaccion` → `docx` y `xlsx`.
+
+Se carga antes de listar tareas o estimar horas, no despues. La skill impone el orden — cliente y base, preguntas, diagrama, ruta, horas, condiciones, entregables — y la regla de que nada se escribe en archivo antes de la aprobacion en el chat.
+
 ## Texto para el cliente
 
 Informe, diagnostico, memo, propuesta, cotizacion, correo formal, minuta, resumen ejecutivo.

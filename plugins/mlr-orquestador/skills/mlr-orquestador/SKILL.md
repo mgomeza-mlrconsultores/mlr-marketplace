@@ -28,6 +28,7 @@ Clasifica la peticion y carga las skills que le corresponden **antes de producir
 
 Tabla completa en `references/enrutamiento.md`. Resumen operativo:
 
+- **Cotizacion, propuesta economica, plan de implementacion, alcance u horas de un proyecto de Odoo** → `mlr-cotizacion`, antes de escribir una sola tarea o una sola hora. Ahi vive la regla de revisar todo en el chat antes de producir archivos. Al llegar a los entregables, encadena `mlr-redaccion` y `docx`.
 - **Texto que el cliente va a leer** (informe, memo, diagnostico, propuesta, correo, minuta) → `mlr-redaccion`, siempre, sin excepcion. Despues `docx` o `pdf`.
 - **Presentacion o deck** → `mlr-presentaciones`, que tiene el patron HTML de la firma. Nunca improvises una estructura de deck.
 - **Otra pieza visual** (pagina, artifact, tablero, grafica) → `mlr-identidad-visual` antes de decidir un solo color. Luego `ui-ux-pro-max`, `artifact-design` o `dataviz` segun el medio.
