@@ -82,6 +82,14 @@ IND_META, TAB_META = 260, 1480
 PGMAR = ('<w:pgMar w:top="1584" w:right="1440" w:bottom="2016" w:left="1440" '
          'w:header="1138" w:footer="1512" w:gutter="0"/>')
 
+# Con interlineado exacto de 53 pt, la cola de una g, j, p, q o y a 42 pt se sale
+# de la caja y aterriza sobre la linea de firmantes. El documento aprobado no lo
+# sufre porque «de Nómina Semanal» no lleva descendentes. Medido: el hueco de
+# tinta entre el titulo y los firmantes es de 11.5 pt en el aprobado, y una «y»
+# se come 7.7 de ellos. Se despeja solo cuando el ultimo renglon lo necesita.
+DESCENDENTES = set("gjpqy")
+HOLGURA_DESCENDENTE = 274      # twips
+
 FIRMANTES_MLR = "C.P. MONICA ARELLANO | C.P. JUAN MARCOS LÓPEZ"
 CORTESIA = ("Quedamos atentos a sus comentarios y esperamos contar con su aprobación "
             "para definir los siguientes pasos.")
@@ -171,6 +179,24 @@ def _incrusta(ft_xml, rels_xml, settings_xml):
     st = st.replace("<w:saveSubsetFonts/>", "")   # viaja la fuente completa
     return ft.encode("utf8"), rl.encode("utf8"), st.encode("utf8"), partes
 
+CT_FUENTE = "application/vnd.openxmlformats-officedocument.obfuscatedFont"
+
+def _declara_tipos(ct_xml, partes_fuente, con_pie):
+    """Cada parte del paquete necesita su tipo de contenido declarado.
+
+    Las fuentes incrustadas NO se cubren con `<Default Extension="odttf">`: la
+    plantilla declara un `<Override>` por archivo, y hay que hacer lo mismo con
+    cada fuente que se anada. Una sola parte sin declarar invalida el paquete
+    entero y Word lo reporta como «contenido no legible», sin decir cual es.
+    """
+    x = ct_xml.decode("utf8")
+    extra = "".join('<Override PartName="/%s" ContentType="%s"/>' % (n, CT_FUENTE)
+                    for n in partes_fuente)
+    if con_pie:
+        extra += ('<Override PartName="/word/footer1.xml" ContentType="application/vnd.'
+                  'openxmlformats-officedocument.wordprocessingml.footer+xml"/>')
+    return x.replace("</Types>", extra + "</Types>").encode("utf8")
+
 def _lexend_por_defecto(styles_xml):
     x = styles_xml.decode("utf8")
     return re.sub(
@@ -197,9 +223,13 @@ class Documento(object):
         self.folio = folio
         self.b = []
         for i, t in enumerate(titulo):
+            ultimo = (i == len(titulo) - 1)
+            holgura = (HOLGURA_DESCENDENTE
+                       if ultimo and DESCENDENTES & set(t.lower()) else 0)
             self.b.append(par(run(t, fam=XBOLD, color=TEAL, sz=SZ_TITULO),
-                              before=(K_TITULO if i == 0 else 0), after=0,
+                              before=(K_TITULO if i == 0 else 0), after=holgura,
                               jc="center", line=L_TITULO))
+        self.titulo_con_descendente = bool(DESCENDENTES & set(titulo[-1].lower()))
         self.b.append(par(run(firmantes, fam=SEMI, color=TEAL, sz=SZ_FIRMANTES),
                           before=K_FIRMANTES, after=320, jc="center", line=L_FIRMANTES))
         # Solo dos metadatos. Nueve etiquetas es lo que direccion rechazo.
@@ -294,11 +324,15 @@ class Documento(object):
         # La plantilla trae <w:spacing> despues de <w:rPr> dentro de <w:pPr>, orden
         # que el esquema no admite. Word lo tolera; otros motores ignoran el alto
         # exacto de 2" y mandan el bloque de contacto a una plana nueva.
-        m = re.search(r"(<w:pPr>)(.*?)(<w:rPr>.*?</w:rPr>)(<w:spacing[^>]*/>)(</w:pPr>)",
-                      fin, re.S)
-        if m:
-            fin = fin.replace(m.group(0), m.group(1) + m.group(2) + m.group(4)
-                              + m.group(3) + m.group(5))
+        mp = re.search(r"<w:pPr>(.*?)</w:pPr>", fin, re.S)
+        if mp:
+            dentro = mp.group(1)
+            def saca(etq):
+                mm = re.search(r"<w:%s\b[^>]*(?:/>|>.*?</w:%s>)" % (etq, etq), dentro, re.S)
+                return mm.group(0) if mm else ""
+            # CT_PPrBase exige este orden; con jc antes de spacing Word rechaza el archivo
+            fin = fin.replace(mp.group(0), "<w:pPr>" + saca("spacing") + saca("ind")
+                              + saca("jc") + saca("rPr") + "</w:pPr>")
 
         extras = {}
         if self.folio:
@@ -333,12 +367,8 @@ class Documento(object):
                         '<Relationship Id="rIdPie" Type="http://schemas.openxml'
                         'formats.org/officeDocument/2006/relationships/footer" '
                         'Target="footer1.xml"/></Relationships>').encode("utf8"))
-                elif n == "[Content_Types].xml" and self.folio:
-                    z.writestr(it, src.read(n).decode("utf8").replace(
-                        "</Types>",
-                        '<Override PartName="/word/footer1.xml" ContentType='
-                        '"application/vnd.openxmlformats-officedocument.'
-                        'wordprocessingml.footer+xml"/></Types>').encode("utf8"))
+                elif n == "[Content_Types].xml":
+                    z.writestr(it, _declara_tipos(src.read(n), fuentes.keys(), self.folio))
                 else:
                     z.writestr(it, src.read(n))
             for n, d in list(extras.items()) + list(fuentes.items()):

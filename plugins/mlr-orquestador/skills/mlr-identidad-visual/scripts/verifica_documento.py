@@ -22,6 +22,11 @@ TOL = 2.0   # puntos de tolerancia contra las medidas de referencia
 # --- medidas del documento aprobado ---------------------------------------
 CARATULA = {"titulo 1": 130.1, "titulo 2": 182.7, "firmantes": 235.3,
             "metadato 1": 277.3, "metadato 2": 306.0, "saludo": 357.5}
+# Un descendente en el ultimo renglon del titulo obliga a despejar 7.7 pt para
+# que la cola no choque con los firmantes (274 tw); todo lo que va debajo baja igual.
+DESCENDENTES = set("gjpqy")
+DESPLAZA_DESCENDENTE = 13.7   # los 274 tw de holgura, en puntos
+BAJAN_CON_DESCENDENTE = ("firmantes", "metadato 1", "metadato 2", "saludo")
 # Bandas calibradas de modo que el DOCUMENTO APROBADO pase limpio. Ese es el
 # contrato del verificador: si el archivo de direccion falla, el umbral esta mal.
 BANDA_LINEA = (15.0, 16.1)    # interlineado exacto; el automatico da ~18.3
@@ -112,9 +117,12 @@ def main():
                     obtenido[k] = l["y0"]
             elif 14.5 <= l["sz"] <= 15.5 and "saludo" not in obtenido:
                 obtenido["saludo"] = l["y0"]
+        cola = bool(gordas) and bool(DESCENDENTES & set(gordas[-1]["t"].lower()))
         for k, ref in CARATULA.items():
             if k not in obtenido:
                 fallos.append("Falta el bloque de caratula «%s»." % k); continue
+            if cola and k in BAJAN_CON_DESCENDENTE:
+                ref += DESPLAZA_DESCENDENTE
             dif = obtenido[k] - ref
             if abs(dif) > TOL:
                 fallos.append("Caratula «%s» a %.1f pt; el aprobado la pone en %.1f "
@@ -198,6 +206,30 @@ def main():
     if a.docx and os.path.exists(a.docx):
         z = zipfile.ZipFile(a.docx)
         nombres = set(z.namelist())
+
+        # Validez OPC: toda parte necesita tipo de contenido, por Default de
+        # extension o por Override propio. Una sola parte sin declarar invalida
+        # el paquete y Word solo dice «contenido no legible», sin senalar cual.
+        ct = z.read("[Content_Types].xml").decode("utf8")
+        defaults = set(x.lower() for x in re.findall(r'<Default Extension="([^"]+)"', ct))
+        overrides = set(re.findall(r'<Override PartName="/([^"]+)"', ct))
+        huerfanas = [n for n in sorted(nombres)
+                     if not n.endswith("/") and n != "[Content_Types].xml"
+                     and n not in overrides
+                     and n.rsplit(".", 1)[-1].lower() not in defaults]
+        if huerfanas:
+            fallos.append("Partes del paquete sin tipo de contenido declarado: %s. "
+                          "Word abrira el archivo como danado." % huerfanas)
+
+        # Toda relacion apunta a una parte que existe
+        for rels in [n for n in nombres if n.endswith(".rels")]:
+            base = rels.rsplit("_rels/", 1)[0]
+            for tgt in re.findall(r'Target="([^"]+)"', z.read(rels).decode("utf8")):
+                if tgt.startswith(("http", "mailto", "/")) or ".." in tgt:
+                    continue
+                if (base + tgt) not in nombres:
+                    fallos.append("La relacion de %s apunta a «%s», que no esta en "
+                                  "el paquete." % (rels, tgt))
         doc = z.read("word/document.xml").decode("utf8")
         ft = (z.read("word/fontTable.xml").decode("utf8")
               if "word/fontTable.xml" in nombres else "")
