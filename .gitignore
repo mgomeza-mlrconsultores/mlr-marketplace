@@ -1,3 +1,6 @@
 .DS_Store
 *.meta.json
 node_modules/
+
+plugins/mlr-orquestador/skills/mlr-identidad-visual/assets/plantillas/
+__pycache__/

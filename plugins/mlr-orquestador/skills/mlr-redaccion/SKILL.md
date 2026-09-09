@@ -135,6 +135,20 @@ vineta es un entregable o una condicion enunciada de corrido:
 4. Su reescritura, comparada parrafo a parrafo contra la version anterior, es la
    especificacion del estilo a extender al resto.
 
+## El verificador es obligatorio
+
+El barrido de todo lo anterior esta implementado en
+`mlr-identidad-visual/scripts/verifica_documento.py`, y se ejecuta sobre el PDF exportado
+antes de entregar nada:
+
+```
+python3 verifica_documento.py "Documento.pdf" --docx "Documento.docx"
+```
+
+Busca las construcciones prohibidas una por una, mide la longitud media de oracion y
+comprueba la maquetacion. Sus umbrales estan calibrados para que el documento aprobado por
+direccion pase limpio. **Un fallo no se justifica, se corrige.**
+
 ## Verificacion obligatoria, programatica
 
 - Cero cifras perdidas respecto de la version anterior: extraer los conjuntos de numeros y
@@ -144,7 +158,9 @@ vineta es un entregable o una condicion enunciada de corrido:
 - Barrido de las construcciones prohibidas sobre el texto final, una por una. Buscar en
   particular los patrones `no es .*, es `, `no se trata de`, `no .*: ` y las series de tres
   frases que empiezan con «La primera», «La segunda», «La tercera».
-- Longitud media de oracion por encima de 20 palabras en los parrafos de prosa. Por debajo
-  de eso, el texto esta cortado en sentencias y hay que reescribirlo.
+- Longitud media de oracion entre 14 y 30 palabras. El documento aprobado esta en 16.4 y
+  una propuesta larga ronda las 24. Por debajo de 14 el texto esta cortado en sentencias,
+  que es lo que el cliente lee como escritura de maquina; por encima de 30 hay frases
+  enredadas. La banda esta calibrada sobre el archivo de direccion, no fijada a ojo.
 - Numero de planas dentro del limite de la seccion «Extension».
 - Render a PDF y revision visual: carátula, una plana interior y la ultima.

@@ -19,6 +19,50 @@ Lo esencial, para no tener que abrir el archivo en cada pieza:
 - Texto blanco sobre teal o cafe; gris carbon `#2B2B2B` o teal sobre fondo claro.
 - Solo colores institucionales. No recolorear fuera de la gama.
 
+## 0. Documentos formales: no se escribe OOXML a mano
+
+Un entregable formal de MLR se construye con **`scripts/documento_mlr.py`** y no se entrega
+sin que **`scripts/verifica_documento.py`** pase en verde. Las dos cosas son obligatorias.
+
+```python
+import sys; sys.path.insert(0, "<ruta a la skill>/scripts")
+from documento_mlr import Documento
+
+d = Documento(titulo=["Cotización", "Proyecto Odoo"],
+              cliente="Grupo Haus — Atención: Sr. Luis Ponce de León",
+              fecha="8 de septiembre de 2026",
+              saludo="Estimado Sr. Luis Ponce de León:")
+d.parrafo("Por medio de la presente, MLR Consultores presenta a ...")
+d.seccion("1. Alcance del servicio propuesto")
+d.vinetas([...])
+d.cuadro(["Hito", "Se libera contra", "Importe"], filas, [700, 4600, 1760])
+d.cierre()
+d.guarda("ruta/Documento.docx")
+```
+
+El modulo trae ya medidos, del documento aprobado por direccion, la caratula, los tres pesos
+de Lexend, el interlineado exacto, los espacios entre bloques, los cuadros que no se parten,
+la incrustacion de fuentes y el cierre con el bloque de contacto. **Cambiar esos valores a
+ojo rompe la equivalencia con el archivo que el cliente aprueba.**
+
+Despues de exportar a PDF:
+
+```
+python3 scripts/verifica_documento.py "Documento.pdf" --docx "Documento.docx"
+```
+
+Comprueba las seis posiciones de la caratula contra las medidas de referencia, el
+interlineado por mediana, la ocupacion de cada plana, los encabezados colgados, que el
+bloque de contacto quepa, la incrustacion de las tres familias —desofuscando cada parte y
+verificando el nombre recuperado—, los margenes y las construcciones de redaccion
+prohibidas. **Sus umbrales estan calibrados para que el documento aprobado pase limpio: si
+alguna vez ese archivo falla, el umbral esta mal, no el archivo.** Un fallo no se justifica
+en el chat, se corrige.
+
+`assets/fuentes/` trae las tres familias de Lexend. El documento de referencia y las hojas
+membretadas no estan en este repositorio, que es publico: sus rutas estan en
+`assets/DONDE-ESTAN-LOS-ORIGINALES.md`.
+
 **Documentos formales.** Se construyen sobre la plantilla de Word del membrete, descargandola de la unidad compartida y escribiendo dentro. Nunca recreando el encabezado. Identificadores en `references/marca.md`.
 
 **Tipografia de documentos formales.** Lexend a 11 puntos en el cuerpo, sin excepcion, fijada en `docDefaults`. Los titulos conservan su jerarquia de tamano y su teal, tambien en Lexend. Oswald no aparece en documentos formales.
