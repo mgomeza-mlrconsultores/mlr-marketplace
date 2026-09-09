@@ -14,13 +14,20 @@ Los valores oficiales estan en `references/marca.md`: paleta, tipografia, reglas
 Lo esencial, para no tener que abrir el archivo en cada pieza:
 
 - **Teal `#24606C`** dominante. **Cafe `#452E27`** solo como acento o palabra destacada. **Azul claro `#E6F3FB`** para fondos.
-- Titulares en **Oswald Bold**, cuerpo en **Inter Regular**.
+- **Documentos formales: Lexend 11** en todo el cuerpo, obligatorio. Se fija en `docDefaults` de `styles.xml`, nunca run por run.
+- Fuera de documentos formales: titulares en **Oswald Bold**, cuerpo en **Inter Regular**.
 - Texto blanco sobre teal o cafe; gris carbon `#2B2B2B` o teal sobre fondo claro.
 - Solo colores institucionales. No recolorear fuera de la gama.
 
 **Documentos formales.** Se construyen sobre la plantilla de Word del membrete, descargandola de la unidad compartida y escribiendo dentro. Nunca recreando el encabezado. Identificadores en `references/marca.md`.
 
-**Margenes del membrete.** La plantilla en crudo deja una banda vacia arriba y abajo. Aplicar siempre los valores corregidos de `references/margenes-membrete.md`: superior 3000 tw, inferior 2560 tw, laterales 1240 tw, encabezado a 0 y pie a 1901 tw. El encabezado a 0 es lo que pone la imagen del membrete a ras de hoja y elimina el exceso de espacio.
+**Tipografia de documentos formales.** Lexend a 11 puntos en el cuerpo, sin excepcion, fijada en `docDefaults`. Los titulos conservan su jerarquia de tamano y su teal, tambien en Lexend. Oswald no aparece en documentos formales.
+
+**Margenes del membrete.** No se estiman ni se copian de un entregable anterior: ya vienen calibrados en las plantillas oficiales de `Plantillas\`. Se abre **Hoja Membretada MLR - varias paginas.docx** (o la de 1 pagina), se vacia el cuerpo conservando la seccion final, los encabezados y el parrafo que ancla el bloque de contacto, y se escribe dentro. Multipagina: `w:top="1584" w:bottom="2016" w:left/right="1238" w:header="1138" w:footer="1512"`. Detalle en `references/margenes-membrete.md`.
+
+**Cierre.** Todo documento formal termina con el **bloque de contacto** de la hoja membretada —Director General y Directora Comercial—, nunca con una firma en texto. Es el ultimo parrafo del cuerpo de la plantilla: se conserva intacto y se coloca al final.
+
+**Revision visual obligatoria.** Ningun documento formal se entrega sin renderizarlo a PDF y mirar la portada, una pagina interior y la ultima. Un hueco de dos o tres centimetros bajo el logotipo, un cierre sin bloque de contacto, un bloque de firma partido entre hojas o una pagina casi vacia son defectos de entrega, no detalles.
 
 **Presentaciones.** Tienen su propio patron de la firma. Cargar `mlr-presentaciones`.
 

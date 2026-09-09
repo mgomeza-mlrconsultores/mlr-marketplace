@@ -1,4 +1,4 @@
-﻿# Marca MLR Consultores — valores oficiales
+# Marca MLR Consultores — valores oficiales
 
 Fuente: *Manual de Identidad Corporativa* y `Guia_de_Marca_MLR.md`, con decisiones de marca cerradas el 2026-06-14. Estos son los valores reales, no aproximaciones.
 
@@ -39,6 +39,14 @@ Mensaje central: **«Contadores que sí le entienden a Odoo.»**
 | Texto y papeleria | Gill Sans | Inter Regular |
 
 Jerarquia: titular en Bold y mayusculas, en teal, con la palabra clave en cafe. Subtitulo en Medium. Cuerpo en Regular.
+
+### Documentos formales: Lexend 11
+
+**Decision de direccion del 2026-09-09, de aplicacion obligatoria.** Todo informe, diagnostico, propuesta, convenio y anexo en hoja de calculo se compone en **Lexend a 11 puntos** para el cuerpo del texto. No es una preferencia estetica: Lexend esta disenada para reducir el esfuerzo de lectura, y estos documentos los leen directivos y contadores de un tiron.
+
+Aplica al cuerpo, a las vinetas, a los pies de tabla y a las celdas del anexo. Los titulos de seccion conservan su jerarquia de tamano y su teal, pero tambien en Lexend. Oswald se reserva para presentaciones, piezas web y material de marketing; no aparece en documentos formales.
+
+En el archivo de Word esto se fija en `docDefaults` de `styles.xml`, no run por run: `rFonts` con `ascii`, `hAnsi` y `cs` en `Lexend`, y `sz` en 22 medios puntos. Fijarlo solo en algunos parrafos deja el resto heredando la fuente del tema y el documento sale mezclado.
 
 **Discrepancia registrada.** La guia de marca propone Barlow o Saira para titulares y Lato o Mulish para cuerpo. Los entregables reales de la firma usan Oswald e Inter. Se adopta Oswald e Inter por ser el estandar en produccion; Oswald reproduce mejor la geometria condensada de DIN Alternate. **Confirmar con Marcos si prefiere alinear a la guia escrita.**
 
