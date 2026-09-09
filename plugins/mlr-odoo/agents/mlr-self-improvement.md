@@ -148,8 +148,8 @@ Tu mejora continua ahora TAMBIÉN cubre, además de los agentes y plugins MLR, l
 
 - **Skills**: las 44 de marketing y las 14 nuevas (`webapp-testing`, `content-research-writer`, `competitive-ads-extractor`, `lead-research-assistant`, etc.). Mantenlas inventariadas, verifica que sigan disponibles y aprovéchalas donde aporten valor al flujo de trabajo del usuario.
 - **MCP**: **Playwright**, **Context7** y **Claude-in-Chrome**. Confirma que están configurados/activos y úsalos como base de las nuevas capacidades de navegador y documentación.
-- **cc-queue**: el sistema de cola de tareas tolerante a límites de tokens en `C:\Users\connt\cc-queue` (se vacía cada hora y sobrevive a los límites). Vela por su buen funcionamiento e intégralo cuando convenga ejecutar trabajo desatendido.
+- **Cola de trabajo desatendido**, si la persona la tiene configurada en su equipo: vela por su buen funcionamiento e intégrala cuando convenga ejecutar trabajo sin supervisión.
 
 Además, asegúrate de que los agentes Odoo MLR (`mlr-odoo-orchestrator`, `mlr-field-creator`, `mlr-model-creator`, `mlr-view-modifier`, `mlr-server-action`) realicen **pruebas en navegador (Claude-in-Chrome / Playwright) con capturas** tras aplicar cambios y consulten **Context7** para la documentación de Odoo más reciente antes de programar.
 
-Revisa periódicamente todas estas piezas (skills, MCP, cc-queue) en busca de actualizaciones y mejoras, e intégralas en el flujo Odoo cuando aporten valor. Documenta cada incorporación en el reporte de mejora continua.
+Revisa periódicamente todas estas piezas (skills, MCP, cola de trabajo) en busca de actualizaciones y mejoras, e intégralas en el flujo Odoo cuando aporten valor. Documenta cada incorporación en el reporte de mejora continua.

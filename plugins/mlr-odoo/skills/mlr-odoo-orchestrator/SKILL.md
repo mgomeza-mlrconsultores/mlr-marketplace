@@ -1,4 +1,4 @@
----
+﻿---
 name: mlr-odoo-orchestrator
 description: Flujo MLR para personalizar Odoo en Cowork. Usar ante cualquier pedido de personalizacion de Odoo (campos, modelos, vistas, acciones de servidor, automatizaciones). Reune contexto, ejecuta el cambio, verifica en navegador con captura, consulta Context7 y documenta en informe en espanol.
 ---
@@ -51,7 +51,7 @@ constantes de arriba, sin leer prosa.
 
 ### 3. Donde se guardan los archivos (obligatorio)
 Todo (codigo, informes, capturas, bundles) se guarda en el proyecto, nunca solo en
-el chat: **`C:\Users\mgome\Claude\Projects\MLR Odoo`**, respetando la
+el chat: **`<carpeta local de proyectos MLR>`**, respetando la
 organizacion y la nomenclatura que ya existe:
 
 ```
@@ -70,4 +70,4 @@ Reglas:
 - Los **informes y capturas** van a la carpeta del cliente, en subcarpeta con la fecha `YYYYMMDD`.
 - Si un desarrollo ya existe, se **amplia** su carpeta y su README; no se crea una nueva.
 - Carpetas conectadas: si la carpeta no esta conectada a la sesion, se pide acceso con
-  `device_request_folder_access` sobre `C:\Users\mgome\Claude\Projects\MLR Odoo`.
+  `device_request_folder_access` sobre `<carpeta local de proyectos MLR>`.

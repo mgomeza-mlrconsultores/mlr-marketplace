@@ -1,4 +1,4 @@
-# Marca MLR Consultores — valores oficiales
+﻿# Marca MLR Consultores — valores oficiales
 
 Fuente: *Manual de Identidad Corporativa* y `Guia_de_Marca_MLR.md`, con decisiones de marca cerradas el 2026-06-14. Estos son los valores reales, no aproximaciones.
 
@@ -77,7 +77,7 @@ Pie de toda pieza formal:
 
 **No preguntar donde esta el membrete.** Estos identificadores son la respuesta. Todo documento formal se construye descargando la plantilla y escribiendo dentro, nunca recreando el encabezado.
 
-**Copia local de las plantillas:** `C:\Users\mgome\Claude\Projects\MLR Odoo\Plantillas\`.
+**Copia local de las plantillas:** `<carpeta local de proyectos MLR>\Plantillas\`.
 
 **Margenes.** La plantilla en crudo deja demasiado espacio arriba y abajo. Los valores corregidos, validados en produccion, estan en `margenes-membrete.md` y son de aplicacion obligatoria en todo documento formal.
 
