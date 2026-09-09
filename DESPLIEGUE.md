@@ -24,7 +24,9 @@ Sirve cuando no se quiere depender de un repositorio. El limite es 50 MB por paq
 
 Elegir **GitHub Sync** y conectar el repositorio `mgomeza-mlrconsultores/mlr-marketplace`. La autenticacion la resuelve la plataforma con la autorizacion del administrador, asi que **ninguna persona del equipo necesita credenciales de git ni acceso al repositorio**.
 
-Esta es la via correcta para MLR por dos razones. El repositorio es privado y seguira siendolo. Y cada version nueva que se publique llega sola a todo el equipo, sin redistribuir nada.
+Es la via mas comoda para el equipo: cada version nueva que se publique llega sola a todos, sin redistribuir nada y sin que nadie ejecute comandos.
+
+Para una instalacion persona a persona, sin pasar por administracion, ver `INSTALAR.md`.
 
 ## Nivel de acceso por plugin
 
@@ -80,4 +82,4 @@ Linux: `/etc/claude-code/managed-settings.json`
 
 La politica gestionada gana sobre la configuracion del usuario y este no puede desactivarla.
 
-**Advertencia.** Por esta via, al ser el repositorio privado, cada maquina necesita credenciales de git con acceso al repositorio. Es la razon por la que la sincronizacion desde el panel de administracion es preferible: ahi la autenticacion la resuelve la plataforma una sola vez.
+El repositorio es publico, asi que por esta via cada maquina solo necesita `git` instalado: no hacen falta credenciales ni permisos.

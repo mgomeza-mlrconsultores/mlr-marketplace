@@ -6,9 +6,9 @@ Funciona igual en Cowork y en Claude Code de escritorio: los comandos se escribe
 
 ## Requisito previo
 
-Acceso de lectura al repositorio `mgomeza-mlrconsultores/mlr-marketplace`. Marcos lo concede desde GitHub. Si el repositorio es privado y no tienes acceso, el primer comando falla con un error de autenticacion: pidele el alta antes de seguir.
+Ninguno. El repositorio `mgomeza-mlrconsultores/mlr-marketplace` es publico, asi que no hace falta cuenta de GitHub ni permisos.
 
-En Claude Code de escritorio hace falta ademas tener `git` con tus credenciales de GitHub ya configuradas, porque la descarga la hace tu maquina.
+En Claude Code de escritorio necesitas `git` instalado, porque la descarga la hace tu maquina.
 
 ## Instalacion, una sola vez
 
@@ -56,4 +56,4 @@ No traen el **contexto de los clientes** ni las correcciones acumuladas de cada 
 
 ## Si algo no aparece
 
-Comprueba que el catalogo esta dado de alta con `/plugin marketplace list`. Si `mlr` no sale, el primer comando no llego a completarse: casi siempre es falta de acceso al repositorio.
+Comprueba que el catalogo esta dado de alta con `/plugin marketplace list`. Si `mlr` no sale, el primer comando no llego a completarse: vuelve a ejecutarlo.
