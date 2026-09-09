@@ -2,6 +2,31 @@
 
 Dos fuentes primarias. Ninguna sustituye a la otra.
 
+## 0. La reunion se conduce con el cuestionario
+
+Antes de la reunion de descubrimiento se imprime o se abre el libro de captura, y se llena
+**en vivo, delante del cliente**. Lo que no quede registrado ahi, no se cotiza.
+
+- `scripts/preguntas.py` — origen unico de las preguntas: ficha del sistema, 17 bloques por
+  aplicacion y cierre. Si una pregunta cambia, cambia aqui y se regeneran los dos documentos.
+- `scripts/libro.py` — genera el libro de captura en Excel, con casillas, listas cerradas y
+  una hoja de resumen que cuenta sola los detonantes de costo.
+- `scripts/guia.py` — genera la guia de la reunion en formato MLR, con el reparto de los 30
+  minutos y como se conduce.
+
+El recorrido obligatorio —ficha, contabilidad, facturacion, ventas, compras, inventario y
+cierre— suma **30 minutos exactos**. Los otros doce bloques son condicionales y solo se
+abren si el cliente los menciona.
+
+**El orden no es arbitrario.** Contabilidad y facturacion van primero porque en Mexico el
+comprobante fiscal, el catalogo de cuentas y el numero de razones sociales condicionan la
+configuracion de todo lo demas; definirlos al final obliga a rehacer.
+
+Cada bloque de aplicacion arranca con la misma espina dorsal, que son las cuatro respuestas
+que mueven el precio: donde vive hoy el proceso, que volumen tiene, que hay que migrar, y
+que de eso **no** se resuelve como lo hace Odoo de fabrica. La cuarta es la que destapa el
+desarrollo y la que mas se olvida.
+
 ## 1. Lectura de la transcripcion
 
 Extraer y dejar por escrito en el chat, en este orden:

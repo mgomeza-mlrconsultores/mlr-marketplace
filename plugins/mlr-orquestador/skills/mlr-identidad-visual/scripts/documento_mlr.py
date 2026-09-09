@@ -211,8 +211,11 @@ def _lexend_por_defecto(styles_xml):
 class Documento(object):
     """Documento formal de MLR sobre la hoja membretada calibrada."""
 
-    def __init__(self, titulo, cliente, fecha, saludo,
+    def __init__(self, titulo, cliente, fecha, saludo=None,
                  firmantes=FIRMANTES_MLR, plantilla=None, folio=True):
+        """`saludo` se omite solo en documentos que no van dirigidos a una
+        persona —guias y formatos de trabajo interno—. Un entregable a cliente
+        siempre lleva saludo nominal: es una carta, no un ensayo."""
         if isinstance(titulo, str):
             titulo = [titulo]
         if len(titulo) > 2:
@@ -235,8 +238,9 @@ class Documento(object):
         # Solo dos metadatos. Nueve etiquetas es lo que direccion rechazo.
         self.metadato("Cliente", cliente)
         self.metadato("Fecha", fecha)
-        self.b.append(par(run(saludo, fam=XBOLD, color=TEAL, sz=SZ_SALUDO),
-                          before=K_SALUDO, after=0, jc="left", line=L_SALUDO))
+        if saludo:
+            self.b.append(par(run(saludo, fam=XBOLD, color=TEAL, sz=SZ_SALUDO),
+                              before=K_SALUDO, after=0, jc="left", line=L_SALUDO))
 
     # -- bloques ----------------------------------------------------------
     def metadato(self, etiqueta, valor):

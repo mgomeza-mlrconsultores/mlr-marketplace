@@ -85,6 +85,9 @@ def main():
     ap.add_argument("--docx")
     ap.add_argument("--sin-caratula", action="store_true",
                     help="para anexos y documentos que no llevan bloque de caratula")
+    ap.add_argument("--sin-saludo", action="store_true",
+                    help="guias y formatos de trabajo interno, que no van dirigidos a "
+                         "una persona. Un entregable a cliente SIEMPRE lleva saludo.")
     a = ap.parse_args()
     try:
         import pymupdf
@@ -118,7 +121,10 @@ def main():
             elif 14.5 <= l["sz"] <= 15.5 and "saludo" not in obtenido:
                 obtenido["saludo"] = l["y0"]
         cola = bool(gordas) and bool(DESCENDENTES & set(gordas[-1]["t"].lower()))
-        for k, ref in CARATULA.items():
+        esperados = dict(CARATULA)
+        if a.sin_saludo:
+            del esperados["saludo"]
+        for k, ref in esperados.items():
             if k not in obtenido:
                 fallos.append("Falta el bloque de caratula «%s»." % k); continue
             if cola and k in BAJAN_CON_DESCENDENTE:
