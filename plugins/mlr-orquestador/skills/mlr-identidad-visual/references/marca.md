@@ -83,8 +83,19 @@ Lo que hay que anadir al paquete:
 3. La relacion correspondiente en `word/_rels/fontTable.xml.rels`, de tipo `.../font`.
 4. `<w:embedTrueTypeFonts/>` en `word/settings.xml`, y **sin** `<w:saveSubsetFonts/>`, para
    que viaje la fuente completa y no solo los glifos usados.
-5. El `Default` de extension `odttf` en `[Content_Types].xml` —la plantilla ya lo trae,
-   porque incrusta Calibri y Cambria.
+5. **Un `<Override PartName="/word/fonts/<archivo>.odttf">` por cada fuente anadida**, en
+   `[Content_Types].xml`, con `ContentType="application/vnd.openxmlformats-officedocument.obfuscatedFont"`.
+
+**Aqui esta la trampa, y costo un entregable danado el 2026-09-09.** `odttf` **no** va como
+`<Default Extension>`: la plantilla declara un `Override` por archivo, uno para Calibri y
+otro para Cambria. Anadir las tres fuentes sin declararlas deja tres partes del paquete sin
+tipo de contenido, y una sola parte sin declarar invalida el paquete entero. Word lo abre
+como «contenido no legible» y **no dice cual es la parte**. Se diagnostico abriendo nueve
+variantes con Word por automatizacion hasta aislarlo.
+
+`verifica_documento.py` lo comprueba ahora: toda parte del paquete tiene que tener tipo de
+contenido, por `Default` o por `Override`, y toda relacion tiene que apuntar a una parte que
+exista.
 
 **Comprobacion obligatoria:** desofuscar cada parte con su propio `fontKey` y verificar que
 el nombre de familia del `.ttf` recuperado coincide con el declarado. Si no coincide, Word

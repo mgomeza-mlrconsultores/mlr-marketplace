@@ -50,6 +50,25 @@ en una captura, pero el documento entero queda desplazado.
 El titulo nunca pasa de dos renglones. Si el nombre del servicio no cabe en dos a 42 pt
 —unos 20 caracteres por renglon—, se acorta el titulo; **no se baja el tamano**.
 
+### Descendentes en el titulo
+
+Con interlineado exacto de 53 pt, la cola de una **g, j, p, q o y** a 42 pt se sale de la
+caja y aterriza sobre la linea de firmantes. El documento aprobado no lo sufre porque su
+segundo renglon, «de Nómina Semanal», no lleva ninguna.
+
+Medido sobre tinta real: el hueco entre el titulo y los firmantes es de **11.5 pt** en el
+aprobado. Con una «y» en el ultimo renglon queda en 3.8, que es la colision. Se despejan
+**274 tw** de espacio posterior, y solo cuando el ultimo renglon lo necesita; con eso el
+hueco vuelve a 11.5 exactos.
+
+Todo lo que va debajo —firmantes, metadatos y saludo— baja esos 13.7 pt, y el verificador
+espera ese desplazamiento cuando detecta un descendente. Ojo con la diferencia: **7.7 pt es
+lo que se come la cola; 13.7 es el espacio que hay que anadir.** No son el mismo numero.
+
+Comparar posiciones de tinta entre titulos distintos engana: «Cotización Maquila» tiene una
+q que desciende y «de Nómina Semanal» una ó que sube sobre la altura de mayusculas. Lo que
+se compara es la linea base, y esas coinciden al punto.
+
 ## Interlineado y espacio entre parrafos
 
 Medido renglon a renglon sobre el documento aprobado. **Interlineado exacto**, que es lo que
