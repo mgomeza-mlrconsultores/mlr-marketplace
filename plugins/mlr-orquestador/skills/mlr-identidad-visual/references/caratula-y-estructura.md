@@ -50,6 +50,41 @@ en una captura, pero el documento entero queda desplazado.
 El titulo nunca pasa de dos renglones. Si el nombre del servicio no cabe en dos a 42 pt
 —unos 20 caracteres por renglon—, se acorta el titulo; **no se baja el tamano**.
 
+## Interlineado y espacio entre parrafos
+
+Medido renglon a renglon sobre el documento aprobado. **Interlineado exacto**, que es lo que
+produce su archivo; el automatico da otra cosa. Valores en twips (1 pt = 20).
+
+| Bloque | Interlineado | Espacio antes | Espacio despues |
+|---|---|---|---|
+| Cuerpo | `317` (15.85 pt) | 0 | `145` (7.25 pt) |
+| Vineta | `308` (15.40 pt) | 0 | `72` (3.60 pt) |
+| Nota al pie de cuadro | `288` (14.40 pt) | 0 | `145` |
+| Encabezado de seccion | automatico | `240` (12 pt) | `80` (4 pt) |
+| Titulo de caratula | `1060` (53 pt) exacto | — | 0 |
+
+Comprobacion: entre renglones de un mismo parrafo tiene que salir 15.8–15.9 pt; entre
+vinetas, 19.0; de parrafo a encabezado, 25.9; de encabezado a parrafo, 24.7. Si no cuadra,
+el interlineado esta en automatico.
+
+## Saltos de plana
+
+1. **Ningun cuadro se parte.** `<w:cantSplit/>` en cada fila para que no se rompa un renglon,
+   y `<w:keepNext/>` en todas las filas menos la ultima para que la tabla entre completa en
+   una plana. La cabecera lleva ademas `<w:tblHeader/>`.
+2. **Ningun encabezado se queda solo al pie.** `<w:keepNext/>` y `<w:keepLines/>` en el
+   encabezado, de modo que arrastra consigo su parrafo de entrada y el arranque del cuadro.
+3. **Ninguna plana por debajo del 85% de ocupacion**, salvo la ultima. Si forzar un cuadro
+   entero deja un hueco grande, no se mete un salto: se **acorta el contenido de las celdas**.
+   Las celdas del documento aprobado son frases cortas, no parrafos.
+4. **El bloque de contacto cabe en la ultima plana de contenido.** Reserva 2" exactas, asi que
+   el texto tiene que terminar 144 pt antes del limite inferior de la caja. Si no cabe, se
+   recorta contenido; nunca se deja una plana con solo el bloque de contacto.
+
+**Trampa de la plantilla:** su parrafo de anclaje trae `<w:spacing>` despues de `<w:rPr>`
+dentro de `<w:pPr>`, orden que el esquema OOXML no admite. Word lo tolera; otros motores
+ignoran el alto exacto y mandan el bloque a una plana nueva. Al generar, se reordena.
+
 ## Metadatos: solo dos
 
 El documento aprobado lleva **Cliente** y **Fecha**. Nada mas.
