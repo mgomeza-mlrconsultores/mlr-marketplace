@@ -64,7 +64,36 @@ En el archivo de Word esto se fija en `docDefaults` de `styles.xml`, no run por 
 | Cifra de resultado | `Lexend ExtraBold` | 11 pt (`sz 22`) | `#000000` |
 | Nota al pie de cuadro | `Lexend` | 10 pt (`sz 20`) | `#595959` |
 
-Para que el PDF salga fiel hay que tener instaladas las tres familias. En un entorno donde falten, se descargan de Lexend y se registran con esos nombres exactos antes de exportar; si no, el render miente y la revision visual no vale.
+### Las fuentes se incrustan en el archivo. Sin excepcion.
+
+**Lexend no esta instalada en las maquinas de MLR.** El documento aprobado se ve bien en
+cualquier equipo porque **incrusta sus fuentes**: Word las guarda como partes
+`word/fonts/*.odttf`. Un `.docx` que solo declara `Lexend` sin incrustarla se abre con la
+fuente del tema —Cambria, serif— y no se parece en nada al modelo. Fue el defecto reportado
+el 2026-09-09.
+
+Lo que hay que anadir al paquete:
+
+1. Las tres familias como partes `word/fonts/*.odttf`, ofuscadas segun ECMA-376 17.8.1: se
+   toman los 16 bytes del `fontKey` **en orden inverso** y se aplican por XOR sobre los
+   primeros 32 bytes del `.ttf`. La operacion es involutiva, asi que sirve para ofuscar y
+   para comprobar.
+2. En `word/fontTable.xml`, una entrada por familia:
+   `<w:font w:name="Lexend ExtraBold"><w:embedRegular r:id="..." w:fontKey="{GUID}"/></w:font>`
+3. La relacion correspondiente en `word/_rels/fontTable.xml.rels`, de tipo `.../font`.
+4. `<w:embedTrueTypeFonts/>` en `word/settings.xml`, y **sin** `<w:saveSubsetFonts/>`, para
+   que viaje la fuente completa y no solo los glifos usados.
+5. El `Default` de extension `odttf` en `[Content_Types].xml` —la plantilla ya lo trae,
+   porque incrusta Calibri y Cambria.
+
+**Comprobacion obligatoria:** desofuscar cada parte con su propio `fontKey` y verificar que
+el nombre de familia del `.ttf` recuperado coincide con el declarado. Si no coincide, Word
+ignora la incrustacion en silencio.
+
+Para que el render de control sea fiel, las tres familias tambien tienen que estar instaladas
+en la maquina que exporta el PDF. Si faltan, se instancian del archivo variable de Lexend en
+los pesos 400, 600 y 800 y se registran con esos nombres exactos. Sin eso el render miente y
+la revision visual no vale nada.
 
 **Discrepancia registrada.** La guia de marca propone Barlow o Saira para titulares y Lato o Mulish para cuerpo. Los entregables reales de la firma usan Oswald e Inter. Se adopta Oswald e Inter por ser el estandar en produccion; Oswald reproduce mejor la geometria condensada de DIN Alternate. **Confirmar con Marcos si prefiere alinear a la guia escrita.**
 

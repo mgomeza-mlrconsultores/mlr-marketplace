@@ -31,8 +31,24 @@ Sobre hoja carta, con la plantilla `Hoja Membretada MLR - varias paginas.docx`:
 | Cuerpo | **11 pt**, negro, justificado |
 | Encabezado de seccion | **13 pt**, teal `#23656F`, negritas, numerado `1. Titulo`. **Sin filete debajo.** |
 
-Posiciones verticales de referencia, medidas desde el borde superior de la hoja: titulo a
-130 pt, firmantes a 235 pt, primer metadato a 277 pt, saludo a 357 pt.
+## Ritmo vertical, medido en el documento aprobado
+
+Posiciones del borde superior de cada bloque, en puntos desde el borde de la hoja. **Se
+calibran renderizando a PDF y midiendo, no a ojo:** la diferencia entre 235 y 251 no se ve
+en una captura, pero el documento entero queda desplazado.
+
+| Bloque | Posicion |
+|---|---|
+| Titulo, primer renglon | 130 pt |
+| Titulo, segundo renglon | 183 pt (interlineado exacto de 53 pt, `w:line="1060" w:lineRule="exact"`) |
+| Firmantes | 235 pt |
+| Primer metadato | 277 pt |
+| Segundo metadato | 306 pt |
+| Saludo | 357 pt |
+| Primer parrafo del cuerpo | 379 pt |
+
+El titulo nunca pasa de dos renglones. Si el nombre del servicio no cabe en dos a 42 pt
+—unos 20 caracteres por renglon—, se acorta el titulo; **no se baja el tamano**.
 
 ## Metadatos: solo dos
 
