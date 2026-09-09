@@ -48,6 +48,24 @@ Aplica al cuerpo, a las vinetas, a los pies de tabla y a las celdas del anexo. L
 
 En el archivo de Word esto se fija en `docDefaults` de `styles.xml`, no run por run: `rFonts` con `ascii`, `hAnsi` y `cs` en `Lexend`, y `sz` en 22 medios puntos. Fijarlo solo en algunos parrafos deja el resto heredando la fuente del tema y el documento sale mezclado.
 
+**Pesos, extraidos de las fuentes incrustadas en el documento aprobado.** El peso se expresa con el **nombre de familia**, no con `<w:b/>`: Word trata cada peso de Lexend como familia propia, y usar ademas la negrita del procesador lo engorda de mas.
+
+| Elemento | Familia | Tamano | Color |
+|---|---|---|---|
+| Titulo de caratula | `Lexend ExtraBold` | 42 pt (`sz 84`) | `#23656F` |
+| Firmantes | `Lexend SemiBold` | 16 pt (`sz 32`) | `#23656F` |
+| Saludo | `Lexend ExtraBold` | 15 pt (`sz 30`) | `#23656F` |
+| Encabezado de seccion | `Lexend ExtraBold` | 13 pt (`sz 26`) | `#23656F` |
+| Etiqueta de metadato | `Lexend SemiBold` | 13 pt (`sz 26`) | `#23656F` |
+| Valor de metadato | `Lexend SemiBold` | 13 pt (`sz 26`) | `#000000` |
+| Cuerpo y vinetas | `Lexend` | 11 pt (`sz 22`) | `#000000` |
+| Cabecera de cuadro | `Lexend ExtraBold` | 10.5 pt (`sz 21`) | `#FFFFFF` sobre `#23656F` |
+| Celda de cuadro | `Lexend` | 11 pt (`sz 22`) | `#000000` |
+| Cifra de resultado | `Lexend ExtraBold` | 11 pt (`sz 22`) | `#000000` |
+| Nota al pie de cuadro | `Lexend` | 10 pt (`sz 20`) | `#595959` |
+
+Para que el PDF salga fiel hay que tener instaladas las tres familias. En un entorno donde falten, se descargan de Lexend y se registran con esos nombres exactos antes de exportar; si no, el render miente y la revision visual no vale.
+
 **Discrepancia registrada.** La guia de marca propone Barlow o Saira para titulares y Lato o Mulish para cuerpo. Los entregables reales de la firma usan Oswald e Inter. Se adopta Oswald e Inter por ser el estandar en produccion; Oswald reproduce mejor la geometria condensada de DIN Alternate. **Confirmar con Marcos si prefiere alinear a la guia escrita.**
 
 ## Logotipo

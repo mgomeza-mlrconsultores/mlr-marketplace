@@ -1,104 +1,150 @@
 ---
 name: mlr-redaccion
-description: Redacta y revisa cualquier texto que MLR Consultores vaya a entregar — informes, diagnosticos, memos, propuestas, cotizaciones, correos formales, minutas, laminas y resumenes ejecutivos — en el registro directivo de la firma: profesional alto, sin coloquialismos, entendible sin releer, sin perder ni un dato y sin rastro de escritura generada por IA.
+description: Redacta y revisa cualquier texto que MLR Consultores vaya a entregar — cotizaciones, propuestas, informes, diagnosticos, memos, correos formales y minutas — en el registro comercial mexicano que direccion aprueba, sin rastro de escritura generada por IA.
 ---
 
 # Redaccion MLR
 
-## Objetivo
+## El documento de referencia manda
 
-El lector no es tecnico: es un directivo, un contador o un jefe de operacion. Debe entender el documento sin ayuda y sin releer ninguna frase. Registro alto y profesional, cero coloquialismos. Cambia **como** se dice, nunca **que** se dice.
+El registro de la firma no se deduce ni se inventa: esta fijado en un archivo real que
+direccion aprobo y envio a cliente.
 
-**Nada tecnico se elimina.** Nombres de campo (`product_uom_qty`, `owner_id`, `picking_id`, `picked`), de modelo (`stock.move`, `eco.exit`), rutas, identificadores, referencias de documento, cifras y porcentajes se conservan. Se explican, no se quitan.
+**`G:\Unidades compartidas\MMLR 2025\Hoja Membretada\Cotizacion_Comband DTH_Maquila Nomina.pdf`**
 
-## Conclusion primero
+Ante cualquier duda de tono, de formula o de extension, se abre ese archivo y se copia su
+manera de decir las cosas. Lo que sigue esta extraido de el; el archivo gana si algo aqui
+resulta ambiguo.
 
-La critica recurrente a los informes de MLR es que dan vueltas. El antidoto es estructural, no cosmetico:
+## Lo primero: es una carta comercial, no un ensayo
 
-- Cada seccion abre con su conclusion. El desarrollo la sustenta despues, nunca al reves.
-- El parrafo de apertura de un apartado no describe lo que el apartado va a hacer. Dice el hallazgo.
-- Si un parrafo puede borrarse sin que se pierda informacion, borralo.
-- Maximo cinco lineas por parrafo. Si crece, contiene dos ideas: separalas.
-- Prohibido el parrafo de transicion que solo anuncia lo que viene.
+Un entregable de MLR se dirige a una persona y se escribe como se le escribe a un cliente:
 
-## Reglas de redaccion
+1. Saludo nominal: **«Estimado Sr. Martin Ortiz:»**
+2. Parrafo de presentacion que abre con **«Por medio de la presente, MLR Consultores
+   presenta a <cliente> …»** y dice, en una sola oracion, que es el documento y sobre que
+   datos se construyo.
+3. Secciones numeradas: **«1. Alcance del servicio propuesto»**, «2. Tarifas…», etc.
+4. Cierre de cortesia: **«Quedamos atentos a sus comentarios y esperamos contar con su
+   aprobacion para definir los siguientes pasos.»**
+5. Bloque de contacto.
 
-- Una idea por oracion. Dos verbos principales y tres subordinadas: partir en dos o tres frases.
-- Conectores explicitos: pues, por su parte, pero, de modo que, es decir, en cambio. Nada de punto y coma para contrastar.
-- Sin negativas complejas. «No corresponde a X, que produce Y y no Z» se convierte en «No corresponde al de X, pues presenta Z en lugar de Y».
-- Cifra, no letra: 23, 13, 607. No veintitres ni seiscientas siete.
-- El porcentaje va pegado a su cifra, entre parentesis: «212,522 (34.1% del total) movimientos».
-- Todo porcentaje declara su base. Si no puede declararse, se usa la cifra absoluta.
-- Remisiones con el numero entre parentesis: «un error informatico (5.1.) identificable».
-- Lo que no se puede medir explica por que no se puede.
-- Se cierra el parrafo cuando la idea esta dicha. Sin coletillas que repiten.
+Esas formulas no son relleno y no se sustituyen por versiones «mas directas». Son el
+registro que el cliente reconoce y que direccion firma.
 
-## Patrones de IA prohibidos
+## Frase larga e informativa, no frase corta y punzante
 
-Eliminar sin excepcion, en documentos y en respuestas de chat:
+La oracion de apertura del archivo aprobado tiene 44 palabras, un solo verbo principal y
+tres complementos encadenados:
 
-- Triadas retoricas: «no solo X, sino tambien Y», «no se trata de X, es Y», «X no es Y; es Z».
-- Cierres de resumen que repiten lo ya dicho con otras palabras.
-- Adjetivacion vacia: robusto, integral, holistico, clave, crucial, fundamental, potente, solido como relleno.
-- Verbos de folleto: aprovechar, potenciar, impulsar, desbloquear, transformar, empoderar, navegar en sentido figurado.
-- Formulas de encuadre: «es importante senalar que», «cabe destacar», «en el panorama actual», «en un mundo donde», «profundicemos en».
-- Simetria mecanica: todos los apartados de la misma extension, todas las listas de tres elementos.
-- Guion largo como comodin de puntuacion. Usa coma, punto o parentesis segun toque.
-- Hedging en cadena: «podria potencialmente sugerir que quiza».
-- Entusiasmo impostado y signos de admiracion.
-- Emojis. Nunca, en ningun entregable.
-- Encabezados que anuncian genero en vez de contenido: «Introduccion», «Consideraciones finales», «Reflexion».
+> «Por medio de la presente, MLR Consultores presenta a Comband DTH la propuesta economica
+> para el servicio de maquila de nomina semanal, considerando la plantilla inicial de 20
+> colaboradores y el crecimiento proyectado a 180 colaboradores en un horizonte de 3 meses.»
 
-## Lexico
+Plana, completa, sin efecto. Ese es el modelo. La prosa cortada en frases breves y
+sentenciosas es precisamente lo que el cliente lee como texto de maquina. **Prohibido
+partir en dos frases lo que cabe, informativamente, en una.**
 
-| No usar | Usar |
-|---|---|
-| cantidad movida | cantidad trasladada |
-| apartado homonimo | apartado equivalente |
-| contribuyente dominante, aislable | error informatico identificable, factor principal |
-| el efecto es terminante | el efecto es absoluto y no admite excepcion |
-| concurren tres causas | se suman tres causas |
-| constituye materia para | servira como base para |
-| admite dos destinos | contempla dos rutas |
-| el circuito funciona | el flujo opera con normalidad |
-| se queda corto | no alcanza a cubrirlo |
-| tropezo con la falla | activo el defecto |
-| a mano | manualmente |
+## Las construcciones que delatan IA
 
-Evitar el «si» enfatico repetido (maximo dos o tres por documento), las antitesis retoricas en serie y las apelaciones al lector («conviene detenerse en»).
+Estas son las que el cliente senalo, con el texto real que las provoco. Ninguna vuelve a
+aparecer en un entregable.
 
-## Glosar la primera vez
+**Enumeracion paralela con el verbo al frente.** Tres o mas miembros con la misma
+estructura sintactica y un verbo aislado.
 
-Todo termino que un lector no especializado no pueda inferir se explica en la misma frase, sin nota al pie:
+- Mal: «La primera proyecta: entrega proyecto arquitectonico y ejecutivo. La segunda
+  equipa: cocinas, muebles de bano y grifería. La tercera instala: calefaccion y aire
+  acondicionado.»
+- Bien: «El grupo opera tres lineas de negocio. La linea de arquitectura entrega el proyecto
+  arquitectonico y ejecutivo al propietario; la de interiorismo suministra e instala
+  cocinas, muebles de bano, griferia y electrodomesticos; y la de instalaciones ejecuta
+  calefaccion, aire acondicionado, agua sanitaria y aporte solar.»
 
-- capa de valoracion: «el registro con el que Odoo asigna valor monetario a cada movimiento; sin esa capa no hay asiento contable».
-- ubicacion de concepto: «las que representan un ajuste y no un lugar fisico».
-- marcada como surtida: «es decir, fisicamente recogida (campo `picked`)».
-- idempotente: enunciar primero el efecto, despues el termino.
+**Dos puntos retoricos.** Los dos puntos introducen una lista o una cita, nunca un efecto de
+enfasis. «La primera proyecta: entrega…» esta mal. «Incluye los siguientes entregables:»
+esta bien.
 
-Un termino ya glosado no se repite. Una palabra no puede significar dos cosas en el mismo documento.
+**Antitesis de definicion.** «X no es Y, es Z», «no se trata de X, sino de Y», «no propone
+X: propone Y».
 
-## NOTA de consecuencia
+- Mal: «Esa diferencia no es de catalogo, es de operacion.»
+- Bien: «Esa diferencia es operativa y no de catalogo, ya que cada linea maneja un esquema
+  de inventario distinto.»
 
-Cuando un hallazgo tecnico tiene una consecuencia de negocio que el lector no deduciria, cerrar el bloque con «NOTA:» y enunciarla en terminos de gestion.
+**Cierre abstracto de parrafo.** La frase final que resume con una imagen o una inversion en
+lugar de aportar un dato.
 
-## Documento ya editado por la persona
+- Mal: «…y que el margen se consulte en lugar de calcularse.»
+- Bien: «…de modo que el margen de cada obra pueda consultarse en cualquier momento sin
+  necesidad de un calculo manual al cierre.»
 
-1. Localizar hasta donde llegan sus cambios. Esa zona es intocable.
-2. Derivar el patron comparando parrafo a parrafo contra la ultima version emitida. El diff es la especificacion.
-3. Editar SU archivo directamente, no regenerar: regenerar pierde su maquetacion. Conservar la estructura de runs (topo de vineta, entradilla en negritas, cuerpo).
-4. En la zona reescrita, reducir cada racha de parrafos vacios a uno. En su zona validada, no tocar nada.
-5. Rehacer el control de encabezados colgados con saltos de pagina, iterando. Si un salto deja una pagina con menos de 22 lineas, moverlo al subtitulo anterior.
+**Frase corta aislada con valor de sentencia.** «El resultado es que ninguna obra tiene un
+costo consolidado.» Se integra al parrafo con su conector y su complemento.
 
-## Verificacion obligatoria
+**Inversion aforistica.** «Lo que no se puede medir explica por que no se puede», «cambia
+como se dice, no que se dice». Fuera de los entregables.
 
-De forma programatica, nunca a ojo:
+**Ademas, sin excepcion:** triadas «no solo X, sino tambien Y»; adjetivacion vacia (robusto,
+integral, holistico, clave, crucial, fundamental, potente); verbos de folleto (aprovechar,
+potenciar, impulsar, desbloquear, transformar, empoderar); formulas de encuadre («es
+importante senalar que», «cabe destacar», «en el panorama actual»); simetria mecanica
+—todos los apartados de la misma longitud, todas las listas de tres—; guion largo como
+comodin de puntuacion; hedging encadenado; signos de admiracion; emojis; encabezados que
+anuncian genero en vez de contenido («Introduccion», «Consideraciones finales»); y recuadros
+o bloques «NOTA» decorativos, que solo se incluyen si Marcos los pide expresamente.
 
-- Cero cifras perdidas: extraer todos los numeros de la version anterior y de la nueva y comparar los conjuntos.
-- Cero nombres tecnicos perdidos: mismo metodo con identificadores de campo, modelo y archivo.
-- Cero diferencias en la zona validada por la persona.
-- Cero encabezados colgados en el PDF renderizado.
-- Margenes del membrete conforme a `mlr-identidad-visual/references/margenes-membrete.md`: sin banda vacia arriba y sin texto encimado con el logotipo o los datos de contacto impresos.
-- Cero coincidencias con la lista de patrones de IA: buscarlos uno por uno en el texto final.
+## Extension
 
-**Cuidado con los indices de elemento.** Si se borran parrafos durante el proceso, los indices se desplazan y una reescritura posterior puede sobrescribir el bloque equivocado. Localizar los bloques por su texto, no por su posicion. La verificacion de cifras es la red que detecta ese error.
+El archivo aprobado resuelve una cotizacion completa **en 3 planas**. Direccion ha dicho
+literalmente que no puede dedicar el tiempo a leer y corregir un documento de diez hojas.
+
+- Cotizacion o propuesta economica: **3 a 5 planas**. Si no cabe, el detalle va al anexo en
+  hoja de calculo, no a mas paginas de prosa.
+- Cuatro a seis secciones numeradas. Nada de doce apartados.
+- El desglose largo —tareas, horas, etapas— vive en el anexo. El documento principal
+  presenta los totales y las condiciones.
+
+## Vinetas
+
+Guion simple (`-`) como marca, texto en el mismo cuerpo y color que el parrafo, una linea o
+dos por vineta. **No** topo teal, **no** entradilla en negritas seguida de un parrafo. Cada
+vineta es un entregable o una condicion enunciada de corrido:
+
+> - Procesamiento de nomina en el sistema NOI.
+> - Altas, bajas y modificaciones salariales ante el IMSS.
+> - Timbrado y envio de CFDI de nomina.
+
+## Reglas que se conservan
+
+- **Nada tecnico se elimina.** Nombres de campo, de modelo, rutas, identificadores, cifras y
+  porcentajes se conservan integros. Se explican en la misma frase, sin nota al pie, y no se
+  vuelven a glosar.
+- El lector no es tecnico: es un directivo o un contador. Debe entender sin releer.
+- Cifra, no letra: 23, 180, 607.
+- El porcentaje pegado a su cifra y con su base declarada.
+- Precios en pesos mexicanos, con la mencion de si son antes de IVA.
+- Espanol de Mexico. Cero coloquialismos.
+- Lo que no se pudo medir se declara; no se fuerza.
+
+## Documento ya editado por Marcos
+
+1. Su archivo es la fuente de verdad. Se parte de el, no del propio.
+2. La zona que el toco es intocable. Al final se verifica que no tiene ni una diferencia.
+3. Se edita SU archivo, no se regenera: regenerar pierde su maquetacion y sus saltos.
+4. Su reescritura, comparada parrafo a parrafo contra la version anterior, es la
+   especificacion del estilo a extender al resto.
+
+## Verificacion obligatoria, programatica
+
+- Cero cifras perdidas respecto de la version anterior: extraer los conjuntos de numeros y
+  compararlos.
+- Cero nombres tecnicos perdidos: mismo metodo con identificadores.
+- Cero diferencias en la zona validada por Marcos.
+- Barrido de las construcciones prohibidas sobre el texto final, una por una. Buscar en
+  particular los patrones `no es .*, es `, `no se trata de`, `no .*: ` y las series de tres
+  frases que empiezan con «La primera», «La segunda», «La tercera».
+- Longitud media de oracion por encima de 20 palabras en los parrafos de prosa. Por debajo
+  de eso, el texto esta cortado en sentencias y hay que reescribirlo.
+- Numero de planas dentro del limite de la seccion «Extension».
+- Render a PDF y revision visual: carátula, una plana interior y la ultima.

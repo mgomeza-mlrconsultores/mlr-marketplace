@@ -25,7 +25,9 @@ Lo esencial, para no tener que abrir el archivo en cada pieza:
 
 **Margenes del membrete.** No se estiman ni se copian de un entregable anterior: ya vienen calibrados en las plantillas oficiales de `Plantillas\`. Se abre **Hoja Membretada MLR - varias paginas.docx** (o la de 1 pagina), se vacia el cuerpo conservando la seccion final, los encabezados y el parrafo que ancla el bloque de contacto, y se escribe dentro. Multipagina: `w:top="1584" w:bottom="2016" w:left/right="1238" w:header="1138" w:footer="1512"`. Detalle en `references/margenes-membrete.md`.
 
-**Cierre.** Todo documento formal termina con el **bloque de contacto** de la hoja membretada —Director General y Directora Comercial—, nunca con una firma en texto. Es el ultimo parrafo del cuerpo de la plantilla: se conserva intacto y se coloca al final.
+**Caratula.** **No existe portada aparte.** La caratula es un bloque de cabecera en la parte alta de la primera plana —titulo a 42 pt teal, firmantes en mayusculas a 16 pt, y solo dos metadatos: Cliente y Fecha— y debajo, en esa misma plana, arranca el saludo y el contenido. Componer una portada dedicada con media plana en blanco es lo que direccion rechazo. Medidas exactas, paleta y cuadros en `references/caratula-y-estructura.md`, tomadas del documento aprobado `Cotizacion_Comband DTH_Maquila Nomina.pdf`.
+
+**Cierre.** Todo documento formal termina con el parrafo de cortesia y el **bloque de contacto** de la hoja membretada —Director General y Directora Comercial—, nunca con una firma en texto. Es el ultimo parrafo del cuerpo de la plantilla: se conserva intacto y se coloca al final.
 
 **Revision visual obligatoria.** Ningun documento formal se entrega sin renderizarlo a PDF y mirar la portada, una pagina interior y la ultima. Un hueco de dos o tres centimetros bajo el logotipo, un cierre sin bloque de contacto, un bloque de firma partido entre hojas o una pagina casi vacia son defectos de entrega, no detalles.
 

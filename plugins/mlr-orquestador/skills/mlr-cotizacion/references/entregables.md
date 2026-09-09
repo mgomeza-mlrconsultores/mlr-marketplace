@@ -18,10 +18,26 @@ Regla firme: **cuando Marcos edita un archivo a mano, ese archivo ya no se regen
 
 El formato, el membrete y el registro de redaccion **no se definen aqui**: se cargan de `mlr-redaccion`, `mlr-identidad-visual` y las directrices vigentes en memoria. Esta seccion solo fija lo que es propio de una cotizacion.
 
-- Portada tipo cotizacion: cliente, objeto, vigencia, folio.
-- Contenido minimo, en secciones numeradas: entendimiento de la operacion, alcance por aplicacion, lo que queda fuera, ruta por etapas en prosa, entregables por etapa, supuestos, condiciones economicas, vigencia y siguiente paso.
-- Los unicos cuadros admitidos son los de condiciones economicas. Todo lo demas de la ruta va narrado; el detalle tabular es el anexo.
+El molde es el documento aprobado por direccion, `Cotizacion_Comband DTH_Maquila Nomina.pdf`. Se abre y se copia su estructura; no se disena una distinta.
+
+**Esqueleto, en este orden:**
+
+1. Bloque de caratula en la parte alta de la primera plana: titulo, firmantes en mayusculas, y solo dos metadatos —Cliente (con la atencion en la misma linea) y Fecha—. **Sin portada aparte.**
+2. Saludo nominal: `Estimado Sr. <Nombre>:`
+3. Parrafo de presentacion: «Por medio de la presente, MLR Consultores presenta a <cliente> la propuesta economica para <objeto>, considerando <los datos de partida>.»
+4. `1. Alcance del servicio propuesto` — lista con guiones de lo que incluye.
+5. `2. <Tarifas o inversion>` — cuadro de cifras.
+6. `3. <Estimado por fase, etapas o calendario>` — cuadro de cifras.
+7. `4. Condiciones comerciales` — lista con guiones: moneda e IVA, vigencia, forma de pago, lo que se contrata aparte.
+8. Cierre de cortesia: «Quedamos atentos a sus comentarios y esperamos contar con su aprobacion para definir los siguientes pasos.»
+9. Bloque de contacto.
+
+**Extension: 3 a 5 planas.** El documento aprobado resuelve una cotizacion completa en 3. Cuatro a seis secciones numeradas, no doce. Si el contenido no cabe, el detalle se va al anexo en hoja de calculo, nunca a mas planas de prosa.
+
+- El desglose de tareas, horas y etapas **no** va en el documento principal. Va en el anexo. El principal presenta los totales, los hitos y las condiciones.
+- Los cuadros son de cifras. Un cuadro descriptivo, que sustituye un argumento por una retícula de frases, no va.
 - Cada cifra del texto tiene su gemela en el anexo, con el mismo valor.
+- El registro de redaccion es el de `mlr-redaccion`, que esta tomado de ese mismo archivo aprobado. Es la parte que direccion critica primero.
 
 ## Anexo en Excel
 
