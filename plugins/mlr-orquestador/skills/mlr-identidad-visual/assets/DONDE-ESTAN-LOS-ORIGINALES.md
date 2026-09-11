@@ -12,6 +12,14 @@ Autora: C.P. Monica Arellano. Es el patron de la firma: caratula, tipografia,
 interlineado, cuadros, saltos y registro de redaccion salen de ahi. Ante cualquier
 duda se abre y se copia.
 
+## Molde del formato de solicitud de informacion
+
+`G:\Unidades compartidas\MMLR 2025\Hoja Membretada\Formato_Cotizacion_MLR.docx`
+
+La carta con la que se le piden datos al cliente antes de cotizar. `formato_cotizacion.py`
+—en `mlr-cotizacion`— clona ese paquete y solo cambia el texto. Trae el membrete de plana
+completa dentro del encabezado, asi que tampoco se sube.
+
 ## Hojas membretadas calibradas
 
 - `C:\Users\mgome\Claude\Projects\MLR Odoo\Plantillas\`

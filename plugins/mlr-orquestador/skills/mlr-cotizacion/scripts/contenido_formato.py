@@ -1,0 +1,148 @@
+# -*- coding: utf-8 -*-
+"""Contenido del formato de cotización MLR · Odoo. Orden lógico y de importancia."""
+
+TITULO = "Información para cotizar nuestros servicios"
+SUBTITULO = "CONSULTORÍA E IMPLEMENTACIÓN EN ODOO"
+SALUDO = "Buenas tardes,"
+ENTRADA = ("Agradecemos su interés en nuestros servicios. Para preparar una cotización de "
+           "implementación y consultoría en Odoo acorde con las necesidades de su empresa, "
+           "agradeceremos que nos compartan la siguiente información. Los apartados que no "
+           "correspondan a su operación pueden omitirse.")
+CIERRE = "Quedamos pendientes de sus comentarios."
+
+BLOQUES = [
+ ("Ficha del sistema", [
+   "Modalidad en la que corre Odoo hoy: Odoo Online, Odoo.sh o servidor propio.",
+   "Edición contratada: Community, Standard o Enterprise.",
+   "Versión exacta de Odoo en uso, mayor y menor.",
+   "Fecha de la última actualización de versión y salto de versión pendiente, si lo hay.",
+   "Número de usuarios internos que entrarán al sistema.",
+   "Número de razones sociales que van a operar en el sistema.",
+   "Número de sedes físicas y de almacenes.",
+   "Responsable de la administración de Odoo dentro de la empresa.",
+   "Implementador anterior, si lo hubo, y si continúa colaborando con ustedes.",
+   "Número de desarrollos o personalizaciones ya realizados, y si están documentados.",
+   "Idiomas y monedas en los que necesitan operar.",
+   "Sistemas externos con los que Odoo debe intercambiar información.",
+   "Fecha en la que necesitan estar operando.",
+   "Personas que deciden y firman del lado de su empresa.",
+ ]),
+ ("Contabilidad y cumplimiento fiscal", [
+   "Número de facturas de venta mensuales.",
+   "Número de facturas de gastos mensuales.",
+   "Número de importaciones mensuales.",
+   "Número de productos en el catálogo de inventario.",
+   "Número de transacciones mensuales en débito bancario.",
+   "Número de transacciones mensuales en crédito bancario.",
+   "Número de cuentas bancarias de débito.",
+   "Número de cuentas bancarias de tarjeta de crédito.",
+   "Gasto actual de honorarios contables.",
+   "Catálogo de cuentas en uso y si está alineado al código agrupador del SAT.",
+   "Sistema con el que emiten y timbran hoy sus comprobantes, y proveedor de certificación.",
+   "Uso de complemento de pagos, notas de crédito y facturación global.",
+   "Forma y periodicidad con la que concilian los movimientos bancarios.",
+   "Control de activos fijos y de su depreciación.",
+   "Fecha de corte y saldos contables que deben migrarse al arranque.",
+ ]),
+ ("Nómina y viáticos", [
+   "Número de trabajadores en nómina.",
+   "Periodicidad de nómina: semanal, quincenal, mensual o mixta.",
+   "Número de trabajadores que utilizan reembolso de viáticos.",
+   "Sistema con el que procesan la nómina hoy y responsable de los movimientos ante el IMSS.",
+   "Necesidad de llevar asistencia, incidencias y vacaciones dentro del sistema.",
+ ]),
+ ("Seguimiento comercial", [
+   "Herramienta en la que vive hoy el seguimiento comercial.",
+   "Número de oportunidades al mes y de personas en el área comercial.",
+   "Número de vendedores y criterios con los que se mide su desempeño.",
+   "Origen de los prospectos: campañas, sitio web, referidos o prospección directa.",
+   "Información que debe migrarse y origen del que proviene.",
+ ]),
+ ("Ventas", [
+   "Herramienta con la que cotizan hoy.",
+   "Volumen de cotizaciones y de pedidos al mes.",
+   "Número de productos y servicios que integran el catálogo.",
+   "Listas de precio distintas por cliente o por canal.",
+   "Cobro de anticipos previos a la entrega.",
+   "Descuentos aplicables y responsable de autorizarlos.",
+   "Firma electrónica de la cotización por parte del cliente.",
+   "Requerimientos de venta que no se resuelven con la operación estándar de Odoo.",
+   "Información que debe migrarse y origen del que proviene.",
+ ]),
+ ("Suscripciones y contratos recurrentes", [
+   "Número de contratos vigentes y periodicidad con la que se factura el recurrente.",
+   "Herramienta en la que vive hoy la facturación recurrente.",
+   "Tratamiento de altas, bajas y cambios a media vigencia.",
+   "Información que debe migrarse y origen del que proviene.",
+ ]),
+ ("Punto de venta", [
+   "Número de tickets al día.",
+   "Número de cajas o terminales y sucursales en las que operan.",
+   "Formas de pago que aceptan en mostrador.",
+   "Necesidad de operar sin conexión a internet.",
+ ]),
+ ("Compras", [
+   "Herramienta en la que viven hoy las compras.",
+   "Número de órdenes de compra al mes y personas involucradas.",
+   "Número de proveedores activos.",
+   "Compras al extranjero que requieren pedimento y arancel dentro del costo.",
+   "Entrega directa del proveedor al cliente o recepción siempre en almacén.",
+   "Autorización de compras por monto y responsables de autorizarla.",
+   "Reposición por mínimos o compra contra pedido.",
+   "Requerimientos de compra que no se resuelven con la operación estándar de Odoo.",
+   "Información que debe migrarse y origen del que proviene.",
+ ]),
+ ("Inventario y almacén", [
+   "Herramienta en la que vive hoy el inventario.",
+   "Número de movimientos al mes y personas que trabajan en almacén.",
+   "Número de productos en existencia y valor del inventario.",
+   "Manejo de ubicaciones dentro del almacén.",
+   "Control de lote o número de serie, y número de productos que lo llevan.",
+   "Método de valuación del inventario, y si opera de forma automática o manual.",
+   "Periodicidad del conteo físico y fecha del último realizado.",
+   "Responsable de autorizar un ajuste de inventario.",
+   "Inventario en consignación o en poder de terceros.",
+   "Unidades de medida distintas para comprar y para vender.",
+   "Seguimiento de productos sin movimiento o caducados.",
+   "Traspasos de mercancía entre almacenes o entre razones sociales.",
+   "Requerimientos de almacén que no se resuelven con la operación estándar de Odoo.",
+   "Información que debe migrarse y origen del que proviene.",
+ ]),
+ ("Fabricación y listas de materiales", [
+   "Herramienta en la que vive hoy la producción.",
+   "Número de órdenes de fabricación al mes y personas en producción.",
+   "Modalidad de trabajo: fabricación, ensamble o armado de kits para venta.",
+   "Número de listas de materiales y niveles que contienen.",
+   "Etapas del proceso que se maquilan con terceros.",
+   "Necesidad de conocer el costo de producción por orden.",
+   "Información que debe migrarse y origen del que proviene.",
+ ]),
+ ("Proyectos", [
+   "Herramienta en la que vive hoy la gestión de proyectos.",
+   "Número de proyectos abiertos y personas involucradas.",
+   "Registro de horas del personal contra el proyecto.",
+   "Necesidad de conocer el margen de cada proyecto u obra.",
+   "Facturación por avance o por entregable.",
+   "Información que debe migrarse y origen del que proviene.",
+ ]),
+ ("Servicio de campo", [
+   "Herramienta en la que vive hoy el servicio en sitio.",
+   "Número de servicios al mes y de técnicos que salen a campo.",
+   "Consumo de material en sitio y su descarga del inventario.",
+   "Firma del cliente en sitio.",
+   "Facturación desde la propia orden de servicio.",
+ ]),
+ ("Mantenimiento", [
+   "Herramienta en la que vive hoy el mantenimiento de equipos.",
+   "Número de equipos en el padrón y personas a cargo.",
+   "Mantenimiento preventivo con calendario.",
+   "Atención de fallas con personal propio o con proveedor externo.",
+ ]),
+ ("Datos, calendario y alcance", [
+   "Fecha de corte que van a usar para el arranque.",
+   "Responsable de entregar los datos a migrar y formato en el que pueden entregarse.",
+   "Personas y áreas que recibirán capacitación.",
+   "Procesos que prefieren no intervenir en esta etapa.",
+   "Fechas fiscales o de negocio que condicionen el calendario.",
+ ]),
+]

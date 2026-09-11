@@ -20,6 +20,19 @@ Cada fase se cierra en el chat, en texto, y se espera aprobacion explicita antes
 - No dejar el script listo "que total no genera nada".
 - No crear la carpeta del entregable antes de la aprobacion final.
 
+## El formato de solicitud de informacion
+
+Antes de cotizar casi siempre hace falta pedirle datos al cliente. Eso no se manda en un
+correo suelto ni en una tabla: va en el formato aprobado por direccion,
+`Formato_Cotizacion_MLR.docx`, que se clona —no se rehace— con
+`scripts/formato_cotizacion.py` y el modulo `scripts/contenido_formato.py`.
+
+Es un formato distinto al de la propuesta y tiene su propio molde, su propia tipografia y su
+propio orden de bloques. Los criterios completos, en `references/formato-de-cotizacion.md`.
+
+Se genera igual que todo lo demas: **despues** de que Marcos aprobo en el chat que bloques
+entran y que se pregunta en cada uno.
+
 ## Las siete fases
 
 Se recorren en orden. Cada una termina con una pregunta de cierre a Marcos.

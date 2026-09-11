@@ -79,6 +79,7 @@ $a = "G:\Unidades compartidas\MMLR 2025\Claude MLR\mlr-marketplace\plugins\mlr-o
 New-Item -ItemType Directory -Force -Path "$a\referencia","$a\plantillas"
 Copy-Item "G:\Unidades compartidas\MMLR 2025\Hoja Membretada\Cotizacion_Comband DTH_Maquila Nomina.pdf" "$a\referencia\Cotizacion aprobada por direccion.pdf" -Force
 Copy-Item "C:\Users\mgome\Claude\Projects\MLR Odoo\Plantillas\Hoja Membretada MLR*.docx" "$a\plantillas\" -Force
+Copy-Item "G:\Unidades compartidas\MMLR 2025\Hoja Membretada\Formato_Cotizacion_MLR.docx" "$a\plantillas\" -Force
 ```
 
 ## Primer arranque
