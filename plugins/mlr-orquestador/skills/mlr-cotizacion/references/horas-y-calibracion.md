@@ -29,6 +29,26 @@ Lecturas que hay que retener de ese registro: los datos maestros y la carga inic
 
 Proyecto de referencia completo: 206 horas reales sobre 42 tareas.
 
+Cotizaciones cerradas que sirven de calibracion:
+
+| Proyecto | Situacion de partida | Horas | Tareas | Aplicaciones |
+|---|---|---|---|---|
+| Taiga | ejecutado, horas reales | 206 | 42 | — |
+| Aire Libre LATAM | implantacion nueva, 3 empresas, catalogo menor a 500 productos | 250 | 40 | 8 |
+| Dunedin | base viva en produccion, 1 empresa, 5 almacenes, 29 rutas de venta | 264 | 50 | 10 |
+
+## Base viva contra implantacion nueva
+
+Es el ajuste que mas se equivoca. Cuando el cliente ya opera sobre Odoo, los datos maestros **ya existen**: productos cargados, categorias con su valuacion, contactos con su RFC, almacenes construidos. Cotizar eso como si hubiera que crearlo infla la ruta entre un tercio y la mitad, y se cae en cuanto el cliente abre su propia base.
+
+En una base viva se cotiza:
+
+- **Depuracion** de lo que esta incompleto: productos sin codigo o sin costo, contactos sin dato fiscal, existencias negativas, documentos en rezago.
+- **Reconstruccion** de lo que esta mal resuelto: automatizaciones que suplen configuracion, catalogos de cuentas usados como dimension, listas de precio de precio fijo replicadas por cliente.
+- **Retiro** de lo que sobra, que casi siempre cuesta mas que construir de cero porque hay que sostener la operacion mientras se quita.
+
+Y no se cotiza lo que ya funciona. Antes de escribir una hora de una aplicacion hay que abrir la base y ver si esa aplicacion ya esta resuelta. Si lo esta, se dice en la propuesta que queda fuera porque opera correctamente: es argumento de venta, no renuncia.
+
 ## Reglas de asignacion
 
 - Ninguna tarea baja de 0.5 h ni sube de 16 h. Lo que pasa de 16 h esta mal partido.
@@ -55,6 +75,10 @@ Se calcula y se distribuye por tarea en un archivo de uso interno de MLR. **Nunc
 ## Condiciones economicas
 
 - **Tarifa de lista** y, cuando aplique, **tarifa preferencial** con fecha limite explicita. Se muestra el ahorro en importe.
+- **Tarifas vigentes 2026**: lista 1,500 MXN por hora, preferencial 1,300 MXN por hora. La vigencia de la preferencial corre al 30 de septiembre para todos los clientes.
+- **Dos modalidades de pago, siempre las dos**: A, anticipo del 30% contra firma y saldo contra aceptacion de cada hito; B, pagos mensuales iguales sin anticipo. Un cuadro por modalidad.
+- **Horas efectivas de consultoria, no dias naturales.** El plazo va en su propio apartado y no se deriva de las horas.
+- **Configuracion contable e iguala son cosas distintas.** La configuracion contable del sistema entra en la propuesta: se cobra cuando es el peso del proyecto, o se declara incluida sin costo cuando se usa como beneficio comercial. El servicio contable recurrente siempre se contrata aparte y se nombra en las exclusiones.
 - **Anticipo** como porcentaje del total, contra orden de inicio.
 - **Hitos de facturacion** con importe por hito. Los importes cierran exactamente contra el total; el redondeo lo absorbe el ultimo hito.
 - **Precio por sede** cuando el cliente opera varias: total entre numero de sedes, dejando claro que incluye todas.

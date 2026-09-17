@@ -29,6 +29,22 @@ Arranca en descubrimiento, cierra en capacitacion y aceptacion. Plantilla base, 
 
 Las etapas se pueden fusionar o partir; el orden no se altera. Datos maestros nunca despues de configuracion. Carga inicial nunca antes de que la estructura de almacenes este cerrada.
 
+## Numeracion y agrupacion por aplicacion
+
+La ruta se agrupa por **aplicacion de Odoo** — Levantamiento, Generales, Inventario, Manufactura, Compras, Ventas, Punto de venta, Contabilidad, Contabilidad analitica, Saldos iniciales, Capacitacion, Puesta en marcha, Desarrollo — y se numera de forma jerarquica dentro de cada una: 1.1, 1.2, 1.3, 2.1, 2.2.
+
+La aplicacion es el agrupador de la tabla de horas del documento principal y del resumen del anexo. El numero jerarquico es el identificador estable de la tarea: se usa en el chat, en el anexo y con el cliente.
+
+Aplicaciones que se incluyen solo si el proyecto las tiene: Manufactura, Punto de venta, Contabilidad analitica. Una aplicacion sin tareas no aparece.
+
+## El desarrollo va aparte, al final y condicional
+
+El desarrollo es la **ultima aplicacion** de la ruta, con numeracion propia y total propio. Nunca se reparte dentro de las aplicaciones funcionales que lo consumen.
+
+En el documento principal se presenta despues del alcance y de la inversion, como bloque que el cliente decide si incluye. La razon es practica: el cliente tiene que poder quitarlo de un tijeretazo sin que el resto del alcance se desarme, y MLR tiene que poder sostener el precio del alcance principal sin el desarrollo dentro.
+
+Cuando el desarrollo se puede sustituir por un producto de mercado ya probado —un conector, un modulo publicado— se declara la sustitucion con su costo y el ahorro en horas.
+
 ## Tipos de trabajo permitidos
 
 Cada tarea lleva exactamente uno:
@@ -58,3 +74,5 @@ Entre cuatro y seis. Cada hito cierra con algo que el cliente puede ver funciona
 ## Numero de tareas
 
 Referencia: entre 40 y 65 tareas para proyectos de 200 a 600 horas. Menos de 30 en un proyecto grande significa tareas demasiado gruesas para controlar avance; mas de 70 significa granularidad que el cliente no va a leer y que MLR no va a administrar.
+
+Ejecutados: Aire Libre LATAM 250 h en 40 tareas sobre 8 aplicaciones y 6 hitos; Dunedin 264 h en 50 tareas sobre 10 aplicaciones y 6 hitos.

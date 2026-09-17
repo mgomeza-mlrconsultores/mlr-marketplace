@@ -73,6 +73,10 @@ El esqueleto arranca en descubrimiento y cierra en capacitacion por area, con ac
 
 Cada tarea declara aplicacion, tipo de trabajo, entregable verificable e hito de facturacion. Una tarea sin entregable verificable no es tarea: es relleno.
 
+La ruta se agrupa **por aplicacion de Odoo**, no por fase abstracta, y se numera de forma jerarquica dentro de cada aplicacion: 1.1, 1.2, 2.1, 2.2. El numero es el identificador que se usa en el chat, en el anexo y en la conversacion con el cliente.
+
+**El desarrollo es siempre la ultima aplicacion de la ruta, separada del resto y condicional.** No se reparte dentro de las aplicaciones que lo usan. Va al final de la propuesta, con su propio total, para que el cliente decida si lo incluye sin tocar el resto del alcance.
+
 Detalle y tipos de trabajo permitidos en `references/esquema-y-ruta.md`.
 
 ### Fase 5 — Horas
@@ -92,6 +96,8 @@ La contingencia interna existe, se calcula y **nunca aparece en un entregable de
 ### Fase 7 — Entregables
 
 Solo despues de la aprobacion final en el chat. Dos piezas: la propuesta en Word y el anexo en Excel con formulas vivas.
+
+El molde esta fijado: seis apartados numerados en el Word y cinco hojas en el anexo. No se inventa una estructura distinta por proyecto.
 
 Detalle de construccion, cuadre y verificacion en `references/entregables.md`.
 
@@ -128,6 +134,10 @@ Si una regla de formato aparece contradictoria entre esta skill y las de arriba,
 | "Agrego tableros y reportes, se ve mas completo" | Lo estandar que no se modifica no va en el alcance. |
 | "La parte contable la meto en la implementacion" | Va en iguala aparte. Solo entra a la implementacion lo que es propio del punto de venta. |
 | "Sumo la contingencia a las horas y queda cubierto" | La contingencia es interna. En el entregable del cliente no existe. |
+| "La base del cliente ya esta implantada, pero cotizo los datos maestros igual" | En una base viva los datos maestros ya existen. Lo que se cotiza es depuracion y reconstruccion de lo mal configurado, no creacion. Cotizar una base viva como si fuera nueva infla la ruta y se cae en la primera revision. |
+| "El desarrollo lo reparto dentro de la aplicacion que lo usa" | El desarrollo va como aplicacion aparte al final. Si esta repartido, el cliente no puede quitarlo sin desarmar el alcance. |
+| "Cada proyecto lleva la estructura de documento que mejor le quede" | El molde esta fijado: seis apartados en el Word, cinco hojas en el anexo. |
+| "Creo una carpeta para la propuesta y ahi la dejo" | El cliente ya tiene carpeta en `MLR Odoo\`. El entregable va en su `Informes\<AAAAMMDD>\` y el trabajo interno en `Documentos extras\<AAAAMMDD>\Interno\`. |
 | "Redondeo las cifras a mano en el Excel" | Toda cifra se comprueba ejecutando. Formulas vivas, verificacion programatica. |
 
 ## Banderas rojas
@@ -140,6 +150,8 @@ Si aparece cualquiera de estas, detente:
 - Un renglon de horas no se puede defender contra un proyecto real anterior.
 - Estas describiendo un comportamiento de Odoo que no probaste.
 - Aparece la palabra contingencia en un archivo que va al cliente.
+- Estas a punto de guardar un entregable fuera de `Informes\<AAAAMMDD>\` de la carpeta del cliente.
+- Un script que se archiva lleva una llave de API escrita.
 
 ## Cierre
 
