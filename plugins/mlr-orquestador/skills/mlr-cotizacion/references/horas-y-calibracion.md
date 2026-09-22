@@ -83,9 +83,9 @@ Se calcula y se distribuye por tarea en un archivo de uso interno de MLR. **Nunc
 | Configuracion y migracion de datos | Configuracion, Datos | 1,100 | 1,300 |
 | Diseno y definicion contable | Entregable (definicion, arquitectura, regularizaciones, reportes fiscales) | 1,700 | 1,950 |
 | Capacitacion y acompanamiento | Capacitacion, Puesta en marcha, Aceptacion, manuales | 1,200 | 1,400 |
-| Desarrollo a medida | Desarrollo | 1,600 | 1,850 |
+| Desarrollo a medida | Desarrollo | 1,400 | 1,600 |
 
-  Por que asi: el grueso de un proyecto es configuracion y datos, y ese renglon es el que el cliente compara contra otras ofertas. Bajarlo a 1,100 deja la propuesta competitiva en lo comparable sin regalar el trabajo de criterio, que es donde esta el valor de la firma y el contador socio. El desarrollo va por encima de la configuracion porque es lo mas caro de producir y lo unico que hay que reconstruir en cada salto de version mayor.
+  Por que asi: el grueso de un proyecto es configuracion y datos, y ese renglon es el que el cliente compara contra otras ofertas. Bajarlo a 1,100 deja la propuesta competitiva en lo comparable sin regalar el trabajo de criterio, que es donde esta el valor de la firma y el contador socio. El desarrollo va por encima de la configuracion porque es lo mas caro de producir y lo unico que hay que reconstruir en cada salto de version mayor, y por debajo de la definicion contable porque ahi el valor lo pone el criterio del contador socio y no las horas de construccion.
 
   El promedio ponderado resultante ronda 1,230 MXN por hora en un proyecto tipico. El importe de cada hito se calcula con la tarifa del rango de cada tarea, no con el promedio: por eso un hito corto y de mucha definicion sale mas caro por hora que uno largo de configuracion, y eso se deja ver.
 
