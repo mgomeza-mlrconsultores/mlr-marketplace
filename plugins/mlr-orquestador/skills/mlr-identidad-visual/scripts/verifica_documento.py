@@ -37,6 +37,7 @@ OCUPACION_MIN = 70            # el aprobado tiene una plana al 75%
 BANDA_PALABRAS = (14.0, 30.0)
 TEAL = "#23656f"
 PESOS = ["Lexend", "Lexend SemiBold", "Lexend ExtraBold"]
+PESO_WGHT = {"Lexend": 400, "Lexend SemiBold": 600, "Lexend ExtraBold": 800}
 CAJA_SUP, CAJA_INF = 79.2, 691.2      # margenes 1584 / 2016 tw
 ALTO_CONTACTO = 144.0                 # 2" que reserva el bloque de contacto
 
@@ -258,7 +259,13 @@ def main():
             try:
                 from fontTools.ttLib import TTFont
                 import io as _io
-                if TTFont(_io.BytesIO(bytes(crudo)), lazy=True)["name"].getDebugName(1) != fam:
+                _f = TTFont(_io.BytesIO(bytes(crudo)), lazy=True)
+                _nom = _f["name"].getDebugName(1) or ""
+                # Al guardar desde Word, Word vuelve a incrustar la fuente como subconjunto
+                # propio (___WRD_EMBED_SUB_nn) con su clave; es valida si el peso coincide.
+                _word = _nom.startswith("___WRD_EMBED_SUB_") and \
+                    _f["OS/2"].usWeightClass == PESO_WGHT[fam]
+                if _nom != fam and not _word:
                     fallos.append("La fuente incrustada para «%s» no es esa familia. "
                                   "Word ignora la incrustacion en silencio." % fam)
             except Exception as e:
