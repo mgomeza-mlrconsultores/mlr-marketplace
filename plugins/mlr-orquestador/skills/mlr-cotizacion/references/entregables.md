@@ -47,7 +47,7 @@ Titulo de caratula `Plan de trabajo / y alcance detallado`. Abre declarando que 
 1. `1. Alcance del servicio propuesto` — el mismo titulo que en la propuesta, con los entregables en vinetas, uno por renglon de alcance.
 2. `2. Esfuerzo estimado` — cuadro de etapas y horas, y el parrafo que separa configuracion, datos y lo demas, declara horas efectivas y remite al anexo.
 3. `3. Plazo de ejecucion`.
-4. `4. Desarrollo complementario, a decisión de <cliente>` — cuando existe: por que no es nativo, cuadro de horas, y la remision a la propuesta economica para su importe.
+4. `4. Desarrollo complementario, a decisión de <cliente>` — cuando existe. Se explica en dos parrafos que el cliente entienda sin conocer Odoo: primero, que resuelve ya el alcance contratado sin el desarrollo y que se ve con eso; despues, que agrega el desarrollo, con la regla de negocio del propio cliente escrita con sus cifras (en Ah Cacao, la tarifa interna del 50% del precio al publico con precios fijos), cuando se registra y que efecto contable y fiscal tiene. Las tareas del cuadro se nombran por lo que hacen para el cliente, no por la tecnica. Cierra con la remision a la propuesta economica para su importe.
 5. `5. Observaciones sobre la base actual` — cuando se audito una base viva.
 6. `6. Supuestos, exclusiones y condiciones` — sin moneda ni importes.
 7. Cierre de cortesia y bloque de contacto.
