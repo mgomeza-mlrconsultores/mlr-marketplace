@@ -14,45 +14,60 @@ Word y Excel se construyen desde ese modulo. Si una cifra aparece distinta en lo
 
 Regla firme: **cuando Marcos edita un archivo a mano, ese archivo ya no se regenera desde el script.** Se edita.
 
-## Propuesta en Word
+## Dos documentos en Word
 
-El formato, el membrete y el registro de redaccion **no se definen aqui**: se cargan de `mlr-redaccion`, `mlr-identidad-visual` y las directrices vigentes en memoria. Esta seccion solo fija lo que es propio de una cotizacion.
+Direccion fijo el 23 de septiembre de 2026 el modelo que armo el contador para Saguapac: la parte comercial y la parte de proyecto van en **dos documentos separados**, y el anexo en hoja de calculo va aparte. El cliente lee primero cuanto y como paga en dos o tres hojas, y el detalle del proyecto lo consulta en su propio documento.
 
-El molde es el documento aprobado por direccion, `Cotizacion_Comband DTH_Maquila Nomina.pdf`. Se abre y se copia su estructura; no se disena una distinta.
+| Pieza | Nombre del archivo | Extension |
+|---|---|---|
+| Propuesta economica | `1. MLR - Propuesta Economica - <Cliente>.docx` | **2 a 3 planas** |
+| Plan de trabajo y alcance detallado | `2. MLR - Plan de Trabajo y Alcance Detallado - <Cliente>.docx` | hasta 6 planas |
+| Anexo de ruta y horas | `MLR - Anexo de Ruta y Horas - <Cliente>.xlsx` | cinco hojas |
 
-**Esqueleto, en este orden:**
+El formato, el membrete y el registro **no se definen aqui**: se cargan de `mlr-redaccion`, `mlr-identidad-visual` y las directrices vigentes en memoria. Los dos documentos se construyen con `documento_mlr.py` y pasan el verificador cada uno por separado.
 
-1. Bloque de caratula en la parte alta de la primera plana: titulo, firmantes en mayusculas, y solo dos metadatos —Cliente (con la atencion en la misma linea) y Fecha—. **Sin portada aparte.**
-2. Saludo nominal: `Estimado Sr. <Nombre>:`
-3. Parrafo de presentacion: «Por medio de la presente, MLR Consultores presenta a <cliente> la propuesta economica para <objeto>, considerando <los datos de partida>.»
-4. `1. Alcance del servicio propuesto` — lista con guiones de los entregables, construida sobre funcionalidad nativa.
-5. `2. Esfuerzo estimado` — cuadro de dos columnas, aplicacion y horas, con el total. Debajo, un parrafo que separa configuracion, datos y documentacion del desarrollo, declara que son horas efectivas de consultoria y no dias naturales, y remite el desglose por tarea al anexo.
-6. `3. Plazo de ejecucion` — plazo en meses desde la orden de inicio, condicionado a la oportunidad con que el cliente entregue informacion y personal, con la evaluacion conjunta a partir del mes siguiente al plazo.
-7. `4. Inversion y programa de pagos` — tarifa de lista con su importe, tarifa preferencial con fecha limite explicita y el beneficio en pesos, y las dos modalidades: **A**, anticipo contra firma y saldo por hito; **B**, pagos mensuales iguales sin anticipo. Un cuadro por modalidad.
-8. `5. Desarrollo` — cuando existe: sus tareas, su total y la frase que deja la decision al cliente. Si se puede sustituir por un producto de mercado, la comparacion con su costo.
-9. `6. Costos de plataforma a cargo del cliente` — cuando aplique: suscripcion, alojamiento, conectores, con el tipo de cambio del DOF del dia y el numero de usuarios supuesto. Se declara que no forman parte de los honorarios.
-10. `7. Supuestos, exclusiones y condiciones` — lista con guiones: moneda e IVA, vigencia de la preferencial, que el alcance del apartado 1 es el alcance contratado, lo que se contrata aparte, trabajo sobre base de pruebas, y lo que queda fuera nombrado uno por uno.
-11. `8. Observaciones sobre la base actual` — solo cuando se audito una base viva: los hallazgos que el cliente necesita conocer, redactados como observacion tecnica y sin senalar al implementador anterior.
-12. Cierre de cortesia: «Quedamos atentos a sus comentarios y esperamos contar con su aprobacion para definir los siguientes pasos.»
-13. Bloque de contacto.
+### 1. Propuesta economica
 
-Los apartados 5, 6 y 8 se omiten cuando el proyecto no los tiene, y los siguientes se renumeran.
+Titulo de caratula `Cotizacion / Proyecto Odoo`. Todo lo que tiene precio vive aqui y solo aqui.
 
-**Extension: 3 a 6 planas.** Cotizacion_Comband resuelve una cotizacion de servicio en 3; Aire Libre LATAM y Dunedin, con ruta por aplicaciones y cuadros de hitos, quedaron en 6. Cuatro a seis secciones numeradas, no doce. Si el contenido no cabe, el detalle se va al anexo en hoja de calculo, nunca a mas planas de prosa.
+1. Caratula, saludo nominal y parrafo de presentacion «Por medio de la presente, MLR Consultores presenta a <cliente> la propuesta economica para <objeto>, considerando <datos de partida>.»
+2. Un parrafo que remite al plan de trabajo y al anexo.
+3. `1. Alcance del servicio propuesto` — un solo parrafo con las horas totales y los entregables enunciados de corrido, y la mencion del desarrollo aparte con sus horas. El detalle esta en el plan.
+4. `2. Inversion` — tarifa de lista y preferencial con fecha limite, y los importes y el beneficio de cada opcion de alcance, en prosa.
+5. `3. Esquemas de pago` — un parrafo que explica A, B y C con sus cifras de mensualidad y descuento, el cuadro comparativo de los tres esquemas con una columna por opcion de alcance, y el cuadro de hitos del esquema A.
+6. `4. Condiciones esenciales` — moneda e IVA con vigencia, **la clausula de pago anticipado**, adicionales y precio de replica, lo que se contrata aparte y el requisito de inicio.
+7. Parrafo de alcance negociable, cierre con la sesion de revision previa a la firma y bloque de contacto.
 
-- El desglose de tareas, horas y etapas **no** va en el documento principal. Va en el anexo. El principal presenta los totales, los hitos y las condiciones.
-- Los cuadros son de cifras. Un cuadro descriptivo, que sustituye un argumento por una retícula de frases, no va.
-- Cada cifra del texto tiene su gemela en el anexo, con el mismo valor.
-- El registro de redaccion es el de `mlr-redaccion`, que esta tomado de ese mismo archivo aprobado. Es la parte que direccion critica primero.
+Si no cabe en tres planas, lo que sobra es prosa: se recorta texto, no se quitan los cuadros de esquemas.
+
+### 2. Plan de trabajo y alcance detallado
+
+Titulo de caratula `Plan de trabajo / y alcance detallado`. Abre declarando que forma parte de la propuesta economica de la misma fecha y que **los importes no se repiten aqui**. No lleva un solo importe de honorarios: solo horas. Las cifras del diagnostico del cliente si van.
+
+1. `1. Alcance del servicio propuesto` — el mismo titulo que en la propuesta, con los entregables en vinetas, uno por renglon de alcance.
+2. `2. Esfuerzo estimado` — cuadro de etapas y horas, y el parrafo que separa configuracion, datos y lo demas, declara horas efectivas y remite al anexo.
+3. `3. Plazo de ejecucion`.
+4. `4. Desarrollo complementario, a decisión de <cliente>` — cuando existe: por que no es nativo, cuadro de horas, y la remision a la propuesta economica para su importe.
+5. `5. Observaciones sobre la base actual` — cuando se audito una base viva.
+6. `6. Supuestos, exclusiones y condiciones` — sin moneda ni importes.
+7. Cierre de cortesia y bloque de contacto.
+
+Los apartados 4 y 5 se omiten cuando no aplican, y los siguientes se renumeran.
+
+### Reglas comunes
+
+- Este par **no** sigue la regla de espejo de numeracion de la directiva de informe principal y anexo tecnico: la propuesta es comercial y el plan es de proyecto, y sus indices son distintos por naturaleza. Lo que si se exige es que el apartado 1 lleve el mismo titulo en los dos, que las etapas se llamen igual en los dos y en el anexo, y que toda cifra coincida.
+- El desglose de tareas vive en el anexo. Los cuadros son de cifras; un cuadro descriptivo no va.
+- Registro de `mlr-redaccion`, que es la parte que direccion critica primero.
 
 ## Anexo en Excel
 
 **Cinco hojas, con estos nombres exactos y en este orden:**
 
-1. `Parametros` — dos columnas, concepto y valor: cliente, fecha de emision, tarifa de lista, tarifa preferencial, fecha limite de la preferencial, anticipo, numero de sedes o empresas, numero de pagos de la modalidad B. Todo lo demas referencia esta hoja.
+1. `Parametros` — dos columnas, concepto y valor: cliente, fecha de emision, tarifa de lista, tarifa preferencial, fecha limite de la preferencial, anticipo del esquema A, numero de pagos del esquema B, descuento del esquema C, numero de sedes o empresas. Todo lo demas referencia esta hoja.
 2. `Ruta` — seis columnas: `Num.` (jerarquico, 1.1, 1.2), `Aplicacion`, `Tarea`, `Tipo de trabajo`, `Horas`, `Hito`. Una fila por tarea y una fila final de total con `SUM`.
 3. `Resumen por etapa` — una fila por aplicacion con `SUMIF` contra `Ruta`, mas porcentaje del proyecto, importe preferencial e importe de lista, todos calculados contra `Parametros`.
-4. `Hitos` — anticipo y un renglon por hito, con horas e importe. Los importes salen del total y del porcentaje de anticipo, nunca tecleados.
+4. `Hitos` — el esquema A con anticipo y un renglon por hito, con una columna por opcion de alcance; debajo, la mensualidad del esquema B y el descuento, el pago y la tarifa efectiva del esquema C. Los importes salen del total y de los porcentajes, nunca tecleados.
 5. `Mezcla` — horas y porcentaje por tipo de trabajo con `SUMIF`, y al pie la separacion entre el bloque de desarrollo y el de configuracion, datos y documentacion.
 
 El desarrollo aparece en `Ruta` como su propia aplicacion, de modo que sale de los tres resumenes sin tocar ninguna formula.
@@ -65,7 +80,7 @@ El desarrollo aparece en `Ruta` como su propia aplicacion, de modo que sale de l
 
 1. **Recalculo completo** del libro. Cero errores, cero formulas sin evaluar.
 2. **Cuadre de cifras.** Total de horas, suma por etapa, suma por hito, suma por tipo de trabajo, importes y precio por sede: todo contra el origen unico.
-3. **Cruce Word contra Excel.** Cada cifra del texto existe igual en el anexo.
+3. **Cruce de los dos Word contra el Excel.** Cada cifra de la propuesta existe igual en el anexo, y el plan de trabajo no contiene ningun importe de honorarios.
 4. **Ortografia y acentuacion.** Verificacion automatizada sobre el texto final, con proteccion de nombres de archivo, de hoja y de identificadores tecnicos. Un documento de cliente sin acentos es un defecto grave.
 5. **Revision visual real.** Exportar a PDF, renderizar a imagen y mirarla. Paginas, ocupacion, invasion del membrete, cuadros partidos. Lo que no se ve, no se afirma.
 6. **Barrido de contingencia.** Buscar la palabra y el importe interno en los dos entregables. Cero apariciones.

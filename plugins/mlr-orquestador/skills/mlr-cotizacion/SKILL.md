@@ -89,15 +89,15 @@ Detalle y base de calibracion en `references/horas-y-calibracion.md`.
 
 ### Fase 6 — Condiciones economicas
 
-Tarifa, tarifa preferencial con fecha limite si aplica, anticipo, hitos de facturacion, precio por sede cuando el cliente opera varias, y lo que se factura aparte — la iguala contable no se mezcla con la implementacion.
+Una sola tarifa para todo el trabajo —lista 1,500, preferencial 1,300 salvo que direccion autorice otra— con fecha limite, los tres esquemas de pago A, B y C, la clausula de pago anticipado, hitos de facturacion, precio por sede cuando el cliente opera varias, y lo que se factura aparte — la iguala contable no se mezcla con la implementacion.
 
 La contingencia interna existe, se calcula y **nunca aparece en un entregable del cliente**, ni como renglon, ni sumada a las horas, ni mencionada.
 
 ### Fase 7 — Entregables
 
-Solo despues de la aprobacion final en el chat. Dos piezas: la propuesta en Word y el anexo en Excel con formulas vivas.
+Solo despues de la aprobacion final en el chat. Tres piezas: la propuesta economica en Word, el plan de trabajo y alcance detallado en Word, y el anexo en Excel con formulas vivas.
 
-El molde esta fijado: seis apartados numerados en el Word y cinco hojas en el anexo. No se inventa una estructura distinta por proyecto.
+El molde esta fijado: propuesta economica de cuatro apartados en dos o tres planas, plan de trabajo de seis apartados y cinco hojas en el anexo. No se inventa una estructura distinta por proyecto.
 
 Detalle de construccion, cuadre y verificacion en `references/entregables.md`.
 
@@ -136,7 +136,10 @@ Si una regla de formato aparece contradictoria entre esta skill y las de arriba,
 | "Sumo la contingencia a las horas y queda cubierto" | La contingencia es interna. En el entregable del cliente no existe. |
 | "La base del cliente ya esta implantada, pero cotizo los datos maestros igual" | En una base viva los datos maestros ya existen. Lo que se cotiza es depuracion y reconstruccion de lo mal configurado, no creacion. Cotizar una base viva como si fuera nueva infla la ruta y se cae en la primera revision. |
 | "El desarrollo lo reparto dentro de la aplicacion que lo usa" | El desarrollo va como aplicacion aparte al final. Si esta repartido, el cliente no puede quitarlo sin desarmar el alcance. |
-| "Cada proyecto lleva la estructura de documento que mejor le quede" | El molde esta fijado: seis apartados en el Word, cinco hojas en el anexo. |
+| "Cada proyecto lleva la estructura de documento que mejor le quede" | El molde esta fijado: propuesta economica, plan de trabajo y anexo de cinco hojas. |
+| "Pongo todo en un solo Word, que queda mas completo" | Direccion lo quiere en dos: la cotizacion en dos o tres hojas y el proyecto aparte. |
+| "Cobro mas caro la definicion contable y mas barato la configuracion" | Direccion descarto la tarifa por tipo de trabajo. Una sola tarifa para todo, incluido el desarrollo. |
+| "El saldo de cada hito se paga contra entregable" | MLR trabaja con pago anticipado: se factura al iniciar el hito o el mes, y sin pago no se ejecuta. |
 | "Creo una carpeta para la propuesta y ahi la dejo" | El cliente ya tiene carpeta en `MLR Odoo\`. El entregable va en su `Informes\<AAAAMMDD>\` y el trabajo interno en `Documentos extras\<AAAAMMDD>\Interno\`. |
 | "Redondeo las cifras a mano en el Excel" | Toda cifra se comprueba ejecutando. Formulas vivas, verificacion programatica. |
 

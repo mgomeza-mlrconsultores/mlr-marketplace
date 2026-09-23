@@ -36,7 +36,7 @@ Cotizaciones cerradas que sirven de calibracion:
 | Taiga | ejecutado, horas reales | 206 | 42 | — |
 | Aire Libre LATAM | implantacion nueva, 3 empresas, catalogo menor a 500 productos | 250 | 40 | 8 |
 | Dunedin | base viva en produccion, 1 empresa, 5 almacenes, 29 rutas de venta | 264 | 50 | 10 |
-| Ah Cacao | base viva, 8 companias a consolidar en una, 8 almacenes, 12 cajas, 1,373 productos, fabricacion activa | 215 | 48 | 11 |
+| Ah Cacao | base viva, 8 companias a consolidar en una, 8 almacenes, 12 cajas, 1,373 productos, fabricacion activa; preferencial 1,200 | 215 | 48 | 11 |
 
 ## Base viva contra implantacion nueva
 
@@ -75,22 +75,15 @@ Se calcula y se distribuye por tarea en un archivo de uso interno de MLR. **Nunc
 
 ## Condiciones economicas
 
-- **Tarifa de lista** y, cuando aplique, **tarifa preferencial** con fecha limite explicita. Se muestra el ahorro en importe.
-- **Tarifas vigentes 2026, diferenciadas por tipo de trabajo.** No se cotiza todo al mismo precio: el cliente paga tarifa de consultoria senior solo en lo que la requiere, y eso se muestra en la propuesta como cuadro propio. La vigencia de la preferencial corre al 30 de septiembre para todos los clientes.
-
-| Rango | Tipos de trabajo que lo componen | Preferencial | Lista |
-|---|---|---|---|
-| Configuracion y migracion de datos | Configuracion, Datos | 1,100 | 1,300 |
-| Diseno y definicion contable | Entregable (definicion, arquitectura, regularizaciones, reportes fiscales) | 1,700 | 1,950 |
-| Capacitacion y acompanamiento | Capacitacion, Puesta en marcha, Aceptacion, manuales | 1,200 | 1,400 |
-| Desarrollo a medida | Desarrollo | 1,400 | 1,600 |
-
-  Por que asi: el grueso de un proyecto es configuracion y datos, y ese renglon es el que el cliente compara contra otras ofertas. Bajarlo a 1,100 deja la propuesta competitiva en lo comparable sin regalar el trabajo de criterio, que es donde esta el valor de la firma y el contador socio. El desarrollo va por encima de la configuracion porque es lo mas caro de producir y lo unico que hay que reconstruir en cada salto de version mayor, y por debajo de la definicion contable porque ahi el valor lo pone el criterio del contador socio y no las horas de construccion.
-
-  El promedio ponderado resultante ronda 1,230 MXN por hora en un proyecto tipico. El importe de cada hito se calcula con la tarifa del rango de cada tarea, no con el promedio: por eso un hito corto y de mucha definicion sale mas caro por hora que uno largo de configuracion, y eso se deja ver.
-
-- **Nunca se compara el precio con el paquete de implementacion de Odoo en un entregable del cliente.** Odoo publica su precio por hora en pesos y es menor; meter la comparacion en la propuesta invita a discutir tarifa en lugar de alcance. La diferenciacion por rangos cumple la misma funcion sin nombrar a nadie.
-- **Dos modalidades de pago, siempre las dos**: A, anticipo del 30% contra firma y saldo contra aceptacion de cada hito; B, pagos mensuales iguales sin anticipo. Un cuadro por modalidad.
+- **Tarifa de lista** y **tarifa preferencial** con fecha limite explicita. Se muestra el beneficio en importe.
+- **Una sola tarifa para todo el trabajo, incluido el desarrollo.** Direccion lo fijo el 23 de septiembre de 2026: no se diferencia la tarifa por tipo de trabajo ni se presenta un cuadro de rangos. Tarifa de lista **1,500 MXN por hora** y preferencial **1,300 MXN por hora**, iguales para configuracion, datos, definicion contable, capacitacion, acompanamiento y desarrollo. Direccion puede autorizar una preferencial menor para un proyecto concreto —Ah Cacao quedo en 1,200—; la de lista no se mueve. La preferencial lleva fecha limite explicita en cada ronda.
+- **Nunca se compara el precio con el paquete de implementacion de Odoo en un entregable del cliente.** Odoo publica su precio por hora en pesos y es menor; meter la comparacion en la propuesta invita a discutir tarifa en lugar de alcance.
+- **Tres esquemas de pago, siempre los tres**, con un cuadro que los pone lado a lado:
+  - **A, por hitos:** anticipo del 30% a la firma y el 70% de cada hito facturado al iniciarlo.
+  - **B, mensual:** pagos mensuales iguales, sin anticipo, facturados al inicio de cada mes.
+  - **C, pago unico:** un solo pago a la firma con 5% de descuento por pronto pago. El descuento es el 5% redondeado al centavo, mitad hacia arriba, y el pago es la diferencia. El total de C queda siempre por debajo del de A y B; si no, el calculo esta mal.
+- **Pago anticipado, nunca vencido.** Toda factura se paga antes de ejecutar el mes o el hito que ampara, y MLR no inicia el trabajo de un periodo cuya factura no este cubierta. La clausula va escrita en las condiciones de la propuesta economica; direccion la pidio expresamente porque las propuestas anteriores no la decian.
+- **Opciones de alcance y esquemas de pago no se mezclan.** Las opciones son lo que el cliente contrata —base, ampliado, con o sin desarrollo—; los esquemas son como lo paga. Cuando hay mas de una opcion, cada cuadro de esquemas lleva una columna por opcion, lado a lado, y ningun renglon combina las dos cosas. Sin colores distintos por opcion: saturan el documento.
 - **Horas efectivas de consultoria, no dias naturales.** El plazo va en su propio apartado y no se deriva de las horas.
 - **Configuracion contable e iguala son cosas distintas.** La configuracion contable del sistema entra en la propuesta: se cobra cuando es el peso del proyecto, o se declara incluida sin costo cuando se usa como beneficio comercial. El servicio contable recurrente siempre se contrata aparte y se nombra en las exclusiones.
 - **Anticipo** como porcentaje del total, contra orden de inicio.

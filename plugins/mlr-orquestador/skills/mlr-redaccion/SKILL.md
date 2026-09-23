@@ -99,8 +99,9 @@ o bloques «NOTA» decorativos, que solo se incluyen si Marcos los pide expresam
 El archivo aprobado resuelve una cotizacion completa **en 3 planas**. Direccion ha dicho
 literalmente que no puede dedicar el tiempo a leer y corregir un documento de diez hojas.
 
-- Cotizacion o propuesta economica: **3 a 5 planas**. Si no cabe, el detalle va al anexo en
-  hoja de calculo, no a mas paginas de prosa.
+- Propuesta economica: **2 a 3 planas**. El alcance detallado, el plan, el diagnostico y los
+  supuestos van en el plan de trabajo, que es un documento aparte, y el desglose de tareas en el
+  anexo en hoja de calculo. Nunca mas paginas de prosa en la propuesta.
 - Cuatro a seis secciones numeradas. Nada de doce apartados.
 - El desglose largo —tareas, horas, etapas— vive en el anexo. El documento principal
   presenta los totales y las condiciones.
