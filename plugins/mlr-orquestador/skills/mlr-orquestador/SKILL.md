@@ -29,6 +29,7 @@ Clasifica la peticion y carga las skills que le corresponden **antes de producir
 Tabla completa en `references/enrutamiento.md`. Resumen operativo:
 
 - **Cotizacion, propuesta economica, plan de implementacion, alcance u horas de un proyecto de Odoo** → `mlr-cotizacion`, antes de escribir una sola tarea o una sola hora. Ahi vive la regla de revisar todo en el chat antes de producir archivos. Al llegar a los entregables, encadena `mlr-redaccion` y `docx`.
+- **Diagnostico de una base de Odoo** (auditoria, revision de salud, estado real de inventario, valuacion, contabilidad, migraciones o codigo a medida), con o sin cotizacion despues → `mlr-diagnostico`. Solo lectura, rondas desde cero hasta dos seguidas sin cambios, y entregable con capturas via `mlr-redaccion`.
 - **Texto que el cliente va a leer** (informe, memo, diagnostico, propuesta, correo, minuta) → `mlr-redaccion`, siempre, sin excepcion. Despues `docx` o `pdf`.
 - **Guia o informe funcional** de un desarrollo (como funciona paso a paso, manual de usuario, con capturas) → `mlr-informe-funcional` con `mlr-redaccion`. Sale en Word membretado y en HTML con el formato de direccion y menu arriba.
 - **Presentacion o deck** → `mlr-presentaciones`, que tiene el patron HTML de la firma. Nunca improvises una estructura de deck.

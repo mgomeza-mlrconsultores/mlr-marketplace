@@ -10,6 +10,14 @@ Propuesta economica, presupuesto, alcance, ruta por etapas, tareas, horas, preci
 
 Se carga antes de listar tareas o estimar horas, no despues. La skill impone el orden — cliente y base, preguntas, diagrama, ruta, horas, condiciones, entregables — y la regla de que nada se escribe en archivo antes de la aprobacion en el chat.
 
+## Diagnostico de una base de Odoo
+
+Auditoria, revision de salud, estado real de inventario y valuacion, contabilidad, migraciones, codigo a medida. Con o sin cotizacion posterior.
+
+`mlr-diagnostico` → al llegar al informe, `mlr-redaccion` → Word con `documento_mlr.py` y `verifica_documento.py`.
+
+Solo lectura por API con lista blanca de metodos. Linea de tiempo de versiones antes de juzgar un saldo. Rondas desde cero, con agente ciego y verificadores, hasta dos seguidas sin cambios materiales. Cada hallazgo con folio, cifra y captura. Cuando despues hay cotizacion, `mlr-cotizacion` toma el resultado en su fase 1.
+
 ## Texto para el cliente
 
 Informe, diagnostico, memo, propuesta, cotizacion, correo formal, minuta, resumen ejecutivo.

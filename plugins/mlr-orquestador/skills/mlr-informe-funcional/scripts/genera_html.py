@@ -240,7 +240,7 @@ def construye(carpeta, datos=None):
                 out.append(H.seccion(previo, menu, "%s · %s" % (num, nombre), T.get(sid, nombre)))
             for h, bs in grupos:
                 n = h.split(" ")[0]
-                out.append(H.seccion(bs, menu, "Paso %s · %s" % (n, h[len(n) + 1:]), T.get(n, h[len(n) + 1:])))
+                out.append(H.seccion(bs, menu, "%s %s · %s" % (getattr(C, "CEJA_H", "Paso"), n, h[len(n) + 1:]), T.get(n, h[len(n) + 1:])))
         else:
             out.append(H.seccion(bloques, menu, "%s · %s" % (num, nombre), T.get(sid, nombre)))
     contacto = "".join("<div><b>%s</b><span>%s</span><span>%s</span></div>" % tuple(E(x) for x in f) for f in FIRMA)

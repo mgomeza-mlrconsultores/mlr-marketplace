@@ -43,7 +43,7 @@ Fuente primaria doble: la transcripcion o minuta de la reunion, y la base de dat
 
 De la transcripcion se extrae, sin interpretar de mas: giro y operacion real, numero de sedes y puntos de venta, procesos que hoy duelen, lo que el cliente pidio explicitamente y lo que dijo que no quiere.
 
-De la base se lee version y edicion exactas, modulos instalados, catalogo y datos existentes, y customizaciones previas. Nunca se supone la version: se consulta.
+La lectura de la base no se hace aqui: es el diagnostico de la skill hermana `mlr-diagnostico`, con su regla de solo lectura, su linea de tiempo de versiones y migraciones, sus rondas hasta dos seguidas sin cambios y su estandar de evidencia. De ese diagnostico la cotizacion toma version y edicion exactas, modulos instalados, volumen de datos, customizaciones previas y los hallazgos que obligan a depurar o reconstruir. Si la base es viva y no hay diagnostico cerrado, la fase queda incompleta.
 
 Salida de la fase: lista de aplicaciones dentro del alcance, lista de lo que queda fuera, y los supuestos que sostienen ambas.
 
@@ -109,6 +109,7 @@ Esta skill decide **que dice** la cotizacion. **Como se escribe y como se ve** y
 - **Membrete, margenes, paleta, tipografia y maqueta** → `mlr-identidad-visual`.
 - **Formato aprobado por direccion, correspondencia entre documento principal y anexo, y cualquier criterio que Marcos haya corregido despues** → directrices vigentes en memoria, recuperadas segun `mlr-memoria`. Esas directrices mandan sobre los valores por defecto de cualquier skill.
 - **Diagramas** → `mlr-diagramas-odoo`. **Hoja de calculo** → `xlsx`.
+- **Diagnostico de la base del cliente** → `mlr-diagnostico`. Aqui solo se usa su resultado.
 
 Si una regla de formato aparece contradictoria entre esta skill y las de arriba, gana la de arriba, y se corrige aqui.
 

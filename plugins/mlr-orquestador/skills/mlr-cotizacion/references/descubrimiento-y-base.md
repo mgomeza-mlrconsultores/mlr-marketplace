@@ -42,35 +42,33 @@ Los puntos 4, 5 y 6 se citan casi textuales. Son la defensa del alcance cuando a
 
 Lo que el cliente afirma sobre un tercero se registra como afirmacion del cliente, no como hecho. Si el proyecto depende de eso — por ejemplo, que la etiqueta del proveedor sea unica y no se repita — se convierte en supuesto explicito de la propuesta.
 
-## 2. Auditoria de la base por API
+## 2. Diagnostico de la base
 
-Conexion por JSON-RPC. Lo que se lee, siempre:
+La auditoria de la base —version, modulos, datos, customizaciones previas, estructura de
+compania— y la verificacion de comportamiento contra el codigo de la version exacta viven
+en la skill hermana `mlr-diagnostico`. Se carga ahi, se corre con su metodo de rondas y
+aqui solo se usa el resultado.
 
-- **Version y edicion exactas.** Mayor, menor, Community o Enterprise, on-premise, Odoo.sh u Online. El alcance cambia con esto: en Online no hay filesystem ni modulos propios.
-- **Modulos instalados.** `ir.module.module` con estado. Distingue lo que ya esta pagado de lo que hay que activar.
-- **Datos existentes.** Volumen real de productos, contactos, listas de precio, movimientos. Un catalogo cargado a medias cuesta mas que uno vacio: hay que revisarlo y refinarlo.
-- **Customizaciones previas.** Campos `x_`, vistas heredadas, `base.automation`, `ir.cron`, acciones de servidor. Es donde se esconde el trabajo del implementador anterior.
-- **Estructura de compania.** Companias activas, almacenes, ubicaciones, diarios.
+Lo que la cotizacion toma del diagnostico:
 
-Sin conexion todavia, la fase se declara incompleta y se dice en el chat. No se cotiza a ciegas.
+- Version y edicion exactas. En Online no hay filesystem ni modulos propios, y eso cambia el alcance.
+- Modulos instalados: lo que ya esta pagado y lo que hay que activar.
+- Volumen real de datos. Un catalogo cargado a medias cuesta mas que uno vacio.
+- Customizaciones previas y lo que se rompe en la version vigente.
+- Hallazgos que obligan a depurar o reconstruir: cada uno puede ser una tarea de la ruta.
 
-## 3. Verificacion de comportamiento
-
-Cuando el proyecto depende de que Odoo haga algo especifico — escaneo que actualiza el documento primario, peso variable por paquete, fabricacion disparada por llegada — no se afirma: se prueba.
-
-Orden de verificacion:
-
-1. Reproducirlo en la base de pruebas por API, punta a punta, con datos reales del caso.
-2. Si no se reproduce, leer el codigo fuente de la version exacta.
-3. Si el codigo dice que no existe, se declara desarrollo y se cotiza como desarrollo.
+Cuando el proyecto depende de que Odoo haga algo especifico, se prueba en la base de pruebas
+o se lee en el codigo de la version exacta, con el mismo estandar de evidencia del
+diagnostico. Si el codigo dice que no existe, se declara desarrollo y se cotiza como
+desarrollo.
 
 Codigo fuente de Odoo disponible localmente en:
 
 `G:\Unidades compartidas\Marcos 2026\Marcos 2026\Trabajo\MLR Consultores\Quimibond\Codigo BD\mi_codigo_quimibond`
 
-La verificacion visual va siempre por navegador. El API cambia y comprueba datos; el navegador comprueba lo que ve el usuario.
+Sin conexion todavia, la fase se declara incompleta y se dice en el chat. No se cotiza a ciegas.
 
-## 4. Salida de la fase
+## 3. Salida de la fase
 
 Tres listas en el chat, nada mas:
 
