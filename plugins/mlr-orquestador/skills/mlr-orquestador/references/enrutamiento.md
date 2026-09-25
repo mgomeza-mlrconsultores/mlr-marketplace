@@ -18,6 +18,14 @@ Informe, diagnostico, memo, propuesta, cotizacion, correo formal, minuta, resume
 
 Nunca redactes un entregable sin `mlr-redaccion` cargada, ni siquiera un correo corto.
 
+## Guia o informe funcional
+
+Como funciona un desarrollo, paso a paso, para quien lo opera. Manual de usuario, guia de operacion, informe funcional no tecnico.
+
+`mlr-informe-funcional` → `mlr-redaccion` → Word con `documento_mlr.py` y `verifica_documento.py` → HTML con `genera_html.py` y `revisa_html.py`.
+
+Capturas reales sobre documentos de demostracion en la base de pruebas, con pie que cita el documento y la cifra que se ve. El informe tecnico de cierre de Odoo (campos, vistas, migracion) sigue siendo de `mlr-report-writer`.
+
 ## Presentacion
 
 `mlr-presentaciones` → HTML autocontenido con el patron de la firma: barra con logotipo vectorial, menu de grupos, navegacion por teclado, barra de progreso y contador.

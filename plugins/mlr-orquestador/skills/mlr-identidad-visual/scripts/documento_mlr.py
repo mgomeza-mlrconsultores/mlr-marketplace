@@ -21,8 +21,14 @@ Uso:
     d.seccion("1. Alcance del servicio propuesto")
     d.vinetas(["Ventas y gestión comercial, ...", "Compras, ..."])
     d.cuadro(["Hito", "Se libera contra", "Importe"], filas, [700, 4600, 1760])
+    d.subtitulo("3.1 Registrar la orden")          # subapartado de guia paso a paso
+    d.imagen("capturas/01.jpg", "Orden S07976 marcada como venta sin factura.")
     d.cierre()                       # parrafo de cortesia + bloque de contacto
     d.guarda("/ruta/Propuesta.docx")
+
+El valor de `cliente` cabe en un renglon (unos 45 caracteres). Si se le cuelga
+"Atencion: ..." y salta de renglon, la caratula baja 20 pt y el verificador la
+rechaza; el destinatario va en el saludo, no en el metadato.
 
 Despues, siempre: `verifica_documento.py` sobre el PDF exportado.
 """
@@ -36,8 +42,10 @@ AQUI = os.path.dirname(os.path.abspath(__file__))
 ASSETS = os.path.join(AQUI, "..", "assets")
 PLANTILLA_VARIAS = "Hoja Membretada MLR - varias paginas.docx"
 PLANTILLA_UNA = "Hoja Membretada MLR - 1 pagina.docx"
-DIRS_PLANTILLA = [
+DIRS_PLANTILLA = [p for p in [os.environ.get("MLR_PLANTILLAS")] if p] + [
     r"C:\Users\mgome\Claude\Projects\MLR Odoo\Plantillas",
+    # Sesion en la nube: la plantilla se trae de la PC con device_stage_files
+    "/mnt/user-data/uploads/MLR Odoo/Plantillas",
     r"G:\Unidades compartidas\MMLR 2025\Hoja Membretada",
     os.path.join(ASSETS, "plantillas"),
 ]
@@ -225,6 +233,8 @@ class Documento(object):
         self.src = plantilla or _busca_plantilla()
         self.folio = folio
         self.b = []
+        self.imagenes = []   # (rId, nombre en word/media, ruta local)
+        self.nfig = 0
         for i, t in enumerate(titulo):
             ultimo = (i == len(titulo) - 1)
             holgura = (HOLGURA_DESCENDENTE
@@ -310,6 +320,54 @@ class Documento(object):
                 for i, (c, w) in enumerate(zip(f, anchos))) + "</w:tr>"
         self.b.append(o + "</w:tbl>" + par("", after=0))
 
+    def subtitulo(self, texto):
+        """Subapartado numerado (3.1, 3.2...) de una guia o manual. Lexend SemiBold
+        12 pt gris pizarra; keepNext para que nunca quede solo al pie."""
+        self.b.append(par(run(texto, fam=SEMI, color="2D3748", sz=24), before=200, after=80,
+                          jc="left", keep=True, juntas=True))
+
+    def imagen(self, ruta, pie, ancho_in=6.3, alto_max_in=4.4):
+        """Figura con el estandar aprobado de capturas: en linea, centrada, keepNext
+        con su pie, contorno de 0.5 pt #BFD4DA y pie 'Figura N.' Lexend 9 pt #595959.
+
+        El tamano sale de la imagen: nunca mas ancha que 6.3 in ni que px/150 (un
+        recorte pequeno no se estira) y nunca mas alta que 4.4 in. Con ese tope caben
+        dos capturas por plana y el verificador no encuentra planas medio vacias."""
+        from PIL import Image
+        EMU = 914400
+        self.nfig += 1
+        w, h = Image.open(ruta).size
+        ancho_in = min(ancho_in, w / 150.0)
+        cx = int(ancho_in * EMU); cy = int(cx * h / w)
+        if cy > int(alto_max_in * EMU):
+            cy = int(alto_max_in * EMU); cx = int(cy * w / h)
+        i = len(self.imagenes) + 1
+        rid = "rIdFig%d" % i
+        ext = os.path.splitext(ruta)[1].lower().lstrip(".")
+        ext = "jpeg" if ext == "jpg" else ext
+        nombre = "media/mlr_fig%d.%s" % (i, ext)
+        self.imagenes.append((rid, nombre, ruta))
+        A = "http://schemas.openxmlformats.org/drawingml/2006/main"
+        dib = ('<w:r><w:drawing><wp:inline distT="0" distB="0" distL="0" distR="0" '
+               'xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing">'
+               '<wp:extent cx="%d" cy="%d"/><wp:effectExtent l="6350" t="6350" r="6350" b="6350"/>'
+               '<wp:docPr id="%d" name="Figura %d"/><wp:cNvGraphicFramePr>'
+               '<a:graphicFrameLocks xmlns:a="%s" noChangeAspect="1"/></wp:cNvGraphicFramePr>'
+               '<a:graphic xmlns:a="%s"><a:graphicData uri="http://schemas.openxmlformats.org/drawingml/2006/picture">'
+               '<pic:pic xmlns:pic="http://schemas.openxmlformats.org/drawingml/2006/picture">'
+               '<pic:nvPicPr><pic:cNvPr id="%d" name="mlr_fig%d.%s"/><pic:cNvPicPr/></pic:nvPicPr>'
+               '<pic:blipFill><a:blip r:embed="%s" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"/>'
+               '<a:stretch><a:fillRect/></a:stretch></pic:blipFill>'
+               '<pic:spPr><a:xfrm><a:off x="0" y="0"/><a:ext cx="%d" cy="%d"/></a:xfrm>'
+               '<a:prstGeom prst="rect"><a:avLst/></a:prstGeom>'
+               '<a:ln w="6350"><a:solidFill><a:srgbClr val="BFD4DA"/></a:solidFill></a:ln></pic:spPr>'
+               '</pic:pic></a:graphicData></a:graphic></wp:inline></w:drawing></w:r>'
+               % (cx, cy, 1000 + i, i, A, A, 1000 + i, i, ext, rid, cx, cy))
+        self.b.append(par(dib, before=80, after=60, jc="center", keep=True))
+        cap = (run("Figura %d. " % self.nfig, fam=SEMI, color=GRIS, sz=18)
+               + run(pie, fam=REG, color=GRIS, sz=18))
+        self.b.append(par(cap, after=170, jc="center", line=260))
+
     def cierre(self, texto=CORTESIA, before=40):
         """Parrafo de cortesia. El bloque de contacto lo anade guarda()."""
         self.b.append(par(run(texto, fam=REG), before=before, after=0, line=L_CUERPO))
@@ -365,18 +423,29 @@ class Documento(object):
                     z.writestr(it, ftrels)
                 elif n == "word/settings.xml":
                     z.writestr(it, settings)
-                elif n == "word/_rels/document.xml.rels" and self.folio:
+                elif n == "word/_rels/document.xml.rels":
+                    rels = "".join(
+                        '<Relationship Id="%s" Type="http://schemas.openxmlformats.org/'
+                        'officeDocument/2006/relationships/image" Target="%s"/>' % (r, m)
+                        for r, m, _ in self.imagenes)
+                    if self.folio:
+                        rels += ('<Relationship Id="rIdPie" Type="http://schemas.openxml'
+                                 'formats.org/officeDocument/2006/relationships/footer" '
+                                 'Target="footer1.xml"/>')
                     z.writestr(it, src.read(n).decode("utf8").replace(
-                        "</Relationships>",
-                        '<Relationship Id="rIdPie" Type="http://schemas.openxml'
-                        'formats.org/officeDocument/2006/relationships/footer" '
-                        'Target="footer1.xml"/></Relationships>').encode("utf8"))
+                        "</Relationships>", rels + "</Relationships>").encode("utf8"))
                 elif n == "[Content_Types].xml":
-                    z.writestr(it, _declara_tipos(src.read(n), fuentes.keys(), self.folio))
+                    ct = _declara_tipos(src.read(n), fuentes.keys(), self.folio).decode("utf8")
+                    for e, mime in (("jpeg", "image/jpeg"), ("png", "image/png")):
+                        if self.imagenes and 'Extension="%s"' % e not in ct:
+                            ct = ct.replace("</Types>", '<Default Extension="%s" ContentType="%s"/></Types>' % (e, mime))
+                    z.writestr(it, ct.encode("utf8"))
                 else:
                     z.writestr(it, src.read(n))
             for n, d in list(extras.items()) + list(fuentes.items()):
                 z.writestr(n, d)
+            for _, m, ruta in self.imagenes:
+                z.write(ruta, "word/" + m)
         src.close()
         return destino
 

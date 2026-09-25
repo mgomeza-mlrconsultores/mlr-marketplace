@@ -4,7 +4,7 @@ Estandar operativo de MLR Consultores. Sustituye el comportamiento generico del 
 
 ## Que instala
 
-Diez skills que se activan solas segun lo que se pida.
+Once skills que se activan solas segun lo que se pida.
 
 **`mlr-orquestador`** — Se dispara al inicio de cualquier trabajo. Recupera memoria, clasifica la peticion, carga las skills especializadas y aplica los innegociables. Es la pieza que impide la respuesta generica.
 
@@ -15,6 +15,8 @@ Diez skills que se activan solas segun lo que se pida.
 **`mlr-identidad-visual`** — Membrete, paleta, tipografia, profundidad por elevacion y lista negra de rasgos que delatan diseno automatico. Lee la marca del Drive de la organizacion, con copia incrustada de respaldo.
 
 **`mlr-cotizacion`** — Cotizacion y plan de implementacion de Odoo. Fija el orden: cliente y base auditada, preguntas resueltas en casa antes de molestar al cliente, diagrama del proceso objetivo, ruta por etapas, horas calibradas contra proyectos reales y condiciones economicas. Nada se escribe en archivo antes de la aprobacion en el chat. El formato y la redaccion de los entregables los delega en `mlr-redaccion` e `mlr-identidad-visual`.
+
+**`mlr-informe-funcional`** — Guia funcional de un desarrollo para el usuario del cliente: paso a paso, con capturas reales de la base de pruebas, en Word membretado y en HTML con el formato aprobado por direccion y la barra de menu de la firma. Trae el metodo de captura en Odoo, los generadores de Word y HTML desde una sola fuente de contenido y el revisor del HTML.
 
 **`mlr-presentaciones`** — Patron de deck de la firma en HTML autocontenido: barra con logotipo vectorial, menu de grupos, navegacion por teclado y contador. Una idea por lamina, con el titular como conclusion.
 

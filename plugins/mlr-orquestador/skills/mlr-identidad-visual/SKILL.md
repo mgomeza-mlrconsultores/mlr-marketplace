@@ -36,6 +36,8 @@ d.parrafo("Por medio de la presente, MLR Consultores presenta a ...")
 d.seccion("1. Alcance del servicio propuesto")
 d.vinetas([...])
 d.cuadro(["Hito", "Se libera contra", "Importe"], filas, [700, 4600, 1760])
+d.subtitulo("3.1 Registrar la orden")                    # guias y manuales
+d.imagen("capturas/01.jpg", "Orden S07976 marcada como venta sin factura.")
 d.cierre()
 d.guarda("ruta/Documento.docx")
 ```
@@ -44,6 +46,13 @@ El modulo trae ya medidos, del documento aprobado por direccion, la caratula, lo
 de Lexend, el interlineado exacto, los espacios entre bloques, los cuadros que no se parten,
 la incrustacion de fuentes y el cierre con el bloque de contacto. **Cambiar esos valores a
 ojo rompe la equivalencia con el archivo que el cliente aprueba.**
+
+`imagen()` aplica el estandar aprobado de capturas (en linea, centrada, keepNext con su pie,
+contorno 0.5 pt #BFD4DA, pie "Figura N." Lexend 9 pt #595959) y fija el tamano desde la imagen:
+hasta 6.3 in de ancho sin pasar de px/150 y hasta 4.4 in de alto, para que quepan dos figuras
+por plana. El metadato `cliente` cabe en un renglon; si salta, la caratula baja 20 pt y el
+verificador la rechaza. La guia funcional completa, con capturas y version HTML, esta en
+`mlr-informe-funcional`.
 
 Despues de exportar a PDF:
 
