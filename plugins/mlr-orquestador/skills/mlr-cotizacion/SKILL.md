@@ -43,7 +43,7 @@ Fuente primaria doble: la transcripcion o minuta de la reunion, y la base de dat
 
 De la transcripcion se extrae, sin interpretar de mas: giro y operacion real, numero de sedes y puntos de venta, procesos que hoy duelen, lo que el cliente pidio explicitamente y lo que dijo que no quiere.
 
-La lectura de la base no se hace aqui: es el diagnostico de la skill hermana `mlr-diagnostico`, con su regla de solo lectura, su linea de tiempo de versiones y migraciones, sus rondas hasta dos seguidas sin cambios y su estandar de evidencia. De ese diagnostico la cotizacion toma version y edicion exactas, modulos instalados, volumen de datos, customizaciones previas y los hallazgos que obligan a depurar o reconstruir. Si la base es viva y no hay diagnostico cerrado, la fase queda incompleta.
+La lectura de la base no se hace aqui: es el diagnostico de la skill hermana `mlr-diagnostico`, con su regla de solo lectura, su linea de tiempo de versiones y migraciones, sus rondas (minimo 4, maximo 10, hasta dos seguidas sin hallazgos relevantes) y su estandar de evidencia. De ese diagnostico la cotizacion toma version y edicion exactas, modulos instalados, volumen de datos, customizaciones previas y los hallazgos que obligan a depurar o reconstruir. Si la base es viva y no hay diagnostico cerrado, la fase queda incompleta.
 
 Salida de la fase: lista de aplicaciones dentro del alcance, lista de lo que queda fuera, y los supuestos que sostienen ambas.
 

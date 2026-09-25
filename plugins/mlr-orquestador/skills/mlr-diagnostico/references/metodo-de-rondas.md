@@ -23,13 +23,17 @@ Los agentes corren en paralelo. Para cargas pesadas conviene que descarguen una 
 
 > Eres auditor esceptico. Tu trabajo es tumbar el catalogo, no confirmarlo. Para cada afirmacion del bloque <X> re-deriva la cifra con un metodo propio, busca contraejemplos y lee el codigo de la version cuando la afirmacion hable de mecanica. Reporta CONFIRMADA / REFUTADA / CIFRA DISTINTA, con cifra, metodo y si la diferencia es material. Empieza con `DIFERENCIAS MATERIALES: n`.
 
-## Que es material
+## Relevante contra menor
 
-- Material: hallazgo nuevo con impacto economico, fiscal u operativo; afirmacion refutada; cifra que cambia mas alla del redondeo o de un metodo equivalente ya explicado; causa distinta.
-- No material: matiz de redaccion, metodo alterno que llega a la misma cifra, desglose adicional que no cambia la conclusion.
+- Relevante (material): hallazgo nuevo con impacto economico, fiscal u operativo; afirmacion refutada; cifra que cambia mas alla del redondeo o de un metodo equivalente ya explicado; causa distinta; algo que cambia lo que se le dice al cliente o lo que tiene que hacer.
+- Menor (estetico): matiz de redaccion, redondeo, metodo alterno que llega a la misma cifra, desglose o ejemplo adicional que no cambia la conclusion ni la cifra del informe.
+- Ante la duda, se clasifica como relevante.
 
-## Cierre
+## Cuantas rondas y cuando se para
 
-- Dos rondas consecutivas con cero cambios materiales en todos los bloques.
+- **Minimo 4 rondas.** No se cierra antes de terminar la cuarta, aunque todas salgan limpias.
+- **Cierre por estabilidad:** desde la cuarta, se para cuando dos rondas consecutivas terminan sin errores o solo con hallazgos menores en todos los bloques. Un hallazgo relevante en cualquier bloque reinicia la cuenta.
+- **Maximo 10 rondas.** Al terminar la decima se cierra aunque siga habiendo hallazgos relevantes. La bitacora y el informe interno dicen que bloques seguian moviendose y que se corrigio en las dos ultimas rondas; lo no estabilizado no entra al informe del cliente como hecho cerrado.
 - Un bloque puede quedar estable antes que otro; se anota, pero el cierre es global.
-- Si Marcos corta antes, la bitacora lo dice y el informe interno lista los bloques que seguian moviendose.
+- Si Marcos corta antes, la bitacora lo dice con la misma constancia.
+- Cada linea de `RONDAS.md` termina con el estado de la cuenta: «relevantes: n · menores: n · rondas estables seguidas: n».

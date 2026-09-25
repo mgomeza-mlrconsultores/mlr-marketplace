@@ -1,6 +1,6 @@
 ---
 name: mlr-diagnostico
-description: Usar cuando hay que diagnosticar una base de Odoo de un cliente —auditoria, revision de salud, estado real de inventario y valuacion, contabilidad, configuracion, migraciones o codigo a medida— con o sin cotizacion posterior. Metodo por rondas desde cero hasta dos rondas seguidas sin cambios, solo lectura, evidencia irrefutable y entregable con capturas que entiende cualquier directivo.
+description: Usar cuando hay que diagnosticar una base de Odoo de un cliente —auditoria, revision de salud, estado real de inventario y valuacion, contabilidad, configuracion, migraciones o codigo a medida— con o sin cotizacion posterior. Metodo por rondas desde cero (minimo 4, maximo 10) hasta dos rondas seguidas sin hallazgos relevantes, solo lectura, evidencia irrefutable y entregable con capturas que entiende cualquier directivo.
 ---
 
 # Diagnostico de bases Odoo
@@ -35,14 +35,17 @@ Productos y categorias (tipo, valuacion, metodo de costo, cuentas), unidades de 
 
 Cuando un comportamiento depende de la version se lee el **codigo fuente de esa version exacta** y se cita archivo y metodo. Lecciones de mecanica ya comprobadas en `references/lecciones-odoo.md`.
 
-## Rondas hasta dos seguidas sin cambios
+## Rondas: minimo 4, maximo 10
 
 El metodo completo, con las instrucciones para cada agente y el formato del catalogo, esta en `references/metodo-de-rondas.md`. Lo esencial:
 
 - **Cada ronda arranca de cero.** Un agente ciego diagnostica la base sin ver el catalogo; verificadores independientes, uno por bloque, re-derivan cada cifra del catalogo con un metodo propio y distinto al original. El orquestador resuelve cada contradiccion con una consulta propia, no por mayoria.
 - **Dudar de uno mismo.** La conclusion de la ronda anterior no es evidencia. La afirmacion de un agente tampoco. Se vuelve a medir.
-- **Cambio material:** hallazgo nuevo con impacto, hallazgo refutado, o correccion de cifra o de causa que va mas alla del redondeo o de un metodo equivalente.
-- **Cierre:** dos rondas consecutivas sin cambios materiales. Si Marcos declara una ronda como la ultima, se cierra ahi y se deja constancia de que el criterio no se alcanzo y de cuales bloques seguian moviendose.
+- **Hallazgo relevante:** hallazgo nuevo con impacto economico, fiscal u operativo, hallazgo refutado, o correccion de cifra o de causa que va mas alla del redondeo o de un metodo equivalente. **Hallazgo menor:** redaccion, redondeo, metodo alterno que llega a la misma cifra, desglose extra o ejemplo adicional que no cambia la conclusion ni la cifra que ve el cliente.
+- **Minimo 4 rondas, siempre.** Aunque las primeras salgan limpias, no se cierra antes de la cuarta.
+- **Cierre por estabilidad:** a partir de la cuarta ronda, se cierra cuando dos rondas consecutivas no traen errores o solo traen hallazgos menores. Un solo hallazgo relevante reinicia la cuenta.
+- **Tope de 10 rondas.** Si en la decima todavia hay hallazgos relevantes, se cierra de todos modos y la bitacora dice que bloques seguian moviendose y que se corrigio en las ultimas dos rondas.
+- Si Marcos declara una ronda como la ultima, se cierra ahi y se deja la misma constancia.
 - Catalogo versionado (`CATALOGO_vN.md`) y bitacora (`RONDAS.md`) en el area interna del cliente.
 
 ## Que cuenta como evidencia
@@ -86,6 +89,7 @@ El reclamo recurrente de los clientes es que los diagnosticos son densos y no se
 - Una cifra del informe no tiene documento con folio detras.
 - Afirmas como funciona Odoo sin haberlo leido en el codigo de esa version.
 - Un hallazgo no dice si es herencia o si sigue pasando.
-- Cerraste con una sola ronda limpia.
+- Vas a cerrar antes de la ronda 10 con menos de 4 rondas, con una sola ronda limpia, o con un hallazgo relevante en cualquiera de las dos ultimas.
+- Vas a abrir una ronda 11.
 - El informe tiene un parrafo que el director de una empresa no entenderia a la primera.
 - Hay una llave de API en un archivo que se va a archivar.

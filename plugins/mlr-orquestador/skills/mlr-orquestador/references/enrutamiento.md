@@ -16,7 +16,7 @@ Auditoria, revision de salud, estado real de inventario y valuacion, contabilida
 
 `mlr-diagnostico` → al llegar al informe, `mlr-redaccion` → Word con `documento_mlr.py` y `verifica_documento.py`.
 
-Solo lectura por API con lista blanca de metodos. Linea de tiempo de versiones antes de juzgar un saldo. Rondas desde cero, con agente ciego y verificadores, hasta dos seguidas sin cambios materiales. Cada hallazgo con folio, cifra y captura. Cuando despues hay cotizacion, `mlr-cotizacion` toma el resultado en su fase 1.
+Solo lectura por API con lista blanca de metodos. Linea de tiempo de versiones antes de juzgar un saldo. Rondas desde cero, con agente ciego y verificadores, con minimo 4 y maximo 10, y cierre cuando dos seguidas no traen errores o solo traen hallazgos menores. Cada hallazgo con folio, cifra y captura. Cuando despues hay cotizacion, `mlr-cotizacion` toma el resultado en su fase 1.
 
 ## Texto para el cliente
 
