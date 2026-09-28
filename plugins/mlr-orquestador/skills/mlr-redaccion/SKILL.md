@@ -136,13 +136,13 @@ Excel, láminas HTML y asuntos de correo. Windows, Google Drive y el correo acep
 problema, así que no hay razón técnica para quitarlas. Solo van sin tilde los identificadores
 de código: nombres de script, variables, claves y campos de Odoo.
 
-- Mal: `1. MLR - Propuesta Economica - Prodetecs.pdf`, hoja «Parámetros», celda «Capacitación».
-- Bien: `1. MLR - Propuesta Económica - Prodetecs.pdf`, hoja «Parámetros», celda «Capacitación».
+- Mal: `1. Propuesta Economica - Prodetecs.pdf`, hoja «Parámetros», celda «Capacitación».
+- Bien: `1. Propuesta Económica - Prodetecs.pdf`, hoja «Parámetros», celda «Capacitación».
 
 En español solo lleva mayúscula la primera palabra y los nombres propios. Aplica a nombres de
 tareas y aplicaciones, encabezados de Excel y títulos de sección: «Listas de materiales»,
 «Configuración general», «Compras y ventas», nunca «Listas de Materiales». El patrón de nombre
-de archivo que fijó dirección («2. MLR - Plan de Trabajo y Alcance Detallado - <Cliente>») se
+de archivo que fijó dirección («2. Plan de Trabajo y Alcance Detallado - <Cliente>») se
 respeta tal cual.
 
 La causa de los errores anteriores fue copiar texto de skills, plantillas y entregables viejos

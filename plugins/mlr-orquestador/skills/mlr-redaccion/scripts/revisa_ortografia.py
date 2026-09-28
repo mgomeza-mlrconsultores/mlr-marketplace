@@ -6,7 +6,7 @@ Revisa el NOMBRE de cada archivo y su CONTENIDO (PDF, Word, Excel, HTML, Markdow
 texto). En Excel revisa tambien el nombre de cada hoja y todas las celdas de texto,
 no las formulas. Devuelve 0 si no hay hallazgos y 1 si los hay.
 
-    python3 revisa_ortografia.py "Informes/20260928/1. MLR - Propuesta Económica - Cliente.pdf" ...
+    python3 revisa_ortografia.py "Informes/20260928/1. Propuesta Económica - Cliente.pdf" ...
     python3 revisa_ortografia.py --nombres-solo "carpeta/*"
 
 En Excel revisa ademas las etiquetas cortas escritas con mayuscula en cada palabra al

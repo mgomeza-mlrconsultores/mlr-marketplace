@@ -20,9 +20,11 @@ Dirección fijo el 23 de septiembre de 2026 el modelo que armo el contador para 
 
 | Pieza | Nombre del archivo | Extensión |
 |---|---|---|
-| Propuesta económica | `1. MLR - Propuesta Económica - <Cliente>.docx` | **2 a 3 planas** |
-| Plan de trabajo y alcance detallado | `2. MLR - Plan de Trabajo y Alcance Detallado - <Cliente>.docx` | hasta 6 planas |
-| Anexo de ruta y horas | `3. MLR - Anexo de Ruta y Horas - <Cliente>.xlsx` | cinco hojas |
+| Propuesta económica | `1. Propuesta Económica - <Cliente>.docx` | **2 a 3 planas** |
+| Plan de trabajo y alcance detallado | `2. Plan de Trabajo y Alcance Detallado - <Cliente>.docx` | hasta 6 planas |
+| Anexo de ruta y horas | `3. Anexo de Ruta y Horas - <Cliente>.xlsx` | cinco hojas |
+
+Los nombres de archivo **no llevan el prefijo «MLR»**: arrancan con el número y el nombre del documento, con tildes, y cierran con el nombre del cliente. La firma ya va en el membrete; el Word y el PDF llevan el mismo nombre.
 
 El formato, el membrete y el registro **no se definen aquí**: se cargan de `mlr-redaccion`, `mlr-identidad-visual` y las directrices vigentes en memoria. Los dos documentos se construyen con `documento_mlr.py` y pasan el verificador cada uno por separado.
 
