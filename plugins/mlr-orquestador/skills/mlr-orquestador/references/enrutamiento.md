@@ -1,58 +1,58 @@
 # Tabla de enrutamiento MLR
 
-Clasifica la peticion en una fila y carga TODO lo de su columna derecha, en ese orden.
+Clasifica la petición en una fila y carga TODO lo de su columna derecha, en ese orden.
 
-## Cotizacion y plan de implementacion de Odoo
+## Cotización y plan de implementación de Odoo
 
-Propuesta economica, presupuesto, alcance, ruta por etapas, tareas, horas, precio por sede.
+Propuesta económica, presupuesto, alcance, ruta por etapas, tareas, horas, precio por sede.
 
 `mlr-cotizacion` → al llegar a los entregables, `mlr-redaccion` → `docx` y `xlsx`.
 
-Se carga antes de listar tareas o estimar horas, no despues. La skill impone el orden — cliente y base, preguntas, diagrama, ruta, horas, condiciones, entregables — y la regla de que nada se escribe en archivo antes de la aprobacion en el chat.
+Se carga antes de listar tareas o estimar horas, no después. La skill impone el orden — cliente y base, preguntas, diagrama, ruta, horas, condiciones, entregables — y la regla de que nada se escribe en archivo antes de la aprobación en el chat.
 
-## Diagnostico de una base de Odoo
+## Diagnóstico de una base de Odoo
 
-Auditoria, revision de salud, estado real de inventario y valuacion, contabilidad, migraciones, codigo a medida. Con o sin cotizacion posterior.
+Auditoria, revisión de salud, estado real de inventario y valuación, contabilidad, migraciones, código a medida. Con o sin cotización posterior.
 
 `mlr-diagnostico` → al llegar al informe, `mlr-redaccion` → Word con `documento_mlr.py` y `verifica_documento.py`.
 
-Solo lectura por API con lista blanca de metodos. Linea de tiempo de versiones antes de juzgar un saldo. Rondas desde cero, con agente ciego y verificadores, con minimo 4 y maximo 10, y cierre cuando dos seguidas no traen errores o solo traen hallazgos menores. Cada hallazgo con folio, cifra y captura. Cuando despues hay cotizacion, `mlr-cotizacion` toma el resultado en su fase 1.
+Solo lectura por API con lista blanca de métodos. Línea de tiempo de versiones antes de juzgar un saldo. Rondas desde cero, con agente ciego y verificadores, con mínimo 4 y máximo 10, y cierre cuando dos seguidas no traen errores o solo traen hallazgos menores. Cada hallazgo con folio, cifra y captura. Cuando después hay cotización, `mlr-cotizacion` toma el resultado en su fase 1.
 
 ## Texto para el cliente
 
-Informe, diagnostico, memo, propuesta, cotizacion, correo formal, minuta, resumen ejecutivo.
+Informe, diagnóstico, memo, propuesta, cotización, correo formal, minuta, resumen ejecutivo.
 
-`mlr-redaccion` → `docx` (Word) o `pdf` (PDF) → verificacion de cifras.
+`mlr-redaccion` → `docx` (Word) o `pdf` (PDF) → verificación de cifras.
 
 Nunca redactes un entregable sin `mlr-redaccion` cargada, ni siquiera un correo corto.
 
-## Guia o informe funcional
+## Guía o informe funcional
 
-Como funciona un desarrollo, paso a paso, para quien lo opera. Manual de usuario, guia de operacion, informe funcional no tecnico.
+Como funciona un desarrollo, paso a paso, para quien lo opera. Manual de usuario, guía de operación, informe funcional no técnico.
 
 `mlr-informe-funcional` → `mlr-redaccion` → Word con `documento_mlr.py` y `verifica_documento.py` → HTML con `genera_html.py` y `revisa_html.py`.
 
-Capturas reales sobre documentos de demostracion en la base de pruebas, con pie que cita el documento y la cifra que se ve. El informe tecnico de cierre de Odoo (campos, vistas, migracion) sigue siendo de `mlr-report-writer`.
+Capturas reales sobre documentos de demostración en la base de pruebas, con pie que cita el documento y la cifra que se ve. El informe técnico de cierre de Odoo (campos, vistas, migración) sigue siendo de `mlr-report-writer`.
 
-## Presentacion
+## Presentación
 
-`mlr-presentaciones` → HTML autocontenido con el patron de la firma: barra con logotipo vectorial, menu de grupos, navegacion por teclado, barra de progreso y contador.
+`mlr-presentaciones` → HTML autocontenido con el patrón de la firma: barra con logotipo vectorial, menú de grupos, navegación por teclado, barra de progreso y contador.
 
 Solo usar `pptx` cuando el cliente pida expresamente un archivo de PowerPoint editable.
 
-Una idea por lamina. El titular es la conclusion, no la etiqueta del tema.
+Una idea por lamina. El titular es la conclusión, no la etiqueta del tema.
 
-## Pagina web, artifact, tablero o calculadora
+## Página web, artifact, tablero o calculadora
 
 `mlr-identidad-visual` → `ui-ux-pro-max` → `artifact-design` → `web-artifacts-builder`.
 
-Si la pieza lleva movimiento, anade `mlr-animacion-web`.
+Si la pieza lleva movimiento, añade `mlr-animacion-web`.
 
-## Grafica, indicador o visualizacion de datos
+## Gráfica, indicador o visualización de datos
 
-`dataviz` antes de escribir la primera linea de codigo de grafico. Nunca improvises paleta.
+`dataviz` antes de escribir la primera línea de código de gráfico. Nunca improvises paleta.
 
-Despues `mlr-identidad-visual` para alinear la paleta a la marca.
+Después `mlr-identidad-visual` para alinear la paleta a la marca.
 
 ## Diagrama
 
@@ -60,11 +60,11 @@ Proceso, flujo, arquitectura, modelo de datos, secuencia, estados.
 
 `mlr-diagramas-odoo` → Mermaid con el tema de la firma. Para flujos que Mermaid no sepa organizar, D2.
 
-Para co-disenar en reunion con el cliente, pizarra tipo Excalidraw; el entregable final se pasa despues a Mermaid.
+Para co-disenar en reunión con el cliente, pizarra tipo Excalidraw; el entregable final se pasa después a Mermaid.
 
 ## Video
 
-Explicativo de proceso, demostracion de Odoo, animacion de datos.
+Explicativo de proceso, demostración de Odoo, animación de datos.
 
 `mlr-video`.
 
@@ -72,31 +72,31 @@ Explicativo de proceso, demostracion de Odoo, animacion de datos.
 
 Campos, modelos, vistas, acciones de servidor, automatizaciones, acciones programadas.
 
-`mlr-odoo-orchestrator` y los agentes especializados de creacion de campos, modelos, vistas y acciones.
+`mlr-odoo-orchestrator` y los agentes especializados de creación de campos, modelos, vistas y acciones.
 
-Al terminar, informe en espanol con `mlr-redaccion`.
+Al terminar, informe en español con `mlr-redaccion`.
 
-## Analisis de negocio y decision
+## Análisis de negocio y decisión
 
-- Optimizacion de proceso, riesgo operativo, capacidad, plan de cambio → plugin de operaciones.
-- Analisis de varianza, estados financieros, conciliacion → plugin de finanzas.
-- Riesgo legal, revision de contrato, verificacion de proveedor → plugin legal.
-- Analisis de datos, consultas, validacion → plugin de datos.
+- Optimización de proceso, riesgo operativo, capacidad, plan de cambio → plugin de operaciones.
+- Análisis de varianza, estados financieros, conciliación → plugin de finanzas.
+- Riesgo legal, revisión de contrato, verificación de proveedor → plugin legal.
+- Análisis de datos, consultas, validación → plugin de datos.
 
-Nombra siempre el marco que estas aplicando. Un analisis sin marco declarado es una opinion.
+Nombra siempre el marco que estas aplicando. Un análisis sin marco declarado es una opinión.
 
-## Investigacion
+## Investigación
 
 Mercado, proveedor, competencia, precios, normativa.
 
-Busqueda en vivo → verificacion en fuente primaria → cita de fuentes.
+Búsqueda en vivo → verificación en fuente primaria → cita de fuentes.
 
-Nunca afirmes un precio, una cifra de mercado o un dato regulatorio sin haberlo comprobado en esta sesion.
+Nunca afirmes un precio, una cifra de mercado o un dato regulatorio sin haberlo comprobado en esta sesión.
 
-## Hoja de calculo o modelo
+## Hoja de cálculo o modelo
 
-`xlsx`. Formulas vivas, nunca valores calculados y pegados.
+`xlsx`. Fórmulas vivas, nunca valores calculados y pegados.
 
-## Peticion ambigua
+## Petición ambigua
 
 Explora requisitos antes de construir. Una pregunta bien hecha ahorra un entregable descartado.

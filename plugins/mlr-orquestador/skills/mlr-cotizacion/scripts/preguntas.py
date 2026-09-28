@@ -55,7 +55,7 @@ def espina(app, unidad, ejemplo_volumen):
     ]
 
 BLOQUES = [
- ("contabilidad", "Contabilidad y Finanzas", 5, True,
+ ("contabilidad", "Contabilidad y finanzas", 5, True,
   espina("la contabilidad", "contabilidad", "pólizas al mes") + [
    ("¿Quién lleva la contabilidad hoy, interno o despacho externo?", "texto", []),
    ("¿Usan el catálogo de cuentas del SAT o uno propio?", "opcion",
@@ -98,7 +98,7 @@ BLOQUES = [
     ["Contra pedido", "Por mínimos", "Ambos", "Por definir"]),
   ]),
 
- ("inventario", "Inventario y Almacén", 6, True,
+ ("inventario", "Inventario y almacén", 6, True,
   espina("el inventario", "almacén", "movimientos al mes") + [
    ("¿Cuántos productos tienen en existencia y cuánto vale el inventario?", "texto", []),
    ("¿Manejan ubicaciones dentro del almacén?", "si/no", []),
@@ -117,7 +117,7 @@ BLOQUES = [
    ("¿Mueven mercancía entre almacenes o entre razones sociales?", "si/no", []),
   ]),
 
- ("fabricacion", "Fabricación y Listas de Materiales", 4, False,
+ ("fabricacion", "Fabricación y listas de materiales", 4, False,
   espina("la producción", "producción", "órdenes de fabricación al mes") + [
    ("¿Fabrican, ensamblan o solo arman kits para vender?", "opcion",
     ["Fabricación real", "Ensamble", "Kits", "Nada de esto"]),
@@ -133,7 +133,7 @@ BLOQUES = [
    ("¿Facturan por avance o por entregable?", "texto", []),
   ]),
 
- ("campo", "Servicio de Campo", 3, False,
+ ("campo", "Servicio de campo", 3, False,
   espina("el servicio en sitio", "servicio de campo", "servicios al mes") + [
    ("¿Cuántos técnicos salen a campo?", "numero", []),
    ("¿El técnico consume material en sitio y hay que descargarlo?", "si/no", []),
@@ -141,7 +141,7 @@ BLOQUES = [
    ("¿Facturan desde la propia orden de servicio?", "si/no", []),
   ]),
 
- ("nomina", "Nómina y Recursos Humanos", 3, False,
+ ("nomina", "Nómina y recursos humanos", 3, False,
   espina("la nómina", "recursos humanos", "colaboradores en plantilla") + [
    ("¿Con qué sistema procesan la nómina hoy?", "texto", []),
    ("¿Con qué periodicidad pagan?", "opcion", ["Semanal", "Quincenal", "Mensual", "Mixta"]),
@@ -155,18 +155,18 @@ BLOQUES = [
    ("¿De dónde llegan los prospectos?", "texto", []),
   ]),
 
- ("pos", "Punto de Venta", 2, False,
+ ("pos", "Punto de venta", 2, False,
   espina("el punto de venta", "punto de venta", "tickets al día") + [
    ("¿Cuántas cajas o terminales tienen y en cuántas sucursales?", "texto", []),
    ("¿Qué formas de pago aceptan en mostrador?", "texto", []),
    ("¿Necesitan que el punto de venta opere sin internet?", "si/no", []),
   ]),
 
- ("ecommerce", "Comercio Electrónico y Sitio Web", 2, False,
+ ("ecommerce", "Comercio electrónico y sitio web", 2, False,
   espina("la venta en línea", "la tienda en línea", "pedidos en línea al mes") + [
    ("¿Tienen tienda en línea hoy y en qué plataforma?", "texto", []),
    ("¿Con qué pasarela de pago cobran?", "texto", []),
-   ("¿Quién les paqueteria y envíos?", "texto", []),
+   ("¿Quién les da el servicio de paquetería y envíos?", "texto", []),
   ]),
 
  ("mantenimiento", "Mantenimiento", 2, False,
@@ -181,19 +181,19 @@ BLOQUES = [
    ("¿Tienen certificación que obligue a dejar evidencia?", "si/no", []),
   ]),
 
- ("gastos", "Gastos y Viáticos", 2, False,
+ ("gastos", "Gastos y viáticos", 2, False,
   espina("la comprobación de gastos", "administración", "comprobaciones al mes") + [
    ("¿Quién autoriza un gasto y hasta qué monto?", "texto", []),
    ("¿Los colaboradores suben su comprobante o lo entregan en papel?", "texto", []),
   ]),
 
- ("suscripciones", "Suscripciones y Contratos Recurrentes", 2, False,
+ ("suscripciones", "Suscripciones y contratos recurrentes", 2, False,
   espina("la facturación recurrente", "administración", "contratos vigentes") + [
    ("¿Con qué periodicidad facturan el recurrente?", "texto", []),
    ("¿Cómo manejan altas, bajas y cambios a media vigencia?", "texto", []),
   ]),
 
- ("documentos", "Documentos y Firma Electrónica", 2, False,
+ ("documentos", "Documentos y firma electrónica", 2, False,
   espina("la firma de documentos", "administración", "documentos a firmar al mes") + [
    ("¿Qué documentos necesitan que el cliente firme?", "texto", []),
    ("¿Usan alguna herramienta de firma hoy?", "texto", []),

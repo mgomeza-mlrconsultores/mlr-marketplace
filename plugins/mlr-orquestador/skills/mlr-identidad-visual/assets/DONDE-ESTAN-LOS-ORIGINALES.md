@@ -1,24 +1,24 @@
 # Originales que NO viven en este repositorio
 
-Este marketplace es publico. La cotizacion aprobada por direccion lleva precios y
+Este marketplace es público. La cotización aprobada por dirección lleva precios y
 datos de contacto de un cliente, y las hojas membretadas son material de marca.
-Ninguna de las dos se sube aqui.
+Ninguna de las dos se sube aquí.
 
-## Documento de referencia del formato y la redaccion
+## Documento de referencia del formato y la redacción
 
 `G:\Unidades compartidas\MMLR 2025\Hoja Membretada\Cotizacion_Comband DTH_Maquila Nomina.pdf`
 
-Autora: C.P. Monica Arellano. Es el patron de la firma: caratula, tipografia,
-interlineado, cuadros, saltos y registro de redaccion salen de ahi. Ante cualquier
+Autora: C.P. Mónica Arellano. Es el patrón de la firma: carátula, tipografía,
+interlineado, cuadros, saltos y registro de redacción salen de ahí. Ante cualquier
 duda se abre y se copia.
 
-## Molde del formato de solicitud de informacion
+## Molde del formato de solicitud de información
 
 `G:\Unidades compartidas\MMLR 2025\Hoja Membretada\Formato_Cotizacion_MLR.docx`
 
 La carta con la que se le piden datos al cliente antes de cotizar. `formato_cotizacion.py`
 —en `mlr-cotizacion`— clona ese paquete y solo cambia el texto. Trae el membrete de plana
-completa dentro del encabezado, asi que tampoco se sube.
+completa dentro del encabezado, así que tampoco se sube.
 
 ## Hojas membretadas calibradas
 
@@ -30,7 +30,7 @@ completa dentro del encabezado, asi que tampoco se sube.
 
 `documento_mlr.py` las busca en esas rutas por su cuenta. Si se trabaja en otra
 maquina, se copia la que toque a `assets/plantillas/` **sin subirla al repositorio**
-(esa carpeta esta en .gitignore).
+(esa carpeta está en .gitignore).
 
 ## Fuentes
 

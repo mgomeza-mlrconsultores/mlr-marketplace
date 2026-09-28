@@ -2,7 +2,7 @@
 
 ## Estructura de trabajo
 
-Cada persona trabaja en su unidad local, dentro de una carpeta raiz llamada **`Proyecto MLR`**. Debajo, una carpeta por cliente, y dentro de cada cliente tres carpetas fijas. La fecha va **dentro** de cada una de las tres.
+Cada persona trabaja en su unidad local, dentro de una carpeta raíz llamada **`Proyecto MLR`**. Debajo, una carpeta por cliente, y dentro de cada cliente tres carpetas fijas. La fecha va **dentro** de cada una de las tres.
 
 ```
 Proyecto MLR/
@@ -20,27 +20,27 @@ Los tres nombres son fijos y se escriben tal cual: `Informes`, `Documentos extra
 
 ## Que va en cada carpeta
 
-**Informes.** Los entregables formales que lee el cliente: diagnosticos, informes de avance, propuestas, memorandos. Construidos sobre el membrete de la firma.
+**Informes.** Los entregables formales que lee el cliente: diagnósticos, informes de avance, propuestas, memorandos. Construidos sobre el membrete de la firma.
 
-**Documentos extras.** Todo lo que acompana sin ser el entregable: insumos que envio el cliente, extracciones de su base de datos, hojas de calculo de trabajo, notas y borradores.
+**Documentos extras.** Todo lo que acompaña sin ser el entregable: insumos que envío el cliente, extracciones de su base de datos, hojas de cálculo de trabajo, notas y borradores.
 
-**Capturas de pantalla.** Evidencia visual: pantallas de Odoo antes y despues de un cambio, mensajes de error, configuraciones. Es lo que sustenta lo que afirma el informe.
+**Capturas de pantalla.** Evidencia visual: pantallas de Odoo antes y después de un cambio, mensajes de error, configuraciones. Es lo que sustenta lo que afirma el informe.
 
 ## Reglas
 
-- Una carpeta de fecha por jornada de entrega o por hito, no por cada dia que se trabajo.
-- Los entregables no se sobrescriben. Version nueva, carpeta de fecha nueva.
+- Una carpeta de fecha por jornada de entrega o por hito, no por cada día que se trabajo.
+- Los entregables no se sobrescriben. Versión nueva, carpeta de fecha nueva.
 - Los archivos de trabajo no se mezclan con los informes. Para eso existe `Documentos extras`.
-- El nombre de archivo lleva cliente, tema y fecha, en minusculas y separado por guiones.
+- El nombre de archivo lleva cliente, tema y fecha, en minúsculas y separado por guiones.
 
 ## Membrete
 
-No vive en la carpeta local. Esta en la unidad compartida de la empresa en Google Drive, carpeta `MLR > Hoja Membretada`, con los identificadores anotados en la skill `mlr-identidad-visual`. Se descarga la plantilla, se escribe dentro y el resultado se guarda en `Informes/<fecha>/`.
+No vive en la carpeta local. Está en la unidad compartida de la empresa en Google Drive, carpeta `MLR > Hoja Membretada`, con los identificadores anotados en la skill `mlr-identidad-visual`. Se descarga la plantilla, se escribe dentro y el resultado se guarda en `Informes/<fecha>/`.
 
 ## Al cerrar un trabajo
 
 1. Dejar el entregable en `Informes/<fecha>/`, y las capturas que lo sustentan en `Capturas de pantalla/<fecha>/`.
-2. Registrar en la memoria del cliente: que se entrego, en que carpeta quedo, que se decidio y que quedo pendiente.
+2. Registrar en la memoria del cliente: que se entrego, en que carpeta quedo, que se decidió y que quedo pendiente.
 3. Decir a la persona, en lenguaje llano, en que carpeta quedo y que contiene.
 
-Si la carpeta del cliente o la de fecha no existen todavia, crearlas siguiendo esta estructura sin preguntar.
+Si la carpeta del cliente o la de fecha no existen todavía, crearlas siguiendo esta estructura sin preguntar.

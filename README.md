@@ -1,6 +1,6 @@
 # Marketplace interno de MLR Consultores
 
-Contiene todo el entorno de trabajo de la firma en un solo lugar. Se da de alta una vez por persona; a partir de ahi solo se actualiza.
+Contiene todo el entorno de trabajo de la firma en un solo lugar. Se da de alta una vez por persona; a partir de ahí solo se actualiza.
 
 ## Qué contiene
 

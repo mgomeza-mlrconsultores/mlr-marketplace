@@ -11,6 +11,9 @@ se corrige.
 
     python3 verifica_documento.py "ruta/Documento.pdf" [--docx "ruta/Documento.docx"]
 
+Revisa tambien la ortografia (tildes y enes) del texto y del nombre del archivo con
+revisa_ortografia.py de mlr-redaccion, que requiere spylls.
+
 Requiere pymupdf. El .docx es opcional pero recomendado: sin el no se comprueban
 la incrustacion de fuentes ni los margenes.
 """
@@ -208,6 +211,24 @@ def main():
         elif media > BANDA_PALABRAS[1]:
             avisos.append("Media de %.1f palabras por oracion, por encima de %.0f. "
                           "Revisar que no haya frases enredadas." % (media, BANDA_PALABRAS[1]))
+
+    # 4b. ortografia: tildes y enes en el texto y en el nombre del archivo ---
+    try:
+        sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                                        "..", "..", "mlr-redaccion", "scripts"))
+        import revisa_ortografia as orto
+        for ruta in {os.path.splitext(r)[0]: r for r in [a.pdf] + ([a.docx] if a.docx else [])}.values():
+            mal = orto.revisa_nombre(ruta)
+            if mal:
+                fallos.append("Nombre de archivo sin tilde: %s. Los archivos se nombran con "
+                              "ortografía completa." % ", ".join("%s -> %s" % x for x in mal))
+        mal = orto.revisa_texto(txt)
+        if mal:
+            fallos.append("Palabras sin tilde o sin eñe: %s" % ", ".join("%s -> %s" % x for x in mal[:15]))
+    except SystemExit as e:
+        avisos.append("Ortografía sin revisar: %s" % e)
+    except Exception as e:
+        avisos.append("Ortografía sin revisar (%s). Correr revisa_ortografia.py de mlr-redaccion." % e)
 
     # 5. paquete -----------------------------------------------------------
     if a.docx and os.path.exists(a.docx):

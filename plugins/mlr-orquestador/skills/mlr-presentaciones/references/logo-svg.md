@@ -1,8 +1,8 @@
 # Logotipo MLR en SVG
 
-Version vectorial para piezas HTML. No depende de archivos externos y escala sin perdida.
+Versión vectorial para piezas HTML. No depende de archivos externos y escala sin perdida.
 
-## Version sobre fondo oscuro (barra superior y portada)
+## Versión sobre fondo oscuro (barra superior y portada)
 
 ```html
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 200" role="img" aria-label="MLR Consultores">
@@ -19,9 +19,9 @@ Version vectorial para piezas HTML. No depende de archivos externos y escala sin
 </svg>
 ```
 
-## Version sobre fondo claro
+## Versión sobre fondo claro
 
-Misma geometria, sustituyendo los trazos y textos:
+Misma geometría, sustituyendo los trazos y textos:
 
 - `stroke="#FFFFFF"` pasa a `stroke="#24606C"`
 - El relleno del cuadro exterior pasa a `rgba(36,96,108,0.08)`
@@ -30,6 +30,6 @@ Misma geometria, sustituyendo los trazos y textos:
 
 ## Reglas
 
-El monograma son tres trazos verticales tipo columnas. No alterar la geometria, los grosores ni el espaciado entre letras. Respetar el area de aislamiento equivalente a una pieza del isotipo.
+El monograma son tres trazos verticales tipo columnas. No alterar la geometría, los grosores ni el espaciado entre letras. Respetar el área de aislamiento equivalente a una pieza del isotipo.
 
 Para piezas que no sean HTML, usar los PNG aprobados del manual en lugar de este SVG.

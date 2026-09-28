@@ -1,13 +1,13 @@
 ---
 name: mlr-presentaciones
-description: Construye presentaciones y decks de MLR Consultores en HTML autocontenido con el patron de la firma: barra superior con logotipo vectorial, menu de grupos, diapositivas navegables por teclado, barra de progreso y contador. Cargar ante cualquier peticion de presentacion, deck, laminas o exposicion para cliente.
+description: Construye presentaciones y decks de MLR Consultores en HTML autocontenido con el patrón de la firma: barra superior con logotipo vectorial, menú de grupos, diapositivas navegables por teclado, barra de progreso y contador. Cargar ante cualquier petición de presentación, deck, laminas o exposición para cliente.
 ---
 
 # Presentaciones MLR
 
-La firma tiene un patron propio de deck en HTML, ya probado con clientes. **No inventes una estructura nueva.** Reproduce este patron y cambia el contenido.
+La firma tiene un patrón propio de deck en HTML, ya probado con clientes. **No inventes una estructura nueva.** Reproduce este patrón y cambia el contenido.
 
-Un archivo HTML unico, sin dependencias externas ni compilacion. Se abre en cualquier navegador, se proyecta y se envia por correo.
+Un archivo HTML único, sin dependencias externas ni compilación. Se abre en cualquier navegador, se proyecta y se envía por correo.
 
 ## Esqueleto
 
@@ -45,29 +45,29 @@ Declarar en `:root`, derivados de la paleta oficial de la firma:
 }
 ```
 
-`--amber`, `--alert` y `--ok` son de estado: senalan advertencia, error y correcto en diagramas y cuadros de hallazgo. No decoran.
+`--amber`, `--alert` y `--ok` son de estado: señalan advertencia, error y correcto en diagramas y cuadros de hallazgo. No decoran.
 
-Incluir siempre las alternativas `DejaVu Sans` y `system-ui` en las pilas tipograficas: el deck debe verse bien sin acceso a internet, en la sala del cliente.
+Incluir siempre las alternativas `DejaVu Sans` y `system-ui` en las pilas tipográficas: el deck debe verse bien sin acceso a internet, en la sala del cliente.
 
-## Navegacion
+## Navegación
 
-El menu se construye por codigo desde un arreglo de grupos, no a mano. Cada grupo apunta al indice de la diapositiva donde empieza:
+El menú se construye por código desde un arreglo de grupos, no a mano. Cada grupo apunta al índice de la diapositiva donde empieza:
 
 ```js
 const groups=[['Inicio',0],['Resumen',1],['El flujo',2],['Beneficios',8],['Cierre',9]];
 ```
 
-La funcion `show(i)` activa la diapositiva, actualiza el contador con formato `01 / 12`, mueve la barra de progreso y marca con la clase `act` el grupo al que pertenece la lamina actual. Al cambiar de lamina, el scroll interno vuelve al inicio.
+La función `show(i)` activa la diapositiva, actualiza el contador con formato `01 / 12`, mueve la barra de progreso y marca con la clase `act` el grupo al que pertenece la lamina actual. Al cambiar de lamina, el scroll interno vuelve al inicio.
 
-Teclado obligatorio: flecha derecha, abajo y PageDown avanzan; flecha izquierda, arriba y PageUp retroceden; Home va a la primera; End a la ultima.
+Teclado obligatorio: flecha derecha, abajo y PageDown avanzan; flecha izquierda, arriba y PageUp retroceden; Home va a la primera; End a la última.
 
-Entre cuatro y seis grupos. Mas de seis y el menu deja de orientar.
+Entre cuatro y seis grupos. Mas de seis y el menú deja de orientar.
 
 ## Contenido
 
 - **Una idea por lamina.** Si necesita dos, son dos laminas.
-- **El titular es la conclusion, no la etiqueta del tema.** «El costo no llega al asiento» y no «Analisis de costos».
-- Cifras grandes, contexto pequeno.
+- **El titular es la conclusión, no la etiqueta del tema.** «El costo no llega al asiento» y no «Análisis de costos».
+- Cifras grandes, contexto pequeño.
 - Capturas reales de Odoo, guardadas en `assets/` junto al HTML y referenciadas de forma relativa. Nunca recreaciones de la interfaz.
 - El logotipo va en la barra en todas las laminas, y completo solo en la portada.
 - Cierre con los datos de contacto aprobados de la firma.
@@ -76,12 +76,12 @@ Entre cuatro y seis grupos. Mas de seis y el menu deja de orientar.
 
 Nombre: `MLR_Presentacion_<Tema>_<Cliente>_<AAAA-MM-DD>.html`.
 
-Ubicacion: `Proyecto MLR/<Cliente>/Informes/<AAAAMMDD>/`, con las imagenes en `assets/` dentro de esa misma carpeta de fecha.
+Ubicación: `Proyecto MLR/<Cliente>/Informes/<AAAAMMDD>/`, con las imágenes en `assets/` dentro de esa misma carpeta de fecha.
 
-Toda presentacion se acompana de su informe en Word sobre el membrete de la firma. El deck expone; el informe sustenta.
+Toda presentación se acompaña de su informe en Word sobre el membrete de la firma. El deck expone; el informe sustenta.
 
-## Verificacion
+## Verificación
 
-Abrir el archivo en el navegador y recorrerlo completo con el teclado antes de entregarlo. Comprobar que el menu marca el grupo correcto, que el contador cuadra con el numero de laminas y que ninguna imagen falta.
+Abrir el archivo en el navegador y recorrerlo completo con el teclado antes de entregarlo. Comprobar que el menú marca el grupo correcto, que el contador cuadra con el número de laminas y que ninguna imagen falta.
 
 Ver `references/logo-svg.md` para el logotipo vectorial y `references/patron-deck.md` para el detalle de clases y comportamiento.

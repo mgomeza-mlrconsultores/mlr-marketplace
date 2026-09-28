@@ -1,0 +1,6 @@
+Diccionario ortográfico del español (Hunspell), tomado del paquete de diccionarios de LibreOffice 24.2
+(proyecto RLA-ES, https://github.com/sbosio/rla-es). Licencia triple: GPL-3+, LGPL-3+ o MPL-1.1.
+
+Lo usa revisa_ortografia.py para detectar tildes y eñes faltantes en textos, celdas de Excel y
+nombres de archivo. No se modifica a mano: si hace falta una excepción de la firma se agrega en
+EXCEPCIONES dentro del script.
