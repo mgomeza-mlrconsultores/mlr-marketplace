@@ -15,7 +15,7 @@ import base64, html, os, sys, json, re, importlib.util
 E = lambda t: html.escape(t, quote=True)
 FIRMA = [("Director General", "direccionjm@mlrconsultores.com", "55 6302 8143"),
          ("Directora Comercial", "m.arellano@mlrconsultores.com", "55 8772 9395"),
-         ("MLR Consultores", "mlrconsultores.com", "Calle Eugenia 830, Col. Del Valle, C.P. 03100, Ciudad de México")]
+         ("MLR Consultores", "mlrconsultores.com", "Av. Presidente Plutarco Elías Calles 957, Int. 1, Col. Iztaccíhuatl, C.P. 03520, Benito Juárez, Ciudad de México")]
 CIERRE = "Quedamos atentos a sus comentarios y esperamos contar con su aprobación para definir los siguientes pasos."
 LEMA = "Contadores que sí le entienden a Odoo"
 

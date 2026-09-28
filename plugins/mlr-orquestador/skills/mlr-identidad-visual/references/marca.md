@@ -131,7 +131,7 @@ Pie de toda pieza formal:
 - Telefonos: 55 6302 8143 / 55 8772 9395
 - Correos: direccionjm@mlrconsultores.com / m.arellano@mlrconsultores.com
 - Web: https://mlrconsultores.com
-- Direccion: Calle Eugenia #830, Col. Del Valle, C.P. 03100, Ciudad de Mexico
+- Direccion: Av. Presidente Plutarco Elias Calles 957, Int. 1, Col. Iztaccihuatl, C.P. 03520, Benito Juarez, Ciudad de Mexico (la de Calle Eugenia ya no es vigente)
 
 **Plantillas de Word.** Unidad compartida de la empresa en Google Drive, carpeta `MLR > Hoja Membretada`, identificador `15QKXzczjEMo1XYv8Hb-aWBH8k-tyC5De`:
 
