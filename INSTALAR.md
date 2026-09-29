@@ -37,11 +37,12 @@ referencia, que no se publican.
 /plugin install mlr-orquestador@mlr
 /plugin install mlr-odoo@mlr
 /plugin install mlr-design@mlr
+/plugin install mlr-contabilidad@mlr
 ```
 
 También puedes escribir solo `/plugin`, entrar al catálogo `mlr` y activarlos desde ahí.
 
-Instala los tres. `mlr-orquestador` es el que enruta todo; sin el, los otros dos se cargan pero nadie los llama en el momento correcto.
+Instala los cuatro. `mlr-orquestador` es el que enruta todo; sin el, los demás se cargan pero nadie los llama en el momento correcto.
 
 ## Que queda instalado
 
@@ -51,13 +52,15 @@ Instala los tres. `mlr-orquestador` es el que enruta todo; sin el, los otros dos
 
 **`mlr-design`** — skills de contenido, marketing y diseño.
 
+**`mlr-contabilidad`** — la conciliación bancaria guiada: pide las conexiones y los estados de cuenta, propone la conciliación en un libro de Excel y aplica en Odoo solo lo aprobado, hasta cerrar cada diario. Las plantillas viven en `G:\Unidades compartidas\MMLR 2025\Hoja Membretada\Conciliación Bancaria`.
+
 ## Actualizar
 
 ```
 /plugin marketplace update mlr
 ```
 
-Trae la última versión de los tres plugins. No hay que reinstalar ni desinstalar nada, y no se pierde configuración. Funciona igual instalado desde la unidad compartida o desde el repositorio.
+Trae la última versión de los cuatro plugins. No hay que reinstalar ni desinstalar nada, y no se pierde configuración. Funciona igual instalado desde la unidad compartida o desde el repositorio.
 
 Si quieres refrescar todos los catálogos que tengas, `/plugin marketplace update --all`.
 

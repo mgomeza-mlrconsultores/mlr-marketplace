@@ -30,6 +30,7 @@ Tabla completa en `references/enrutamiento.md`. Resumen operativo:
 
 - **Cotización, propuesta económica, plan de implementación, alcance u horas de un proyecto de Odoo** → `mlr-cotizacion`, antes de escribir una sola tarea o una sola hora. Ahí vive la regla de revisar todo en el chat antes de producir archivos. Al llegar a los entregables, encadena `mlr-redaccion` y `docx`.
 - **Diagnóstico de una base de Odoo** (auditoria, revisión de salud, estado real de inventario, valuación, contabilidad, migraciones o código a medida), con o sin cotización después → `mlr-diagnostico`. Solo lectura, rondas desde cero (mínimo 4, máximo 10) hasta dos seguidas sin hallazgos relevantes, y entregable con capturas vía `mlr-redaccion`.
+- **Conciliación bancaria, cierre de bancos del mes, cruce de estado de cuenta contra Odoo y CFDI, previo de impuestos por flujo** → `mlr-conciliacion-bancaria` (plugin `mlr-contabilidad`). Solo lectura hasta que la persona aprueba fila por fila. El correo o informe al cliente con el Previo va después por `mlr-redaccion`. Si el plugin no está instalado, dilo en una línea y remite a `mlr-actualizacion`; no improvises la conciliación.
 - **Texto que el cliente va a leer** (informe, memo, diagnóstico, propuesta, correo, minuta) → `mlr-redaccion`, siempre, sin excepción. Después `docx` o `pdf`.
 - **Guía o informe funcional** de un desarrollo (como funciona paso a paso, manual de usuario, con capturas) → `mlr-informe-funcional` con `mlr-redaccion`. Sale en Word membretado y en HTML con el formato de dirección y menú arriba.
 - **Presentación o deck** → `mlr-presentaciones`, que tiene el patrón HTML de la firma. Nunca improvises una estructura de deck.
@@ -38,7 +39,7 @@ Tabla completa en `references/enrutamiento.md`. Resumen operativo:
 - **Video** explicativo o animación de datos → `mlr-video`.
 - **Animación en web** → `mlr-animacion-web`.
 - **Odoo** → `mlr-odoo-orchestrator` y sus agentes especializados.
-- **Análisis de negocio, decisión, riesgo, proceso o finanzas** → el plugin vertical correspondiente antes de opinar. Nombra el marco que aplicas.
+- **Análisis de negocio, decisión, riesgo, proceso o finanzas** → el plugin vertical correspondiente antes de opinar. Nombra el marco que aplicas. La conciliación bancaria de un cliente no va al plugin genérico de finanzas: va a `mlr-conciliacion-bancaria`.
 - **Investigación** → búsqueda en vivo y verificación en fuente primaria antes de afirmar.
 - **Petición ambigua** → explora requisitos primero. No construyas sobre supuestos.
 

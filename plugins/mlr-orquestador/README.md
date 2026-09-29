@@ -26,6 +26,8 @@ Once skills que se activan solas según lo que se pida.
 
 **`mlr-animacion-web`** — Movimiento en páginas y tableros con criterio de estudio, sobre GSAP.
 
+**Plugin hermano `mlr-contabilidad`** — Trae `mlr-conciliacion-bancaria`, la conciliación guiada de bancos contra Odoo y los CFDI. El orquestador enruta ahí cualquier petición de conciliación y le presta memoria, redacción e identidad; la skill remite de vuelta al orquestador para el correo al cliente y para guardar los criterios de cada cliente.
+
 **`mlr-actualizacion`** — Instala, verifica y mantiene al día todo el entorno: marketplace interno, memoria, skills externas y carpeta de plantillas. Nunca reinstala: actualiza.
 
 ## Memoria en la nube

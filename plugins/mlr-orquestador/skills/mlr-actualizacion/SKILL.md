@@ -33,12 +33,13 @@ Si ya aparece, actualizarlo:
 /plugin marketplace update mlr
 ```
 
-Instalar o actualizar los tres plugins de la firma:
+Instalar o actualizar los cuatro plugins de la firma:
 
 ```
 /plugin install mlr-orquestador@mlr
 /plugin install mlr-odoo@mlr
 /plugin install mlr-design@mlr
+/plugin install mlr-contabilidad@mlr
 ```
 
 Sobre un plugin ya presente, esta orden actualiza a la versión publicada en el marketplace. No duplica nada.
@@ -109,6 +110,9 @@ No instalar Remotion por defecto: su licencia tiene umbrales por facturación y 
 
 ## 5. Plantillas en Drive
 
+Para la conciliación bancaria, comprobar además que la carpeta `MMLR 2025 > Hoja Membretada > Conciliación Bancaria` de la unidad compartida esté accesible, con sus dos plantillas. Sin ella, `mlr-conciliacion-bancaria` trabaja con las copias neutralizadas que trae el plugin. Revisar también que la máquina tenga Python con `openpyxl`, `lxml` y `pdfplumber`, y LibreOffice para recalcular el libro.
+
+
 Comprobar que existe `MLR/00-Plantillas/` en el Drive de la organización, con el membrete oficial y la paleta, en solo lectura para el equipo. De ahí lee `mlr-identidad-visual`.
 
 Si no existe, avisar. Sin esa carpeta, la identidad visual cae al respaldo incrustado.
@@ -117,7 +121,7 @@ Si no existe, avisar. Sin esa carpeta, la identidad visual cae al respaldo incru
 
 Comprobar y reportar, en este orden:
 
-1. Los tres plugins de la firma están presentes y en la versión del marketplace.
+1. Los cuatro plugins de la firma están presentes y en la versión del marketplace.
 2. La memoria responde a una consulta de prueba.
 3. Existe al menos una directriz en el espacio de firma.
 4. La carpeta de plantillas es accesible.

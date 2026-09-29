@@ -18,6 +18,14 @@ Auditoria, revisión de salud, estado real de inventario y valuación, contabili
 
 Solo lectura por API con lista blanca de métodos. Línea de tiempo de versiones antes de juzgar un saldo. Rondas desde cero, con agente ciego y verificadores, con mínimo 4 y máximo 10, y cierre cuando dos seguidas no traen errores o solo traen hallazgos menores. Cada hallazgo con folio, cifra y captura. Cuando después hay cotización, `mlr-cotizacion` toma el resultado en su fase 1.
 
+## Conciliación bancaria y cierre de bancos
+
+Conciliar un diario de banco, caja, tarjeta o acreedor en un periodo; saber si el mes cuadró; partidas sin identificar; cruce del estado de cuenta contra Odoo y los CFDI; previo de impuestos por flujo; pagos al SAT contra acuses; reversiones de IVA en base de efectivo.
+
+`mlr-conciliacion-bancaria` (plugin `mlr-contabilidad`) → `xlsx` para el libro → al llegar al correo o informe del cliente, `mlr-redaccion` e `mlr-identidad-visual`.
+
+Arranque guiado un dato a la vez, estado de cuenta con control de carátula en cero, libro por diario y periodo, acciones que solo se aplican con `Aprobado = Sí`, una fila por tipo antes del lote y cierre con la hoja Verificación en CERRADO. Los criterios fiscales del cliente se leen y se guardan con `mlr-memoria`. Si la revisión de configuración destapa problemas de fondo, se pasa a `mlr-diagnostico`.
+
 ## Texto para el cliente
 
 Informe, diagnóstico, memo, propuesta, cotización, correo formal, minuta, resumen ejecutivo.
@@ -79,7 +87,7 @@ Al terminar, informe en español con `mlr-redaccion`.
 ## Análisis de negocio y decisión
 
 - Optimización de proceso, riesgo operativo, capacidad, plan de cambio → plugin de operaciones.
-- Análisis de varianza, estados financieros, conciliación → plugin de finanzas.
+- Análisis de varianza y estados financieros → plugin de finanzas. La conciliación bancaria de un cliente en Odoo va a `mlr-conciliacion-bancaria`, no al plugin genérico.
 - Riesgo legal, revisión de contrato, verificación de proveedor → plugin legal.
 - Análisis de datos, consultas, validación → plugin de datos.
 

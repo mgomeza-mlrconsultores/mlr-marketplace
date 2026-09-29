@@ -7,18 +7,20 @@ Contiene todo el entorno de trabajo de la firma en un solo lugar. Se da de alta 
 - **mlr-orquestador** — El estándar operativo. Recupera contexto de cliente y directrices vigentes desde memoria en la nube al abrir cada sesión, enruta cada petición al flujo especializado y aplica las normas de la firma. Ocho módulos: orquestación, memoria, redacción, identidad visual, diagramas, video, animación web y actualización del entorno.
 - **mlr-odoo** — Agentes y flujo para personalización de Odoo.
 - **mlr-design** — Skills de contenido, marketing y diseño.
+- **mlr-contabilidad** — Procesos contables sobre Odoo. Hoy trae la conciliación bancaria guiada: banco, Odoo y CFDI, libro de conciliación con previo de impuestos, y aplicación en Odoo solo de lo aprobado.
 
 ## Puesta en marcha, una sola vez
 
 **Paso 1.** Subir el contenido de este paquete a un repositorio git privado de la organización. La ruta de ese repositorio es la dirección del marketplace.
 
-**Paso 2.** Cada persona da de alta el marketplace y instala los tres plugins:
+**Paso 2.** Cada persona da de alta el marketplace y instala los cuatro plugins:
 
 ```
 /plugin marketplace add <dirección-del-repositorio>
 /plugin install mlr-orquestador@mlr
 /plugin install mlr-odoo@mlr
 /plugin install mlr-design@mlr
+/plugin install mlr-contabilidad@mlr
 ```
 
 **Paso 3.** Pedir al asistente: «pon al día mi entorno MLR». La skill `mlr-actualizacion` se encarga del resto: conecta la memoria en la nube, instala las skills externas gratuitas y verifica que todo responda.

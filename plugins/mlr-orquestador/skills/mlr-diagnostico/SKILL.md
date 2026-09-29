@@ -33,6 +33,8 @@ Cada hallazgo del catálogo se etiqueta: `[origen NN]` si se genero con la versi
 
 Productos y categorías (tipo, valuación, método de costo, cuentas), unidades de medida y sus factores, almacenes, ubicaciones (incluidas las archivadas con existencias), rutas y reglas, compras y ventas sin documento de origen, fabricación, flotilla, activos, diarios, catálogo de cuentas (incluidas archivadas en uso), saldos por cuenta y por periodo, bancos y extractos, conciliaciones contra documentos cancelados, impuestos y CFDI, fechas de bloqueo, usuarios y permisos, y todo lo hecho a medida: módulos propios, `base.automation`, `ir.actions.server`, vistas de Studio, `ir.cron`, estados agregados por código.
 
+Si el hallazgo es que un diario de banco o caja no está conciliado, el diagnóstico lo documenta y la corrección se hace después con `mlr-conciliacion-bancaria` (plugin `mlr-contabilidad`), que ya trae la extracción, el cruce con CFDI y la aplicación con aprobación.
+
 Cuando un comportamiento depende de la versión se lee el **código fuente de esa versión exacta** y se cita archivo y método. Lecciones de mecánica ya comprobadas en `references/lecciones-odoo.md`.
 
 ## Rondas: mínimo 4, máximo 10
