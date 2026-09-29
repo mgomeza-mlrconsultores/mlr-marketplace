@@ -61,7 +61,7 @@ Tabla completa en `references/enrutamiento.md`. Resumen operativo:
 - Página membretada MLR en todo documento formal.
 - Toda cifra declara su base. Todo dato lleva fuente.
 - Vistas heredadas en Odoo, nunca Studio. Las etiquetas visibles al usuario no llevan prefijo `[MLR]`.
-- Trabajo local en `Proyecto MLR/<Cliente>/` con las carpetas `Informes`, `Documentos extras` y `Capturas de pantalla`, y dentro de cada una la carpeta de fecha `AAAAMMDD`. Detalle en `references/carpetas-y-entrega.md`.
+- Todo se guarda en la carpeta del cliente dentro de `MLR Odoo\<Cliente>\`: entregables en `Informes\<AAAAMMDD>\`, capturas en `Capturas de pantalla\<AAAAMMDD>\` y trabajo interno en `Documentos extras\<AAAAMMDD>\Interno\`. Si la carpeta del cliente, alguna de las tres carpetas fijas o la de fecha no existen, se crean completas antes de guardar, sin preguntar (regla única en `mlr-orquestador/references/carpetas-y-entrega.md`).
 
 ## Verificación antes de entregar
 

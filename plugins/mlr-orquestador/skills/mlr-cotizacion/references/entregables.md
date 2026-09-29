@@ -91,15 +91,15 @@ Si alguna verificación no se pudo ejecutar — por ejemplo, exportación a PDF 
 
 ## Archivo y registro
 
-Los entregables se guardan en la carpeta del cliente dentro de `MLR Odoo\`. **Si el cliente ya tiene carpeta, se usa la suya; nunca se crea una paralela ni se inventa un nombre nuevo.** Si no existe, se crea con esta estructura:
+Los entregables se guardan en la carpeta del cliente dentro de `MLR Odoo\`. **Si el cliente ya tiene carpeta, se usa la suya; nunca se crea una paralela ni se inventa un nombre nuevo.** Si no existe la carpeta del cliente, alguna de sus carpetas fijas o la de fecha, se crean completas, con todas las intermedias, antes de guardar y sin preguntar. La regla única está en `mlr-orquestador/references/carpetas-y-entrega.md`:
 
 ```
 MLR Odoo\<Cliente>\
   Informes\<AAAAMMDD>\              lo que recibe el cliente
-  Documentos extras\<AAAAMMDD>\     lo que mando el cliente y el trabajo de esa fecha
+  Documentos extras\<AAAAMMDD>\     lo que mandó el cliente y el trabajo de esa fecha
     Interno\                        scripts, origen unico de datos, salidas de diagnostico
       Version reemplazada\          entregables sustituidos despues de emitidos
-  Capturas de pantalla\<AAAAMMDD>\
+  Capturas de pantalla\<AAAAMMDD>\  evidencia visual numerada; nunca dentro de Informes
   Contexto\                         ficha del cliente y memoria
 ```
 

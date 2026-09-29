@@ -57,8 +57,8 @@ organizacion y la nomenclatura que ya existe:
 ```
 <Cliente>/Contexto/                         Historial_Chat_*.md, README_Contexto_<Cliente>.md, Memoria_Cowork
 <Cliente>/Informes/<YYYYMMDD>/              MLR_<Tema>_<Cliente>_<YYYY-MM-DD>.<md|docx|pdf|pptx>
-<Cliente>/Capturas de Pantalla/<YYYYMMDD>/  evidencias numeradas: 01_..., 02_...
-<Cliente>/Documentos extras/                exports, xlsx, material de apoyo
+<Cliente>/Capturas de pantalla/<YYYYMMDD>/  evidencias numeradas: 01_..., 02_... (nunca dentro de Informes)
+<Cliente>/Documentos extras/<YYYYMMDD>/    exports, xlsx, material de apoyo; lo interno en Interno/
 Desarrollos/<Nombre del desarrollo>/        README.md + Instalador/<YYYYMMDD>/
 Instalador Odoo MLR/Bundles de codigos/     bundles maestros .zip para la Plataforma MLR
 ```
@@ -67,7 +67,7 @@ Reglas:
 - **Cliente nuevo** -> se crea su carpeta con esa misma estructura, sin inventar variantes.
 - El **codigo de un desarrollo** va en `Desarrollos/<desarrollo>/Instalador/<fecha>/`, y el
   `README.md` del desarrollo se actualiza con lo que cambio, el estado y las pruebas.
-- Los **informes y capturas** van a la carpeta del cliente, en subcarpeta con la fecha `YYYYMMDD`.
+- Los **informes y capturas** van a la carpeta del cliente dentro de `MLR Odoo`, en `Informes/<YYYYMMDD>/` y `Capturas de pantalla/<YYYYMMDD>/`. Si la carpeta del cliente, alguna de las tres carpetas fijas (`Informes`, `Documentos extras`, `Capturas de pantalla`) o la de fecha no existen, se crean completas, con sus intermedias, antes de guardar y sin preguntar.
 - Si un desarrollo ya existe, se **amplia** su carpeta y su README; no se crea una nueva.
 - Carpetas conectadas: si la carpeta no esta conectada a la sesion, se pide acceso con
   `device_request_folder_access` sobre `<carpeta local de proyectos MLR>`.

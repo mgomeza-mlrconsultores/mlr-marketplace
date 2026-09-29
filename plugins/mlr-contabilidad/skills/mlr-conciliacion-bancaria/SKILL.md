@@ -123,9 +123,9 @@ Las tolerancias viven en `params.json`; la hoja Reglas las toma de ahí en cada 
 
 ## Carpetas
 
-- Trabajo de cada diario: `Proyecto MLR/<Cliente>/Documentos extras/<AAAAMMDD>/Conciliacion_<Diario>/` con `params.json`, los JSON, `decisiones.json`, `bitacora.jsonl`, `respaldos/` y `versiones/`.
-- Libro final: `Proyecto MLR/<Cliente>/Informes/<AAAAMMDD>/`, o la carpeta que el cliente use para sus papeles de trabajo, si la persona la indica en el arranque.
-- Capturas: `Proyecto MLR/<Cliente>/Capturas de pantalla/<AAAAMMDD>/`.
+- Trabajo de cada diario: `MLR Odoo\<Cliente>\Documentos extras\<AAAAMMDD>\Conciliacion_<Diario>\` con `params.json`, los JSON, `decisiones.json`, `bitacora.jsonl`, `respaldos/` y `versiones/`.
+- Libro final: `MLR Odoo\<Cliente>\Informes\<AAAAMMDD>\`, o la carpeta que el cliente use para sus papeles de trabajo, si la persona la indica en el arranque.
+- Capturas: `MLR Odoo\<Cliente>\Capturas de pantalla\<AAAAMMDD>\`. Si la carpeta del cliente, alguna de las tres carpetas fijas o la de fecha no existen, se crean completas antes de guardar, sin preguntar (regla única en `mlr-orquestador/references/carpetas-y-entrega.md`).
 
 ## El Previo no sale mientras no cuadre
 

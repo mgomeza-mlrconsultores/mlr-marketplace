@@ -60,17 +60,17 @@ El resto se instala y se actualiza con la skill `mlr-actualizacion`, que trae lo
 
 ## Estructura de archivo
 
-Cada persona trabaja en su unidad local bajo una carpeta raíz `Proyecto MLR`:
+Todo se guarda en la carpeta del proyecto `MLR Odoo` (en el equipo de Marcos, `C:\Users\mgome\Claude\Projects\MLR Odoo\`), una carpeta por cliente:
 
 ```
-Proyecto MLR/
-  <Cliente>/
-    Informes/               20260821/  20260906/ ...
-    Documentos extras/      20260821/ ...
-    Capturas de pantalla/   20260821/ ...
+MLR Odoo\
+  <Cliente>\
+    Informes\               20260929\ ...   entregables que abre el cliente
+    Documentos extras\      20260929\ ...   insumos y trabajo; lo interno en Interno\
+    Capturas de pantalla\   20260929\ ...   evidencia visual, nunca dentro de Informes
 ```
 
-Nombres fijos, fecha en formato `AAAAMMDD` dentro de cada una de las tres carpetas.
+Nombres fijos, fecha en formato `AAAAMMDD` dentro de cada una de las tres carpetas. Si la carpeta del cliente o cualquiera de sus subcarpetas no existe, se crea completa antes de guardar. Regla única: `skills/mlr-orquestador/references/carpetas-y-entrega.md`.
 
 El membrete no vive en local: está en la unidad compartida de la empresa en Drive, carpeta `MLR > Hoja Membretada`. El plugin trae los identificadores exactos de la carpeta y de los tres archivos, así que nunca hay que indicarle donde están.
 

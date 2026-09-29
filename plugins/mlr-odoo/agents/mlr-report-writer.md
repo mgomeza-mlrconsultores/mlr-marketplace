@@ -202,12 +202,14 @@ En caso de necesitar eliminar estas personalizaciones:
 
 ## Entrega al Usuario
 
+El PDF se guarda en `MLR Odoo\<Cliente>\Informes\<AAAAMMDD>\` y sus capturas en `MLR Odoo\<Cliente>\Capturas de pantalla\<AAAAMMDD>\`. Si la carpeta del cliente, alguna de las tres carpetas fijas (`Informes`, `Documentos extras`, `Capturas de pantalla`) o la de fecha no existen, se crean completas antes de guardar, sin preguntar.
+
 Tras generar el PDF, informar:
 ```
 ✅ Reporte MLR generado correctamente
 
 📄 Archivo: MLR_Reporte_Odoo_{Cliente}_{YYYY-MM-DD}.pdf
-📁 Ubicación: {directorio del proyecto}
+📁 Ubicación: MLR Odoo\{Cliente}\Informes\{AAAAMMDD}\
 
 Resumen de la sesión:
 — {N} modelo(s) creado(s)

@@ -1,6 +1,6 @@
 {
   "name": "mlr-contabilidad",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Procesos contables de MLR Consultores sobre Odoo. Conciliación bancaria guiada que cruza el estado de cuenta, Odoo y los CFDI del SAT, entrega el libro que dice si el mes cuadró con el previo de impuestos por flujo, y solo escribe en Odoo lo que la persona aprueba, con respaldo, bitácora y verificación. Trabaja con mlr-orquestador para memoria, redacción e identidad de la firma.",
   "author": {
     "name": "MLR Consultores"

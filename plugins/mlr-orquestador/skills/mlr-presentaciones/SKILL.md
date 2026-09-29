@@ -76,7 +76,7 @@ Entre cuatro y seis grupos. Mas de seis y el menú deja de orientar.
 
 Nombre: `MLR_Presentacion_<Tema>_<Cliente>_<AAAA-MM-DD>.html`.
 
-Ubicación: `Proyecto MLR/<Cliente>/Informes/<AAAAMMDD>/`, con las imágenes en `assets/` dentro de esa misma carpeta de fecha.
+Ubicación: `MLR Odoo\<Cliente>\Informes\<AAAAMMDD>\`, con las imágenes incrustadas o en `assets\` dentro de esa misma carpeta de fecha, y las capturas originales en `Capturas de pantalla\<AAAAMMDD>\`. Si la carpeta del cliente, alguna de las tres carpetas fijas o la de fecha no existen, se crean completas antes de guardar, sin preguntar (regla única en `mlr-orquestador/references/carpetas-y-entrega.md`).
 
 Toda presentación se acompaña de su informe en Word sobre el membrete de la firma. El deck expone; el informe sustenta.
 

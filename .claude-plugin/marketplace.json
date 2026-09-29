@@ -12,7 +12,7 @@
     {
       "name": "mlr-orquestador",
       "source": "./plugins/mlr-orquestador",
-      "version": "2.16.0",
+      "version": "2.17.0",
       "description": "Estandar operativo de MLR. Recupera contexto de cliente y directrices vigentes desde memoria en la nube al abrir cada sesion, enruta cada peticion al flujo especializado y aplica las normas de redaccion, identidad visual, diagramacion, video, animacion, entrega y archivo. Impide la respuesta generica.",
       "author": {
         "name": "MLR Consultores"
@@ -21,7 +21,7 @@
     {
       "name": "mlr-odoo",
       "source": "./plugins/mlr-odoo",
-      "version": "1.2.0",
+      "version": "1.2.1",
       "description": "Agentes y flujo MLR para personalizacion de Odoo: reunir contexto, ejecutar cambios en campos, modelos, vistas y acciones, verificar en navegador con captura, e informe en espanol.",
       "author": {
         "name": "MLR Consultores"
@@ -39,7 +39,7 @@
     {
       "name": "mlr-contabilidad",
       "source": "./plugins/mlr-contabilidad",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "description": "Procesos contables de MLR sobre Odoo. Conciliación bancaria guiada: estado de cuenta, Odoo y CFDI del SAT, libro que dice si el mes cuadró con el previo de impuestos por flujo, y aplicación en Odoo solo de lo aprobado, con respaldo, bitácora y verificación.",
       "author": {
         "name": "MLR Consultores"

@@ -25,7 +25,7 @@ Carga también `mlr-redaccion` antes de escribir una línea. Las reglas de allí
 4. **Contenido** en `contenido.py` (copia `scripts/contenido_ejemplo.py`). Título, cliente, saludo, introducción, secciones con bloques, titulares del HTML, portada y datos que llegan tarde (tabla de pruebas, párrafo de producción).
 5. **Word:** `python3 scripts/genera_docx.py <carpeta> <salida.docx> [datos.json]`, exportar a PDF y `verifica_documento.py` hasta que salga limpio.
 6. **HTML:** `python3 scripts/genera_html.py <carpeta> <salida.html> [datos.json]` y `python3 scripts/revisa_html.py <salida.html> <carpeta_png>`; mirar las laminas generadas.
-7. **Archivo:** `<Cliente>/Informes/AAAAMMDD/` para Word, PDF y HTML; `<Cliente>/Capturas de Pantalla/AAAAMMDD/` para las capturas. Nombre: `MLR_Guia_Funcional_<Tema>_<Cliente>_<AAAA-MM-DD>`.
+7. **Archivo:** `MLR Odoo\<Cliente>\Informes\AAAAMMDD\` para Word, PDF y HTML; `MLR Odoo\<Cliente>\Capturas de pantalla\AAAAMMDD\` para las capturas, nunca dentro de `Informes`; lo interno en `Documentos extras\AAAAMMDD\Interno\`. Si la carpeta del cliente, alguna de las tres carpetas fijas o la de fecha no existen, se crean completas antes de guardar, sin preguntar (regla única en `mlr-orquestador/references/carpetas-y-entrega.md`). Nombre: `MLR_Guia_Funcional_<Tema>_<Cliente>_<AAAA-MM-DD>`.
 
 ## 2. Estructura del contenido
 

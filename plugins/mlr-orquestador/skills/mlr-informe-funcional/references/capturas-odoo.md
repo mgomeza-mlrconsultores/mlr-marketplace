@@ -40,4 +40,4 @@ La captura del panel (`computer screenshot`) solo sirve para mirar, no guarda ar
 
 ## Nombres
 
-`capturas/01.jpg ... NN.jpg` en el orden en que aparecen en el texto. Al archivar en el PC: `<Cliente>/Capturas de Pantalla/AAAAMMDD/<Cliente>_<Tema>_Figura_NN.jpg`.
+`capturas/01.jpg ... NN.jpg` en el orden en que aparecen en el texto. Al archivar en el PC: `MLR Odoo\<Cliente>\Capturas de pantalla\AAAAMMDD\<Cliente>_<Tema>_Figura_NN.jpg`; si la carpeta no existe se crea con sus intermedias.
