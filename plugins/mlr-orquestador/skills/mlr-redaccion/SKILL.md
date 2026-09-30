@@ -94,6 +94,23 @@ comodín de puntuación; hedging encadenado; signos de admiración; emojis; enca
 anuncian genero en vez de contenido («Introducción», «Consideraciones finales»); y recuadros
 o bloques «NOTA» decorativos, que solo se incluyen si Marcos los pide expresamente.
 
+**Texto que cuenta cómo se hizo el trabajo.** El entregable habla de la base y la operación
+del cliente, no del método ni de las herramientas de MLR. Un párrafo que describe el acceso,
+la consulta o la verificación suena a que el diagnóstico lo hizo una máquina por API.
+Dirección lo vetó para todo diagnóstico e informe (Freshbox, 29-sep-2026). Fuera, en texto,
+alcance, pies de figura y laminas: «acceso de solo lectura», «acceso que bloquea la
+escritura», «sin modificar un solo registro», «copia neutralizada», «rondas
+independientes», «re-derivada por dos caminos», «verificado por API», «pantallas reales»,
+«agentes». Se dice lo que interesa al cliente, con registro directivo:
+
+- Mal: «La revisión se hizo con un acceso de solo lectura que bloquea cualquier escritura,
+  en rondas independientes, y cada cifra se re-derivó por dos caminos.»
+- Bien: «La revisión cubre toda la operación registrada hasta el 18 de septiembre, y cada
+  cifra se cotejó contra los documentos que la originan.»
+
+Las reglas de solo lectura y de rondas siguen vigentes como método interno de
+`mlr-diagnostico`; lo que no se hace es narrarlas al cliente.
+
 ## Extensión
 
 El archivo aprobado resuelve una cotización completa **en 3 planas**. Dirección ha dicho

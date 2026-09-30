@@ -14,6 +14,16 @@ Cada punto salio de un diagnóstico real y se comprobó en código o en datos. A
 - Al recalcular FIFO desde movimientos, las revaluaciones sin movimiento de la versión anterior no se toman: productos con existencia y valor cero.
 - Tras migrar, `stock.move.account_move_id` puede quedar vacío. El vinculo asiento–albarán se reconstruye por `account.move.ref` («albarán - producto») y `product_id` del apunte.
 
+## Lotes y fechas de caducidad en perecederos (Odoo 19)
+
+Revisión obligada si el cliente vende alimentos, químicos o cualquier producto con vida útil (Freshbox, 29-sep-2026):
+
+- Que el módulo de caducidades (`product_expiry`) esté instalado y que el grupo de lotes (`stock.group_production_lot`) esté implícito en los usuarios internos. Instalado no quiere decir usado.
+- Por producto almacenable activo: `tracking` (`lot`, `serial`, `none`) y `use_expiration_date` con sus plazos (`expiration_time`, `use_time`, `removal_time`, `alert_time`). Contar cuántos perecederos quedan en `none` y cuáles tienen caducidad marcada sin lote, que no sirve de nada.
+- `stock.lot` con `expiration_date` pasada y existencia, lotes con cantidad negativa y lotes de prueba que se quedaron en la base.
+- Estrategia de retiro (`removal_strategy_id`) en categorías y en la ubicación de existencias: sin FEFO el sistema no sugiere sacar primero lo que vence primero.
+- En el informe se cuenta con la lista de lotes (vencidos y negativos a la vista) y un pivote de productos por categoría y seguimiento. La corrección es activar lote y caducidad en los perecederos, capturar lotes en el conteo físico y fijar FEFO; en la cotización es la tarea «Lotes y fechas de caducidad» dentro de inventario.
+
 ## Herencia de 17 que hay que reconocer
 
 - Cuentas transitorias de mercancía recibida sin factura y enviada sin factura con saldos que la 19 ya no mueve. Descomponer su saldo por origen (reaperturas, errores de unidad de medida, entradas sin orden) antes de proponer el saneamiento.

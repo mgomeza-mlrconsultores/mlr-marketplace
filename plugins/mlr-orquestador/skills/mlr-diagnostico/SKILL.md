@@ -31,7 +31,7 @@ Cada hallazgo del catálogo se etiqueta: `[origen NN]` si se genero con la versi
 
 ## Fase 1 — Barrido por áreas
 
-Productos y categorías (tipo, valuación, método de costo, cuentas), unidades de medida y sus factores, almacenes, ubicaciones (incluidas las archivadas con existencias), rutas y reglas, compras y ventas sin documento de origen, fabricación, flotilla, activos, diarios, catálogo de cuentas (incluidas archivadas en uso), saldos por cuenta y por periodo, bancos y extractos, conciliaciones contra documentos cancelados, impuestos y CFDI, fechas de bloqueo, usuarios y permisos, y todo lo hecho a medida: módulos propios, `base.automation`, `ir.actions.server`, vistas de Studio, `ir.cron`, estados agregados por código.
+Productos y categorías (tipo, valuación, método de costo, cuentas), trazabilidad por lotes y fechas de caducidad en perecederos (seguimiento por producto, lotes vencidos o negativos y estrategia de retiro), unidades de medida y sus factores, almacenes, ubicaciones (incluidas las archivadas con existencias), rutas y reglas, compras y ventas sin documento de origen, fabricación, flotilla, activos, diarios, catálogo de cuentas (incluidas archivadas en uso), saldos por cuenta y por periodo, bancos y extractos, conciliaciones contra documentos cancelados, impuestos y CFDI, fechas de bloqueo, usuarios y permisos, y todo lo hecho a medida: módulos propios, `base.automation`, `ir.actions.server`, vistas de Studio, `ir.cron`, estados agregados por código.
 
 Si el hallazgo es que un diario de banco o caja no está conciliado, el diagnóstico lo documenta y la corrección se hace después con `mlr-conciliacion-bancaria` (plugin `mlr-contabilidad`), que ya trae la extracción, el cruce con CFDI y la aplicación con aprobación.
 
@@ -66,6 +66,7 @@ El reclamo recurrente de los clientes es que los diagnósticos son densos y no s
 - Cada hallazgo se cuenta en cuatro tiempos: **que paso** en una frase sin tecnicismos, **la captura** que lo muestra, **cuanto cuesta o que riesgo tiene**, y **que hay que hacer**.
 - Una captura real de la base por hallazgo, con pie numerado que dice lo que se ve y la cifra exacta de la pantalla. Método de captura en `references/lecciones-odoo.md`.
 - Sin nombres de modelo, campo, id, XML id ni código. Folios de documentos y nombres de cuentas si, porque el cliente los reconoce.
+- **El informe no cuenta cómo se hizo.** Ni en la introducción, ni en el alcance, ni en las laminas: nada de solo lectura, acceso que bloquea la escritura, copia neutralizada, rondas independientes, cifras re-derivadas por dos caminos ni pantallas «reales». Suena a trabajo hecho por máquina y dirección lo vetó (Freshbox, 29-sep-2026). El alcance dice qué cubre la revisión, con qué corte y que cada cifra se cotejó contra sus documentos; los patrones y ejemplos están en `mlr-redaccion`.
 - Primero lo mas grave y lo que rompe la operación en la versión nueva; después el resto en una lista corta; al final el orden sugerido para corregir.
 - Redacción con `mlr-redaccion`, membrete y maqueta con `mlr-identidad-visual` (`documento_mlr.py` con figuras en línea). `verifica_documento.py` tiene que salir limpio: si una plana queda por debajo del 70 %, se ajusta el tamaño de las figuras o se suelta el «mantener con el siguiente» de un párrafo; nunca se mete un salto de página.
 - Se entrega en dos formatos con el mismo contenido: el Word membretado para leer y la **presentación HTML con el formato de dirección** para exponer al cliente (Reciservicios, 11-sep-2026): portada oscura, una lamina por hallazgo con su captura, titular que es conclusión, menú de grupos arriba, contador, teclado, capturas que se amplían al tocarlas y modo claro/oscuro. Se genera con `genera_html.py` de `mlr-informe-funcional` a partir de un `contenido.py` propio del diagnóstico, con `CEJA_H = "Hallazgo"` para que cada lamina diga «Hallazgo 3.1» y un `("h", "3.1 ...")` por hallazgo. Portada con cuatro cifras clave en `kpi`, plan final en `flujo`. `revisa_html.py` en verde antes de entregar.
@@ -84,6 +85,8 @@ El reclamo recurrente de los clientes es que los diagnósticos son densos y no s
 | "Pongo la tabla con todos los casos" | El cliente lee un caso con su captura. Los totales van en la frase; el listado, si hace falta, en anexo. |
 | "Lo explico con el nombre del campo, es mas preciso" | El cliente no sabe que es `value_manual`. Se explica con la pantalla que ve. |
 | "Hago clic en Generar asiento para capturar el resultado" | Solo lectura. Se captura la pantalla previa, sin confirmar. |
+| "Explico en el alcance que usamos acceso de solo lectura y rondas independientes, da confianza" | Al cliente le suena a IA. El método se queda en la bitácora interna; el informe dice qué se revisó y con qué corte. |
+| "Los perecederos se controlan por cantidad, no es hallazgo" | Sin lote ni caducidad no hay retiro por vencimiento ni rastreo de un lote defectuoso. Se revisa en todo cliente que maneje perecederos. |
 
 ## Banderas rojas
 

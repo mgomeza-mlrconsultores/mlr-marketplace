@@ -37,6 +37,17 @@ Cotizaciones cerradas que sirven de calibración:
 | Aire Libre LATAM | implantación nueva, 3 empresas, catálogo menor a 500 productos | 250 | 40 | 8 |
 | Dunedin | base viva en producción, 1 empresa, 5 almacenes, 29 rutas de venta | 264 | 50 | 10 |
 | Ah Cacao | base viva, 8 companias a consolidar en una, 8 almacenes, 12 cajas, 1,373 productos, fabricación activa; preferencial 1,200 | 215 | 48 | 11 |
+| Prodetecs | base viva, saneamiento de inventario y listas de materiales | 90 | 20 | 5 |
+| Freshbox | base viva de 10 meses, reimplantación contable y de inventario en dos proyectos más la opción conjunta; tarifa ofertada 900 | 170 (85 + 85) | 31 | 7 |
+
+### Freshbox, reparto de horas (29-sep-2026)
+
+Sirve de referencia para sanear una base viva pequeña con contabilidad e inventario rotos a la vez. Horas cerradas con Marcos después de bajar de 230 a 170 por tratarse de reimplantación sobre datos existentes.
+
+- Contabilidad, 85 h: levantamiento contable y fiscal 2, de cobranza y bancos 1, flujo objetivo 1.5, usuarios y permisos 1, plan de cuentas 10 (fusión de duplicadas), diarios 1.5, impuestos 2, saldos iniciales 9, pagos 14, extractos 2, modelos de conciliación 1.5, conciliación bancaria 15, regularización contra CFDI del SAT 14, material 1.5, sesiones 6, fechas de bloqueo y aceptación 3.
+- Inventario, 85 h: levantamiento de inventario 1.5, de compras y ventas 1.5, flujo 1.5, categorías 1.5, productos 4, unidades de medida 1, ubicaciones y rutas 3, lotes y fechas de caducidad 3, costes en destino 1.5, regularización de existencias 8, valoración 8, cierre de valoración 6.5, históricos de compras 16, control de facturas 3.5, históricos de ventas 13.5, política de facturación 1, material 1.5, sesiones 6, aceptación 2.5.
+
+Lectura: en una base viva el peso está en pagos, conciliación y regularización de históricos, no en la configuración. Las tareas de configuración puntual (unidades, diarios, costes en destino) no pasan de hora y media.
 
 ## Base viva contra implantación nueva
 
@@ -75,13 +86,14 @@ Se calcula y se distribuye por tarea en un archivo de uso interno de MLR. **Nunc
 
 ## Condiciones económicas
 
-- **Tarifa de lista** y **tarifa preferencial** con fecha límite explicita. Se muestra el beneficio en importe.
-- **Una sola tarifa para todo el trabajo, incluido el desarrollo.** Dirección lo fijo el 23 de septiembre de 2026: no se diferencia la tarifa por tipo de trabajo ni se presenta un cuadro de rangos. Tarifa de lista **1,500 MXN por hora** y preferencial **1,300 MXN por hora**, iguales para configuración, datos, definición contable, capacitación, acompañamiento y desarrollo. Dirección puede autorizar una preferencial menor para un proyecto concreto —Ah Cacao quedo en 1,200—; la de lista no se mueve. La preferencial lleva fecha límite explicita en cada ronda.
+- **Tarifa ofertada, sola.** Desde el 29 de septiembre de 2026, dirección fijó una **tarifa ofertada de 900 MXN por hora** para toda cotización nueva, con fecha límite explícita. El documento muestra únicamente esa tarifa: no lleva tarifa de lista, ni preferencial, ni el beneficio en importe contra la lista, ni columnas de importe de lista en el anexo. La redacción aprobada: «MLR Consultores ofrece a <cliente> una tarifa de $900.00 por hora, aplicable por igual a todo el trabajo y condicionada a la aceptación por escrito de esta cotización a más tardar el <fecha>. Con esa tarifa, el alcance del apartado 1 importa <importe> antes del impuesto al valor agregado.»
+- **Una sola tarifa para todo el trabajo, incluido el desarrollo.** Dirección lo fijo el 23 de septiembre de 2026: no se diferencia la tarifa por tipo de trabajo ni se presenta un cuadro de rangos. La tarifa ofertada es igual para configuración, datos, definición contable, capacitación, acompañamiento y desarrollo.
+- **Historial de tarifas.** Hasta el 28 de septiembre se cotizó con lista 1,500 y preferencial 1,300 (Ah Cacao con preferencial 1,200). Los clientes cotizados con esas tarifas las conservan en sus reemisiones salvo que dirección diga otra cosa; lo nuevo va a 900.
 - **Nunca se compara el precio con el paquete de implementación de Odoo en un entregable del cliente.** Odoo publica su precio por hora en pesos y es menor; meter la comparación en la propuesta invita a discutir tarifa en lugar de alcance.
 - **Tres esquemas de pago, siempre los tres**, con un cuadro que los pone lado a lado:
   - **A, por hitos:** anticipo del 30% a la firma y el 70% de cada hito facturado al iniciarlo.
   - **B, mensual:** pagos mensuales iguales, sin anticipo, facturados al inicio de cada mes.
-  - **C, pago único:** un solo pago a la firma con 5% de descuento por pronto pago, aprobado por dirección como esquema permanente. El descuento se calcula sobre el importe preferencial de cada opción de alcance, es el 5% redondeado al centavo, mitad hacia arriba, y el pago es la diferencia. La propuesta dice el descuento en pesos y la tarifa efectiva por hora que resulta (1,300 x 0.95 = 1,235 con la preferencial general). El descuento rige solo dentro de la vigencia de la preferencial. El total de C queda siempre por debajo del de A y B; si no, el cálculo está mal.
+  - **C, pago único:** un solo pago a la firma con 5% de descuento por pronto pago, aprobado por dirección como esquema permanente. El descuento se calcula sobre el importe de cada opción de alcance a la tarifa ofertada, es el 5% redondeado al centavo, mitad hacia arriba, y el pago es la diferencia. La propuesta dice el descuento en pesos y la tarifa efectiva por hora que resulta (900 x 0.95 = 855). El descuento rige solo dentro de la vigencia de la tarifa ofertada. El total de C queda siempre por debajo del de A y B; si no, el cálculo está mal.
 - **Pago anticipado, nunca vencido.** Toda factura se paga antes de ejecutar el mes o el hito que ampara, y MLR no inicia el trabajo de un periodo cuya factura no este cubierta. La clausula va escrita en las condiciones de la propuesta económica; dirección la pidió expresamente porque las propuestas anteriores no la decían.
 - **Opciones de alcance y esquemas de pago no se mezclan.** Las opciones son lo que el cliente contrata —base, ampliado, con o sin desarrollo—; los esquemas son como lo paga. Cuando hay mas de una opción, cada cuadro de esquemas lleva una columna por opción, lado a lado, y ningún renglón combina las dos cosas. Sin colores distintos por opción: saturan el documento.
 - **Horas efectivas de consultoría, no días naturales.** El plazo va en su propio apartado y no se deriva de las horas.

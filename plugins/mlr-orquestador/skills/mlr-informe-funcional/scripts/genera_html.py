@@ -9,8 +9,20 @@ figure.shot + lightbox, dark mode, print at 13.333 x 7.5 in. On top of it, the
 firm's deck bar: vector logo, group menu built from data-nav, progress bar,
 counter, keyboard navigation and theme button. Self-contained: captures are
 embedded as data URIs and fonts fall back to local families without internet.
+
+Sheet layout (Freshbox, 29-sep-2026): wide container, text on the left and
+captures on the right without dominating the sheet. Each sheet picks, from the
+aspect ratio of its captures, stacked ("pila"), side by side ("fila") or a
+two-column grid ("rejilla"); a fit script keeps every sheet inside the viewport
+and figures under FIG_SHARE of its height. Sheets without figures put the
+headline on the left and the text on the right ("texto"), or run full width
+when they carry figures of numbers or a flow ("solo").
 """
 import base64, html, os, sys, json, re, importlib.util
+try:
+    from PIL import Image
+except ImportError:
+    Image = None
 
 E = lambda t: html.escape(t, quote=True)
 FIRMA = [("Director General", "direccionjm@mlrconsultores.com", "55 6302 8143"),
@@ -18,6 +30,10 @@ FIRMA = [("Director General", "direccionjm@mlrconsultores.com", "55 6302 8143"),
          ("MLR Consultores", "mlrconsultores.com", "Av. Presidente Plutarco Elías Calles 957, Int. 1, Col. Iztaccíhuatl, C.P. 03520, Benito Juárez, Ciudad de México")]
 CIERRE = "Quedamos atentos a sus comentarios y esperamos contar con su aprobación para definir los siguientes pasos."
 LEMA = "Contadores que sí le entienden a Odoo"
+
+UPSCALE = 1.25       # captures are drawn up to 125 % of their pixel width
+FIG_SHARE = 0.64     # figures never take more than this share of the viewport height
+PRINT_ROOM, PRINT_CAP = 5.0, 0.45   # inches for figures on the 13.333 x 7.5 in print page
 
 LOGO_DARK = '''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 200" role="img" aria-label="MLR Consultores"><g><rect x="10" y="14" width="172" height="172" rx="6" fill="rgba(255,255,255,0.12)" stroke="#FFFFFF" stroke-width="2"/><rect x="26" y="30" width="140" height="140" fill="none" stroke="#FFFFFF" stroke-width="4"/><path d="M50 150 L50 64 L96 116 L142 64 L142 150" fill="none" stroke="#FFFFFF" stroke-width="9" stroke-linejoin="miter"/><path d="M74 150 L74 92 M74 150 L104 150" fill="none" stroke="#FFFFFF" stroke-width="9"/><path d="M118 150 L118 92 L134 92 Q146 92 146 104 Q146 116 134 116 L118 116 M130 116 L146 150" fill="none" stroke="#FFFFFF" stroke-width="8"/></g><text x="208" y="104" font-family="Oswald, Archivo, 'DejaVu Sans', sans-serif" font-weight="700" font-size="62" letter-spacing="6" fill="#FFFFFF">MLR</text><text x="210" y="140" font-family="Oswald, Archivo, 'DejaVu Sans', sans-serif" font-weight="600" font-size="27" letter-spacing="7" fill="#EAF1F2">CONSULTORES</text><text x="211" y="164" font-family="Inter, 'DejaVu Sans', sans-serif" font-weight="400" font-size="13" letter-spacing="1.2" fill="#CFE0E2">CONSULTORÍA FISCAL ESPECIALIZADA</text></svg>'''
 
@@ -102,6 +118,42 @@ dl.meta{grid-template-columns:repeat(2,auto)}.contact{grid-template-columns:1fr}
 @media (max-width:560px){.wrap{padding:22px 18px 28px}.sheet{padding-left:10px;padding-right:10px}#pgtxt{display:none}}
 @media print{@page{size:13.333in 7.5in;margin:0}header.nav,#lb{display:none}html{scroll-snap-type:none}
 .sheet{min-height:7.5in;height:7.5in;padding:.3in;page-break-after:always;break-after:page}.wrap{box-shadow:none;height:100%}}
+/* adaptive sheet layout */
+.bar{max-width:min(92vw,1600px);padding:0 8px}
+.sheet{min-height:calc(100vh - var(--hd));padding:14px 2vw;align-items:stretch}
+.sheet:first-child{min-height:100vh;padding-top:calc(var(--hd) + 14px)}
+.wrap{max-width:min(92vw,1600px);min-height:calc(100vh - var(--hd) - 28px);display:flex;flex-direction:column;padding:40px clamp(36px,4vw,80px) 46px}
+.wrap>.grid2{flex:1;align-content:center}
+p{max-width:68ch}
+.txt h2::before{content:"";display:block;width:56px;height:4px;border-radius:2px;background:var(--teal);margin-bottom:20px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .txt h2::before{background:var(--mist)}}:root[data-theme="dark"] .txt h2::before{background:var(--mist)}
+.split h2,.texto h2,.solo h2{font-size:clamp(30px,2.9vw,50px);max-width:18ch;margin-bottom:22px}
+.split .grid2,.texto .grid2{grid-template-columns:5fr 7fr;gap:clamp(40px,4.5vw,88px);align-items:center}
+.split.par .grid2{grid-template-columns:4.2fr 7.8fr}
+.split.tabla .grid2{grid-template-columns:1fr 1fr;align-items:start}.split.tabla>.wrap>h2{max-width:34ch}
+.split.tabla>.wrap>h2::before{content:"";display:block;width:56px;height:4px;border-radius:2px;background:var(--teal);margin-bottom:20px}
+.figs{display:grid;gap:18px;align-content:center}
+.figs.pila{grid-template-columns:1fr}
+.figs.fila{grid-template-columns:var(--cols);align-items:start}
+.figs.rejilla{grid-template-columns:1fr 1fr;align-items:start}.figs.rejilla figcaption{font-size:11.5px}
+.figs figure.shot{width:fit-content;max-width:100%;margin:0 auto}
+.figs figure.shot img{width:var(--w);max-width:100%;height:auto}
+.figs figure.shot figcaption{width:0;min-width:100%}
+.solo .kpis{margin:26px 0 28px}
+.solo ol.flow{margin:40px 0 10px}.solo ol.flow li{font-size:15.5px;padding:48px 18px 12px}.solo ol.flow li b{font-size:19px;margin-bottom:4px}
+.close .wrap{justify-content:space-between;padding-top:56px;padding-bottom:60px}
+.close .cover-logo.sm svg{height:64px}
+.close .lead{font:800 clamp(32px,3.6vw,60px)/1.06 var(--f-head);font-stretch:74%;letter-spacing:-.012em;max-width:26ch;margin:auto 0 44px;color:#fff}
+.close .contact{padding-top:26px}.close .motto{font-size:22px;margin-top:28px}
+@media (max-height:900px){.wrap{padding:28px clamp(30px,3.4vw,64px) 34px}.split h2,.texto h2,.solo h2{font-size:clamp(28px,2.5vw,42px)}
+.close .wrap{padding-top:40px;padding-bottom:44px}.close .lead{font-size:clamp(30px,3.2vw,50px);margin-bottom:30px}}
+@media (max-height:800px){.cover .wrap{padding:30px clamp(32px,3vw,60px) 36px}.kicker{margin:22px 0 10px}dl.meta{margin:20px 0 16px}}
+@media (max-width:1440px){.brand span{display:none}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}figure.shot{transition:none}}
+@media (max-width:980px){.split .grid2,.texto .grid2,.figs.fila,.figs.rejilla{grid-template-columns:1fr}.wrap{min-height:0}.sheet{min-height:0}}
+@media print{.sheet{min-height:7.5in;height:7.5in;padding:.3in}.sheet:first-child{min-height:7.5in;padding-top:.3in}
+.wrap{min-height:0;height:100%;max-width:none}
+.figs figure.shot img{width:auto!important;max-height:var(--ph)}}
 '''
 
 
@@ -126,6 +178,29 @@ document.querySelectorAll('figure.shot').forEach(f=>{f.addEventListener('click',
 lb.addEventListener('click',close);
 document.getElementById('theme').onclick=()=>{const r=document.documentElement;const d=r.dataset.theme==='dark'||(!r.dataset.theme&&matchMedia('(prefers-color-scheme: dark)').matches);r.dataset.theme=d?'light':'dark'};
 mark(0);
+
+(function(){
+const nav=document.querySelector('header.nav');
+function fit(){
+  const mobile=innerWidth<=980, target=innerHeight-nav.offsetHeight-28;
+  document.querySelectorAll('.sheet .figs').forEach(fg=>{
+    const imgs=[...fg.querySelectorAll('img')];imgs.forEach(i=>i.style.width='');
+    if(mobile||!imgs.length)return;
+    const wrap=fg.closest('.wrap');let prev=1e9;
+    for(let t=0;t<6;t++){
+      const over=Math.max(wrap.offsetHeight-target,fg.offsetHeight-__SHARE__*innerHeight);if(over<=1||over>=prev-1)break;prev=over;
+      const rows={};imgs.forEach(i=>{const r=i.getBoundingClientRect(),k=Math.round(r.top/8);rows[k]=Math.max(rows[k]||0,r.height)});
+      const base=Object.values(rows).reduce((a,b)=>a+b,0);
+      const k=Math.max(.3,1-over/base);imgs.forEach(i=>{i.style.width=(i.getBoundingClientRect().width*k)+'px'});
+    }
+  });
+}
+let tm;addEventListener('resize',()=>{clearTimeout(tm);tm=setTimeout(fit,120)});
+addEventListener('beforeprint',()=>document.querySelectorAll('.sheet .figs img').forEach(i=>i.style.width=''));
+addEventListener('afterprint',fit);
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);
+addEventListener('load',fit);fit();
+})();
 '''
 
 
@@ -149,11 +224,22 @@ class Hojas(object):
                 return "data:%s;base64,%s" % (mime, base64.b64encode(open(p, "rb").read()).decode())
         return None
 
-    def figura(self, key, cap):
+    def tam(self, key):
+        for ext in ("jpg", "png"):
+            p = os.path.join(self.carpeta, "capturas", "%s.%s" % (key, ext))
+            if os.path.exists(p) and Image is not None:
+                return Image.open(p).size
+        return (1600, 900)
+
+    def figura(self, key, cap, ph=None):
         # never loading="lazy": lazy images come out blank when the page is printed to PDF
         n = self.fign.setdefault(key, len(self.fign) + 1)
         src = self.img(key)
-        inner = ('<img src="%s" alt="%s">' % (src, E(cap))) if src else \
+        size = ""
+        if ph is not None:
+            nw, nh = self.tam(key)
+            size = ' width="%d" height="%d" style="--w:%dpx;--ph:%.2fin"' % (nw, nh, round(nw * UPSCALE), ph)
+        inner = ('<img%s src="%s" alt="%s">' % (size, src, E(cap))) if src else \
                 '<div class="ph">Captura %s pendiente</div>' % key
         return ('<figure class="shot" tabindex="0" data-cap="Figura %d. %s">%s'
                 '<figcaption><b>Figura %d.</b> %s</figcaption></figure>' % (n, E(cap), inner, n, E(cap)))
@@ -197,12 +283,44 @@ class Hojas(object):
                                       ('<div class="figs n%d">%s</div>' % (len(figuras), figs)) if figs else ""))
 
     def seccion(self, bloques, grupo, ceja, titular):
-        """Figures go to the right column; with no figures, tables go there."""
+        """Text left, captures right. The arrangement of the captures comes from their aspect ratio."""
         figs = [b for b in bloques if b[0] == "fig"]
-        der = figs or [b for b in bloques if b[0] == "t"]
-        txt = [b for b in bloques if b not in der]
-        return self.hoja(grupo, ceja, titular, "".join(self.bloque(b) for b in txt),
-                         [self.bloque(b) for b in der], cls="step" if len(figs) < 3 else "step many")
+        txt = "".join(self.bloque(b) for b in bloques if b[0] != "fig")
+        top = '<div class="topline"><span>%s</span><span>%s · Odoo</span></div>' % (E(ceja), E(self.C.CLIENTE))
+        h2 = "<h2>%s</h2>" % E(titular)
+        if not figs:
+            plano = all(b[0] in ("p", "v", "h") for b in bloques)
+            lay = "texto" if plano else "solo"
+            cuerpo = ('<div class="grid2"><div class="txt">%s</div><div>%s</div></div>' % (h2, txt)) if plano else \
+                     ('<div class="grid2"><div class="txt">%s%s</div></div>' % (h2, txt))
+        else:
+            rs = [w / float(h) for w, h in (self.tam(b[1]) for b in figs)]
+            if len(figs) >= 3:
+                arr = "rejilla"
+            elif len(figs) == 2 and (max(rs) < 2 or min(rs) < 1.2):
+                arr = "fila"
+            else:
+                arr = "pila"
+            lay = "split" if arr == "pila" else "split par"
+            if arr == "pila":
+                room = PRINT_ROOM - PRINT_CAP * len(figs)
+                inv = sum(1 / r for r in rs)
+                phs = [room * (1 / r) / inv for r in rs]
+            else:
+                filas = 1 if arr == "fila" else (len(figs) + 1) // 2
+                phs = [(PRINT_ROOM - PRINT_CAP * filas) / filas] * len(figs)
+            fh = "".join(self.figura(b[1], b[2], ph) for b, ph in zip(figs, phs))
+            style = (' style="--cols:%s"' % " ".join("%.2ffr" % r for r in rs)) if arr == "fila" else ""
+            if any(b[0] == "t" for b in bloques):
+                # a table next to captures: headline across the sheet, table and captures below at equal width
+                lay += " tabla"
+                cuerpo = '%s<div class="grid2"><div class="txt">%s</div><div class="figs %s"%s>%s</div></div>' % (
+                    h2, txt, arr, style, fh)
+            else:
+                cuerpo = '<div class="grid2"><div class="txt">%s%s</div><div class="figs %s"%s>%s</div></div>' % (
+                    h2, txt, arr, style, fh)
+        return '<section class="sheet %s" data-nav="%s"><div class="wrap">%s%s</div></section>' % (
+            lay, E(grupo), top, cuerpo)
 
 
 PORTADA_HTML = ('<section class="sheet cover" data-nav="Inicio" data-bg="dark"><div class="wrap">'
@@ -269,7 +387,7 @@ def pagina(carpeta, datos=None):
         if g not in seen:
             seen.add(g)
             groups.append([g, i])
-    js = JS.replace("__GROUPS__", json.dumps(groups, ensure_ascii=False))
+    js = JS.replace("__GROUPS__", json.dumps(groups, ensure_ascii=False)).replace("__SHARE__", str(FIG_SHARE))
     return PAGINA % (E(C.TITULO_HTML), CSS, LOGO_DARK, E(C.BARRA), cuerpo, js)
 
 

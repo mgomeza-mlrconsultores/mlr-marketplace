@@ -13,6 +13,8 @@ Una cotización de MLR es un compromiso técnico con precio. Cada hora que se es
 
 Cada fase se cierra en el chat, en texto, y se espera aprobación explicita antes de pasar a la siguiente. Aprobar la fase 3 no aprueba la fase 4. "Ok" a una lista de etapas no autoriza redactar la propuesta.
 
+La ruta se presenta en el chat **como texto, no como tabla**: una línea por subtarea con su número, nombre, horas y una descripción corta, agrupada por aplicación y con el total de cada hito al pie. Así la revisa Marcos renglón por renglón y corrige nombres y horas antes de que exista un archivo (Freshbox, 29-sep-2026: se generaron los documentos sin cerrar la ruta en el chat y hubo que rehacerlos).
+
 **Sin excepciones:**
 
 - No adelantar el archivo "para que lo veas mas rápido".
@@ -73,9 +75,9 @@ El esqueleto arranca en descubrimiento y cierra en capacitación por área, con 
 
 Cada tarea declara aplicación, tipo de trabajo, entregable verificable e hito de facturación. Una tarea sin entregable verificable no es tarea: es relleno.
 
-La ruta se agrupa **por aplicación de Odoo**, no por fase abstracta, en tres niveles — aplicación, tarea y subtarea — numerados 1.1.1, 1.1.2, 1.2.1. El número es el identificador que se usa en el chat, en el anexo y en la conversación con el cliente. La primera aplicación es Descubrimiento, con el levantamiento por área.
+La ruta se agrupa **por aplicación de Odoo**, no por fase abstracta, en tres niveles — aplicación, tarea y subtarea — numerados 1.1.1, 1.1.2, 1.2.1. El número es el identificador que se usa en el chat, en el anexo y en la conversación con el cliente. El orden es fijo: **Descubrimiento** (levantamiento por área, poco partido, y el flujo objetivo), **Configuración general** (usuarios y permisos) y después las aplicaciones que toca el proyecto, con Capacitación y cierre al final. En un proyecto contable todo el trabajo va dentro de la aplicación **Contabilidad**, partida en tareas, no en aplicaciones sueltas.
 
-La tarea y la subtarea se nombran con **la funcionalidad de Odoo** («Listas de materiales», «Costes en destino», «Ajustes de inventario»), con mayúscula solo en la primera palabra, y la **descripción es general**: dice qué trabajo se hace en esa funcionalidad, sin cifras, folios ni nombres del cliente, que van en las observaciones del plan de trabajo.
+La tarea y la subtarea se nombran con **la funcionalidad de Odoo** («Listas de materiales», «Costes en destino», «Regularización de existencias»), con mayúscula solo en la primera palabra, y la **descripción es general**: dice qué trabajo se hace en esa funcionalidad, sin cifras, folios ni nombres del cliente, que van en las observaciones del plan de trabajo. Un concepto contable no es una funcionalidad: «Costo de ventas», «Cuentas por cobrar», «Cartera al corte» o «Contabilidad electrónica» no son tareas, y la facturación electrónica no es una aplicación del proyecto. El detalle, con la lista de nombres vetados y los nombres correctos, en `references/esquema-y-ruta.md`.
 
 **El desarrollo es siempre la última aplicación de la ruta, separada del resto y condicional.** No se reparte dentro de las aplicaciones que lo usan. Va al final de la propuesta, con su propio total, para que el cliente decida si lo incluye sin tocar el resto del alcance.
 
@@ -91,7 +93,7 @@ Detalle y base de calibración en `references/horas-y-calibracion.md`.
 
 ### Fase 6 — Condiciones económicas
 
-Una sola tarifa para todo el trabajo —lista 1,500, preferencial 1,300 salvo que dirección autorice otra— con fecha límite, los tres esquemas de pago A, B y C, la clausula de pago anticipado, hitos de facturación, precio por sede cuando el cliente opera varias, y lo que se factura aparte — la iguala contable no se mezcla con la implementación.
+Una sola tarifa para todo el trabajo: la **tarifa ofertada**, que desde el 29 de septiembre de 2026 es de **900 MXN por hora** para toda cotización nueva, con fecha límite. El documento muestra solo esa tarifa: no se escribe tarifa de lista, ni preferencial, ni el beneficio contra la lista. Los clientes cotizados antes conservan su tarifa. Con ella van los tres esquemas de pago A, B y C, la clausula de pago anticipado, hitos de facturación, precio por sede cuando el cliente opera varias, y lo que se factura aparte — la iguala contable no se mezcla con la implementación. Detalle en `references/horas-y-calibracion.md`.
 
 La contingencia interna existe, se calcula y **nunca aparece en un entregable del cliente**, ni como renglón, ni sumada a las horas, ni mencionada.
 
@@ -146,6 +148,11 @@ Si una regla de formato aparece contradictoria entre esta skill y las de arriba,
 | "Creo una carpeta para la propuesta y ahí la dejo" | El cliente ya tiene carpeta en `MLR Odoo\`. El entregable va en su `Informes\<AAAAMMDD>\` y el trabajo interno en `Documentos extras\<AAAAMMDD>\Interno\`. |
 | "Nombro la tarea con lo que queda hecho para el cliente" | El nombre es la funcionalidad de Odoo: «Unidades de medida y empaquetados», no «Corrección de las 11 unidades que valen una pieza». |
 | "Pongo las cifras del diagnóstico en la descripción, así se ve el trabajo" | La descripción es general y sigue siendo cierta aunque el levantamiento mueva las cifras. Las cifras van en las observaciones del plan. |
+| "Pongo «Costo de ventas» o «Cuentas por cobrar» como tarea" | Son conceptos, no funcionalidades. El costo de ventas sale de las facturas y del inventario; se cotiza la funcionalidad que lo produce. |
+| "Llamo «Ajustes de inventario» a la regularización" | Dirección lo corrigió: «Regularización de existencias». |
+| "Separo las facturas de proveedor y de cliente como tareas" | Es «Regularización de históricos de compras» y «de ventas», e incluye los documentos primarios y sus facturas. |
+| "Junto contabilidad e inventario en una sola cotización y le llamo integral" | Se cotizan por separado y, si dirección quiere decidir, se agrega la opción **conjunta**. «Integral» es relleno para el verificador y no se usa. |
+| "Pongo la tarifa de lista para que se vea el descuento" | Dirección pidió solo la tarifa ofertada, sin lista ni beneficio. |
 | "Escribo Listas de Materiales, como en inglés" | En español solo va mayúscula la primera palabra: «Listas de materiales». |
 | "El nombre del archivo va sin tildes por compatibilidad" | Windows, Drive y el correo aceptan tildes. «Propuesta Económica», no «Propuesta Económica». |
 | "Redondeo las cifras a mano en el Excel" | Toda cifra se comprueba ejecutando. Fórmulas vivas, verificación programática. |

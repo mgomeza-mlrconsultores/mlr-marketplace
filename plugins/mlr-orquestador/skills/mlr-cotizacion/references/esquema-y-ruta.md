@@ -35,15 +35,41 @@ La ruta sigue el esquema del proyecto Taiga en tres niveles, numerados de forma 
 
 La primera aplicación es siempre **Descubrimiento**, con el levantamiento operativo desglosado por área (inventario, compras, ventas, listas de materiales, valoración, contabilidad, según el proyecto) y el flujo objetivo con sus criterios de configuración como entregable. El levantamiento no se mete dentro de Inventario ni de ninguna otra aplicación. En una base viva, después del levantamiento solo se cotiza lo que falta.
 
-Después van las aplicaciones de Odoo que el proyecto toca — Inventario, Manufactura, Compras, Ventas, Punto de venta, Contabilidad, Contabilidad analítica, Saldos iniciales — y al final Capacitación y cierre y, si existe, Desarrollo. Una aplicación sin tareas no aparece.
+La segunda es **Configuración general**, con usuarios y permisos y lo que afecta a toda la base. Después van las aplicaciones de Odoo que el proyecto toca — Inventario, Manufactura, Compras, Ventas, Punto de venta, Contabilidad, Contabilidad analítica — y al final Capacitación y cierre y, si existe, Desarrollo. Una aplicación sin tareas no aparece.
+
+El levantamiento no se parte de más: una subtarea por área que de verdad se levanta por separado (en Freshbox, «Levantamiento de inventario» y «Levantamiento de compras y ventas»), no una por cada funcionalidad que luego se configura.
+
+En un proyecto contable todo el trabajo de fondo va en la aplicación **Contabilidad**, partida en tareas: catálogo, diarios, impuestos, saldos iniciales, pagos, extractos, modelos de conciliación, conciliación bancaria y regularización contra CFDI. Pagos y bancos no son aplicaciones aparte.
 
 La aplicación es el agrupador de la tabla de horas del documento principal y del resumen del anexo.
 
 ## Nombres de tareas y subtareas: la funcionalidad de Odoo
 
-El nombre de la tarea y de la subtarea es **el nombre de la funcionalidad tal como aparece en Odoo**: «Categorías de producto», «Productos», «Listas de materiales», «Unidades de medida y empaquetados», «Costes en destino», «Ubicaciones», «Ajustes de inventario», «Valoración de inventario», «Órdenes de compra». En Descubrimiento y en Capacitación y cierre, donde no hay pantalla de Odoo, el nombre es el del área o el del entregable: «Levantamiento de compras», «Flujo objetivo y criterios de configuración», «Sesiones teóricas y prácticas», «Aceptación y cierre de alcance».
+El nombre de la tarea y de la subtarea es **el nombre de la funcionalidad tal como aparece en Odoo**: «Categorías de producto», «Productos», «Listas de materiales», «Unidades de medida y empaquetados», «Costes en destino», «Ubicaciones y rutas», «Lotes y fechas de caducidad», «Valoración de inventario», «Cierre de valoración», «Plan de cuentas», «Diarios y cuentas predeterminadas», «Impuestos», «Pagos», «Extractos bancarios», «Modelos de conciliación», «Conciliación bancaria», «Fechas de bloqueo». En Descubrimiento y en Capacitación y cierre, donde no hay pantalla de Odoo, el nombre es el del área o el del entregable: «Levantamiento de compras», «Flujo objetivo y criterios de configuración», «Sesiones teóricas y prácticas», «Aceptación y cierre de alcance».
 
 El nombre no lleva verbos, cifras, folios, nombres de cuentas ni nada propio del cliente. Mal: «Ruta de traslado CEDIS a sede con documento único», «Corrección de las 11 unidades que valen una pieza». Bien: «Rutas», «Unidades de medida y empaquetados».
+
+### Nombres vetados y su sustituto
+
+Fijados por Marcos en la cotización de Freshbox (29-sep-2026):
+
+- «Ajustes de inventario» → **«Regularización de existencias»**, que incluye el conteo físico y la corrección de negativos.
+- «Facturas de proveedor» y «Facturas de cliente» como tareas → **«Regularización de históricos de compras»** y **«Regularización de históricos de ventas»**. Cada una revisa los documentos primarios (órdenes, recepciones, entregas) y sus facturas. Las facturas de gasto con uso G01 que llevan orden de compra van en compras; las facturas de venta, en ventas.
+- «Gastos», «Complementos de pago», «Contabilidad electrónica» → en contabilidad, una sola tarea: **«Regularización de movimientos contables contra CFDI del SAT»**, que cubre las facturas de gasto registradas directo en contabilidad y los complementos de pago.
+- «Costo de ventas», «Cuentas por cobrar», «Cartera al corte» → son conceptos. El costo de ventas se construye con las facturas y el inventario; la cartera sale de los pagos y la conciliación. Se nombra la funcionalidad que los produce.
+- «Facturación electrónica» como aplicación → no va: el timbrado ya opera y lo que falla se corrige en la regularización contra CFDI.
+- «Parámetros del sistema y claves de API» → no se configura. La revocación de llaves la hace el cliente y va como supuesto.
+
+### Contabilidad frente a inventario: dónde va cada cosa
+
+Cuando el cliente pide separar el saneamiento contable del de inventario, la regla es el documento de origen:
+
+- Lo que toca las aplicaciones de Compras, Ventas e Inventario, con sus documentos primarios, sus facturas, el costo y la valoración contable del inventario, va en la cotización de **inventario**.
+- Los gastos y movimientos registrados directo en contabilidad, los pagos, la cobranza, los bancos y la conciliación van en la cotización de **contabilidad**.
+
+Cada una se cotiza completa, con sus tres documentos, y además se arma la opción **conjunta** para que dirección decida: suma las dos rutas, une en una sola tarea lo que se repite (flujo objetivo, material de soporte, sesiones de capacitación, fechas de bloqueo y aceptación) sumando sus horas, y ordena las aplicaciones en Descubrimiento, Configuración general, Contabilidad, Inventario, Compras, Ventas y Capacitación y cierre. Nunca se le llama «integral»: el verificador lo marca como adjetivación vacía. El archivo lleva el sufijo `<Cliente> Contabilidad e Inventario`.
+
+### Mayúsculas
 
 Se escribe con mayúscula solo en la primera palabra y en los nombres propios, igual en la aplicación, la tarea y la subtarea: «Listas de materiales», «Configuración general», «Compras y ventas», nunca «Listas de Materiales».
 
@@ -94,4 +120,4 @@ Entre cuatro y seis. Cada hito cierra con algo que el cliente puede ver funciona
 
 Referencia: entre 40 y 65 tareas para proyectos de 200 a 600 horas. Menos de 30 en un proyecto grande significa tareas demasiado gruesas para controlar avance; mas de 70 significa granularidad que el cliente no va a leer y que MLR no va a administrar.
 
-Ejecutados: Aire Libre LATAM 250 h en 40 tareas sobre 8 aplicaciones y 6 hitos; Dunedin 264 h en 50 tareas sobre 10 aplicaciones y 6 hitos; Prodetecs 90 h en 20 subtareas sobre 5 aplicaciones y 5 hitos (saneamiento de una base viva).
+Ejecutados: Aire Libre LATAM 250 h en 40 tareas sobre 8 aplicaciones y 6 hitos; Dunedin 264 h en 50 tareas sobre 10 aplicaciones y 6 hitos; Prodetecs 90 h en 20 subtareas sobre 5 aplicaciones y 5 hitos (saneamiento de una base viva); Freshbox 170 h en dos proyectos de 85 h, contabilidad con 16 subtareas e inventario con 19, y la conjunta con 31 (reimplantación sobre una base viva, 29-sep-2026).

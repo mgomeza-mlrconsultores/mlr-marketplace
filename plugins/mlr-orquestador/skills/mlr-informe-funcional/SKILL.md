@@ -63,7 +63,7 @@ Detalle del formato en `references/formato-html-direccion.md`. Lo que no se nego
 
 - Una lamina por idea; el menú de arriba se construye desde `data-nav`, nunca a mano.
 - Las capturas van incrustadas y sin `loading="lazy"`: con carga diferida la impresión a PDF sale sin imágenes.
-- Una sola figura por lamina se limita a la altura de la pantalla; con dos a cuatro va en rejilla.
+- Texto a la izquierda y capturas a la derecha, sin que dominen la lamina: las figuras nunca pasan del 64 % del alto de la pantalla ni del 125 % de su tamaño real. El generador elige el acomodo por la proporción de las capturas — una o dos anchas apiladas, dos cuando una es vertical lado a lado, tres o cuatro en rejilla de dos columnas — y un ajuste en el navegador las reduce hasta que la lamina cabe sin scroll. Con cuadro y capturas, el titular cruza la lamina y abajo van cuadro y capturas a medias. Sin capturas, titular a la izquierda y texto a la derecha.
 - `revisa_html.py` en verde: sin scroll horizontal, sin imágenes rotas ni capturas pendientes, ninguna lamina mas alta que 1600x900 y una página impresa por lamina.
 
 ## 6. Seguridad

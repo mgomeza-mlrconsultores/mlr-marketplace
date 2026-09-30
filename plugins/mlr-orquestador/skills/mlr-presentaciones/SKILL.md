@@ -72,6 +72,18 @@ Entre cuatro y seis grupos. Mas de seis y el menú deja de orientar.
 - El logotipo va en la barra en todas las laminas, y completo solo en la portada.
 - Cierre con los datos de contacto aprobados de la firma.
 
+## Criterio estético de dirección
+
+Fijado con Marcos en el diagnóstico de Freshbox (29-sep-2026), aplica a todo deck y a toda presentación HTML de informe:
+
+- **Impacto, no vistas cargadas.** Poco texto por lamina, titular grande y aire alrededor. Si la lamina se ve llena, sobra algo.
+- **Texto a la izquierda, capturas a la derecha, sin que dominen.** Las capturas acompañan: nunca más del 64 % del alto de la pantalla ni más del 125 % de su tamaño real. Agrandarlas para llenar la pantalla fue lo primero que dirección rechazó.
+- Contenedor ancho, pero con márgenes amplios; una barra corta de acento teal sobre cada titular.
+- **Cierre con impacto:** una frase grande y condensada, el logotipo y el contacto. Un párrafo chico en la última lamina se ve flojo.
+- Ninguna lamina explica cómo se hizo el trabajo: ni accesos, ni herramientas, ni rondas de verificación.
+
+Las presentaciones de diagnóstico e informe se generan con `mlr-informe-funcional/scripts/genera_html.py`, que ya aplica estos criterios y elige el acomodo de cada lamina por la proporción de sus capturas. Detalle en `mlr-informe-funcional/references/formato-html-direccion.md`.
+
 ## Archivos
 
 Nombre: `MLR_Presentacion_<Tema>_<Cliente>_<AAAA-MM-DD>.html`.

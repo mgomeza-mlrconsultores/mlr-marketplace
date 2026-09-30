@@ -6,9 +6,11 @@
 
 Antes de generar cualquier documento se escribe un solo módulo de datos — `datos.py` en la carpeta de trabajo interno — con:
 
-- Tarifas, fecha límite de la preferencial, número de sedes, porcentaje de anticipo.
+- Tarifa ofertada y su fecha límite, número de sedes, porcentaje de anticipo, pagos del esquema B y descuento del esquema C.
 - La ruta completa: número, tarea, tipo de trabajo, horas, hito.
 - Los importes derivados, calculados, nunca teclados.
+
+Cuando hay varias cotizaciones del mismo cliente (contabilidad, inventario y la conjunta) el origen es uno solo, `ruta.py`, con una ruta por proyecto y la conjunta armada por código a partir de las otras dos; el proyecto se elige con una variable de entorno y un `build.sh` genera, convierte a PDF, recalcula y verifica las tres. Implementación de referencia en `scripts/referencia_generadores/` (Freshbox, 29-sep-2026).
 
 Word y Excel se construyen desde ese módulo. Si una cifra aparece distinta en los dos documentos, es porque alguien la escribió a mano.
 
@@ -35,7 +37,7 @@ Título de carátula `Cotizacion / Proyecto Odoo`. Todo lo que tiene precio vive
 1. Carátula, saludo nominal y párrafo de presentación «Por medio de la presente, MLR Consultores presenta a <cliente> la propuesta económica para <objeto>, considerando <datos de partida>.»
 2. Un párrafo que remite al plan de trabajo y al anexo.
 3. `1. Alcance del servicio propuesto` — un solo párrafo con las horas totales y los entregables enunciados de corrido, y la mención del desarrollo aparte con sus horas. El detalle está en el plan.
-4. `2. Inversion` — tarifa de lista y preferencial con fecha límite, y los importes y el beneficio de cada opción de alcance, en prosa.
+4. `2. Inversión` — la tarifa ofertada con su fecha límite y el importe de cada opción de alcance, en prosa. Sin tarifa de lista, sin preferencial y sin beneficio (dirección, 29-sep-2026).
 5. `3. Esquemas de pago` — un párrafo que explica A, B y C con sus cifras de mensualidad y descuento, el cuadro comparativo de los tres esquemas con una columna por opción de alcance, y el cuadro de hitos del esquema A.
 6. `4. Condiciones esenciales` — moneda e IVA con vigencia, **la clausula de pago anticipado**, adicionales y precio de replica, lo que se contrata aparte y el requisito de inicio.
 7. Párrafo de alcance negociable, cierre con la sesión de revisión previa a la firma y bloque de contacto.
@@ -66,9 +68,9 @@ Los apartados 4 y 5 se omiten cuando no aplican, y los siguientes se renumeran.
 
 **Cinco hojas, con estos nombres exactos y en este orden:**
 
-1. `Parametros` — dos columnas, concepto y valor: cliente, fecha de emisión, tarifa de lista, tarifa preferencial, fecha límite de la preferencial, anticipo del esquema A, número de pagos del esquema B, descuento del esquema C, número de sedes o empresas. Todo lo demás referencia esta hoja.
+1. `Parametros` — dos columnas, concepto y valor: cliente, atención, fecha de emisión, vigencia de la tarifa ofertada, tarifa ofertada, anticipo del esquema A, número de pagos del esquema B, descuento del esquema C, plazo y número de sedes o empresas. En la opción conjunta, además, las horas y pagos B de cada proyecto por separado. Todo lo demás referencia esta hoja.
 2. `Ruta` — seis columnas: `Num.` (jerárquico, 1.1, 1.2), `Aplicacion`, `Tarea`, `Tipo de trabajo`, `Horas`, `Hito`. Una fila por tarea y una fila final de total con `SUM`.
-3. `Resumen por etapa` — una fila por aplicación con `SUMIF` contra `Ruta`, mas porcentaje del proyecto, importe preferencial e importe de lista, todos calculados contra `Parametros`.
+3. `Resumen por etapa` — una fila por aplicación con `SUMIF` contra `Ruta`: horas, porcentaje del proyecto e importe a la tarifa ofertada, calculados contra `Parametros`. Sin columna de lista ni de beneficio. En la conjunta, `Ruta` lleva una columna `Proyecto` y el resumen agrega debajo el comparativo de las tres opciones con sus horas e importes.
 4. `Hitos` — el esquema A con anticipo y un renglón por hito, con una columna por opción de alcance; debajo, la mensualidad del esquema B y el descuento, el pago y la tarifa efectiva del esquema C. Los importes salen del total y de los porcentajes, nunca tecleados.
 5. `Mezcla` — horas y porcentaje por tipo de trabajo con `SUMIF`, y al pie la separación entre el bloque de desarrollo y el de configuración, datos y documentación.
 
