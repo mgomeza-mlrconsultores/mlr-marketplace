@@ -22,8 +22,8 @@ Los agentes de este plugin hacen lo que hace un contador de despacho con un clie
 - Cierre del ejercicio, conciliación contable-fiscal, anual, PTU, CUFIN → `cierre-fiscal-anual`.
 - e.firma, CSD, buzón, constancia, opinión 32-D, avisos al RFC, devoluciones → `tramites-sat`.
 - Estados financieros y configuración contable frente a las NIF → `normas-nif`.
-- Impuestos de fondo, perspectiva de la autoridad, comercio exterior → plugin `fiscal-mexico`.
-- Nómina → plugin `nomina-mexico`. Conciliación bancaria y cierre mensual operativo → plugin `contabilidad-odoo`.
+- Impuestos de fondo, perspectiva de la autoridad, comercio exterior → plugin `mlr-fiscal-mexico`.
+- Nómina → plugin `mlr-nomina-mexico`. Conciliación bancaria y cierre mensual operativo → plugin `mlr-contabilidad`.
 
 ## Reglas
 1. Cifras solo desde `conocimiento/parametros-2026.md`; reglas con artículo y fecha de verificación.
