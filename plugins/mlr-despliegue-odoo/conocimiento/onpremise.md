@@ -1,0 +1,10 @@
+# Servidores propios
+
+## Opciones
+Paquetes oficiales (deb o rpm, canal nightly por versión) para instalaciones simples con una versión por servidor. Código fuente (clon de la rama de la versión, entorno virtual, servicio systemd) para control total y varios entornos. Contenedores con la imagen oficial y PostgreSQL en contenedor o servicio gestionado, volúmenes para filestore y configuración, y una red interna; es la opción recomendada cuando conviven varias versiones o se necesita reproducibilidad.
+
+## Instalación de referencia (Ubuntu LTS)
+Usuario de sistema sin privilegios para Odoo; PostgreSQL con un rol propio sin superusuario (o con permiso de crear base solo en desarrollo); dependencias del sistema y wkhtmltopdf con parche Qt para la arquitectura del servidor; código en `/opt/odoo/<version>` con `addons_path` que incluya `odoo/addons`, `addons` y las carpetas de módulos propios y de terceros, cada una en la rama de la versión; archivo de configuración con `admin_passwd` fuerte, `db_host`, `db_user`, `db_password`, `dbfilter`, `list_db = False`, `proxy_mode = True`, `workers` según CPU, límites de memoria y tiempo, `logfile` con rotación, `data_dir` en disco con respaldo; servicio systemd con reinicio automático; proxy inverso (nginx) con TLS, redirección a HTTPS, proxy del websocket al puerto de gevent, límites de tamaño de carga y cabeceras de cliente real; firewall con solo 22 (restringido por origen o solo con llaves), 80 y 443; zona horaria UTC; locale es_MX.UTF-8.
+
+## Operación
+Actualizar el código con `git pull` sobre la misma rama y reiniciar con `-u` solo de los módulos cambiados, nunca `-u all` en producción sin ensayo; registrar cada despliegue con fecha, commit y módulos; separar entornos de pruebas y producción; mantener la base de pruebas como copia neutralizada de producción (desactivar correos salientes y acciones programadas, cambiar contraseñas); monitoreo de disco, memoria, conexiones a PostgreSQL y tiempo de respuesta; parches de seguridad del sistema con actualizaciones automáticas; parches de Odoo (la rama estable recibe correcciones continuas) al menos mensuales.

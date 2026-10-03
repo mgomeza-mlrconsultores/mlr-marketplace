@@ -1,0 +1,13 @@
+# Lo que un contador le sugiere al cliente
+
+## Al iniciar la relación o el proyecto
+Conseguir la constancia de situación fiscal actualizada y verificar que régimen, domicilio y obligaciones correspondan a la operación real; corregir avisos al RFC antes de facturar desde Odoo. Habilitar el buzón tributario y entregar al despacho acceso de consulta. Revisar vigencia de e.firma y CSD y calendarizar renovaciones. Separar cuentas bancarias personales y de la empresa; una cuenta por compañía en Odoo. Formalizar contratos con los proveedores y clientes relevantes para la materialidad. Definir quién autoriza gastos y bajo qué límites, y reflejarlo en los flujos de aprobación de Odoo.
+
+## Cada mes
+Entregar antes del día 5 lo que no está en el sistema. Pagar todo lo que exceda dos mil pesos por transferencia y los combustibles siempre por medios electrónicos. No aceptar CFDI de proveedores en 69-B definitivo; revisar la lista antes de pagar a un proveedor nuevo. Pedir complemento de pago a los proveedores a los que se paga en parcialidades y emitirlo a los clientes dentro del plazo (a más tardar el quinto día natural del mes siguiente al pago, según la regla vigente). Cancelar CFDI solo con motivo correcto y dentro del ejercicio; las cancelaciones de ejercicios anteriores requieren justificación. No usar la cuenta de la empresa para gastos del socio: los retiros sin documento se convierten en dividendos fictos o en préstamos que la autoridad cuestiona.
+
+## Según la situación
+Empresa que crece y supera el umbral de RESICO: planear el cambio de régimen con anticipación; la configuración fiscal de Odoo cambia. Empresa con saldos a favor de IVA recurrentes: integrar el expediente de devolución mes a mes, no al final. Empresa con nómina: cuadrar nómina timbrada, contabilidad e IMSS cada mes; la diferencia es la causa más frecuente de carta invitación. Empresa que licita o trabaja con gobierno: opinión de cumplimiento positiva permanente y REPSE si presta servicios especializados. Empresa con socios extranjeros o pagos al extranjero: retenciones por tratados, CFDI de retenciones y precios de transferencia cuando haya partes relacionadas. Empresa con inventario: inventario físico anual y ajustes documentados; las mermas sin acta no son deducibles. Empresa con activos fijos: expediente por activo, bajas con acta y destrucción cuando aplique.
+
+## Cómo se comunica
+Una nota mensual breve: qué se pagó, qué cambió, qué debe corregir, qué viene el mes siguiente. Las recomendaciones llevan importe estimado del riesgo cuando se puede calcular y plazo sugerido. Lo que detiene la operación (sellos, opinión negativa, buzón sin habilitar) se comunica el mismo día por el canal acordado.

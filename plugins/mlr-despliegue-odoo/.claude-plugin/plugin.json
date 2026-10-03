@@ -1,0 +1,20 @@
+{
+  "name": "mlr-despliegue-odoo",
+  "version": "0.1.0",
+  "description": "Especialistas de infraestructura para Odoo: arquitectura de despliegue, Odoo.sh, servidores propios en Linux y contenedores, actualización de versión, endurecimiento de seguridad, respaldos y recuperación, rendimiento y bases de prueba en nube de bajo costo. Decisiones con requisitos por versión verificados y procedimientos reproducibles.",
+  "author": {
+    "name": "MLR Consultores"
+  },
+  "license": "Privado",
+  "keywords": [
+    "odoo.sh",
+    "on-premise",
+    "linux",
+    "docker",
+    "upgrade",
+    "seguridad",
+    "respaldos",
+    "rendimiento",
+    "oci"
+  ]
+}

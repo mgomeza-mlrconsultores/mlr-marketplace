@@ -1,0 +1,19 @@
+{
+  "name": "mlr-nomina-mexico",
+  "version": "0.1.0",
+  "description": "Especialistas de nómina mexicana para consultoría Odoo: cálculo de ISR y subsidio, IMSS e INFONAVIT, prestaciones y finiquitos conforme a la LFT, CFDI de nómina 1.2, configuración y auditoría de la nómina en Odoo (localización mexicana y nóminas externas), cumplimiento laboral (REPSE, jornada, NOM-035/037) y vigilancia de cambios. Parámetros 2026 con fuente; el cálculo se valida por un contador o especialista en nómina antes de pagar.",
+  "author": {
+    "name": "MLR Consultores"
+  },
+  "license": "Privado",
+  "keywords": [
+    "nomina",
+    "imss",
+    "infonavit",
+    "isr",
+    "lft",
+    "cfdi nomina",
+    "odoo",
+    "mexico"
+  ]
+}

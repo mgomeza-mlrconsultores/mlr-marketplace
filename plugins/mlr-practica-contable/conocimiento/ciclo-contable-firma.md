@@ -1,0 +1,21 @@
+# Ciclo de trabajo de un despacho contable con un cliente
+
+## El mes, día por día
+Del 1 al 5 el despacho recibe del cliente lo que no está en Odoo: estados de cuenta bancarios, CFDI emitidos fuera del sistema, comprobantes de gastos de caja chica, contratos nuevos, altas y bajas de personal. Sin esto el mes no cierra; por eso el calendario del cliente fija el día 5 como fecha límite y el despacho lo recuerda el día 1 y el día 4.
+
+Del 5 al 10 se registra y concilia: se cargan los CFDI recibidos que faltan, se conciliar los bancos, se revisan las cuentas puente (IVA por acreditar y trasladado no cobrado, anticipos, deudores diversos), se calculan depreciaciones y provisiones, y se cruza la nómina timbrada contra la contabilidad y contra el IMSS.
+
+Del 10 al 15 se determinan los impuestos: pago provisional de ISR (coeficiente de utilidad o RESICO), IVA definitivo del mes (trasladado efectivamente cobrado menos acreditable efectivamente pagado), retenciones de ISR e IVA (salarios, asimilados, honorarios, arrendamiento, fletes), IEPS si aplica e impuesto sobre nóminas estatal. El contador presenta al cliente el cálculo con la cifra a pagar y la fecha límite, y espera la aprobación para presentar.
+
+Del 15 al 17 se presentan las declaraciones y se pagan las líneas de captura. El plazo general es el día 17 del mes siguiente; existe la facilidad de días adicionales según el sexto dígito numérico del RFC (uno a cinco días hábiles) que no aplica a todos los contribuyentes, por lo que se verifica antes de prometerla. El IMSS mensual y, en meses impares, el bimestral de retiro, cesantía, vejez e INFONAVIT también vencen el 17.
+
+Después del 17 se presenta la DIOT en la plataforma vigente y se envía la contabilidad electrónica (balanza del mes) dentro de los primeros días del segundo mes posterior según el tipo de contribuyente. Se emiten los estados financieros mensuales y una nota al cliente con tres cosas: qué pagó, qué cambió respecto al mes anterior y qué debe corregir antes del siguiente cierre.
+
+## El año
+Enero: cálculo anual de ISR de salarios y ajuste anual a los trabajadores que corresponda; constancias; presentación del aviso de factores de UMA y salarios mínimos en nómina; actualización de parámetros en el sistema. Febrero: declaraciones informativas que subsistan, prima de riesgo de trabajo ante el IMSS (presentación anual en febrero), revisión del coeficiente de utilidad que se usará desde marzo. Marzo: declaración anual de personas morales (31 de marzo), con ISSIF cuando aplique, y cierre contable del ejercicio anterior. Abril: declaración anual de personas físicas (30 de abril), balanza de cierre anual electrónica de personas morales. Mayo: PTU de personas morales (dentro de los 60 días siguientes al vencimiento de la anual), dictamen fiscal para obligados, balanza de cierre anual de personas físicas. Junio: PTU de personas físicas. Julio a diciembre: seguimiento de pagos provisionales, revisiones de materialidad de proveedores, depuración de cuentas antes del cierre, planeación del cierre en noviembre y diciembre (deducciones pendientes, inventario físico, provisiones, cuentas incobrables, activos a dar de baja).
+
+## Lo que el despacho entrega cada mes
+Cálculo de impuestos con papel de trabajo, acuses de declaraciones y comprobantes de pago, estados financieros (estado de situación financiera, estado de resultados, flujo si el cliente lo pide), conciliaciones bancarias, control de CFDI emitidos y recibidos contra el SAT, relación de pendientes del cliente y un semáforo de cumplimiento.
+
+## Qué cambia cuando el cliente usa Odoo
+El registro deja de ser captura y pasa a ser revisión: el despacho valida lo que el cliente ya operó. La conciliación bancaria se hace en el sistema con los estados de cuenta importados. Los impuestos salen de los reportes de impuestos de Odoo y se cruzan contra los CFDI y la DIOT. La contabilidad electrónica sale del propio Odoo (catálogo con código agrupador, balanza XML). El riesgo cambia de omitir a configurar mal: una posición fiscal incorrecta, una cuenta sin código agrupador o un impuesto mal definido se repiten en todos los asientos del mes. Por eso el despacho que trabaja con Odoo revisa configuración antes que saldos.

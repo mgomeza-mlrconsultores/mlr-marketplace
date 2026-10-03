@@ -1,0 +1,19 @@
+{
+  "name": "mlr-legal-mexico",
+  "version": "0.1.0",
+  "description": "Especialistas legales de México para proyectos Odoo: contratos de tecnología y propiedad intelectual, protección de datos personales (ley de 2025), derecho laboral aplicado a la operación, derecho mercantil y corporativo, consumidor y comercio electrónico, y vigilancia de reformas. Estructuran, detectan riesgos y preparan expedientes; la opinión legal la emite un abogado titulado.",
+  "author": {
+    "name": "MLR Consultores"
+  },
+  "license": "Privado",
+  "keywords": [
+    "legal",
+    "contratos",
+    "datos personales",
+    "laboral",
+    "mercantil",
+    "ecommerce",
+    "mexico",
+    "odoo"
+  ]
+}

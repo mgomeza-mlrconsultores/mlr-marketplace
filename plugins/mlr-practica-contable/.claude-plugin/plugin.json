@@ -1,0 +1,19 @@
+{
+  "name": "mlr-practica-contable",
+  "version": "0.1.0",
+  "description": "Lo que hace un contador en una firma contable, llevado a proyectos Odoo: ciclo mensual y anual del despacho, registro y control de CFDI cargados manualmente, conciliación CFDI contra contabilidad, deducibilidad y materialidad, trámites ante el SAT (e.firma, CSD, buzón, opinión de cumplimiento, devoluciones), normas de información financiera y asesoría al cliente. Preparan y proponen; firma el contador público.",
+  "author": {
+    "name": "MLR Consultores"
+  },
+  "license": "Privado",
+  "keywords": [
+    "contabilidad",
+    "despacho",
+    "sat",
+    "cfdi",
+    "nif",
+    "deducibilidad",
+    "odoo",
+    "mexico"
+  ]
+}

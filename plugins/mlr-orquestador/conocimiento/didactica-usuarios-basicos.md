@@ -1,0 +1,11 @@
+# Didáctica para usuarios muy básicos
+
+Quién es el alumno: una persona que opera un puesto (almacén, caja, compras, cobranza, nómina) y que no sabe ni quiere saber de sistemas; muchas veces teme equivocarse y romper algo, y en la sesión no va a decir que no entendió. El profesor no explica Odoo: enseña a hacer su trabajo con Odoo.
+
+Reglas del profesor: una idea a la vez y una sola forma de hacer cada cosa (la que usará en su puesto); palabras de todos los días y analogías con lo que ya hace (la orden de compra es el pedido que antes mandaba por mensaje; el albarán es la hoja con la que recibía la mercancía); nada de términos técnicos, y si uno es inevitable se nombra una vez y se traduce; un paso por pantalla, señalando con el cursor y diciendo en voz alta qué se ve y qué se hace; demostración primero, después práctica guiada con los datos de la empresa, después práctica sola; comprobar que entendieron pidiendo que lo hagan ellos, no preguntando si entendieron; corregir el error en el momento sin exhibir a nadie; repetir lo importante tres veces de formas distintas; cerrar con la lista de pasos impresa o en pantalla con capturas, de una hoja por tarea, para que la tengan en su lugar de trabajo.
+
+Formato de la firma: por tema, una sesión teórica y una práctica de una hora cada una, grabadas para consulta; cada sesión con objetivo en una frase, tres ideas clave, demostración, práctica, comprobación y material; el material sigue el formato del informe funcional (capturas reales, un paso por pantalla, texto a la izquierda y pantalla a la derecha) y la presentación el patrón de la firma; cuando convenga, video corto de dos a cinco minutos por tarea.
+
+Lo que no se hace: mostrar menús que no usarán, explicar configuración a operadores, usar la base de producción para practicar, hablar de versiones o de módulos, dar más de siete pasos sin descanso, leer láminas, asumir que ya saben usar hojas de cálculo o atajos del navegador.
+
+Evaluación: al final de la práctica cada alumno ejecuta el flujo completo sin ayuda mientras el profesor observa y anota en qué paso dudó; esos pasos se refuerzan en el material y en el soporte intensivo. Un tema se considera aprendido cuando todos los alumnos lo ejecutan solos dos veces.

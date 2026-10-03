@@ -1,0 +1,19 @@
+{
+  "name": "mlr-fiscal-mexico",
+  "version": "0.1.0",
+  "description": "Especialistas fiscales de México para consultoría Odoo: CFDI 4.0 y complementos, ISR, IVA e IEPS, pagos provisionales, DIOT y contabilidad electrónica, perspectiva de la autoridad (SAT), opinión de cumplimiento, comercio exterior y vigilancia de reformas. Parámetros 2026 con fuente y fecha; preparan y calculan, la opinión la firma un contador público.",
+  "author": {
+    "name": "MLR Consultores"
+  },
+  "license": "Privado",
+  "keywords": [
+    "fiscal",
+    "sat",
+    "cfdi",
+    "isr",
+    "iva",
+    "diot",
+    "mexico",
+    "odoo"
+  ]
+}

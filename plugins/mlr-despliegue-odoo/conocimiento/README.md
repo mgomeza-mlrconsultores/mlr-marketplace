@@ -1,0 +1,5 @@
+# Conocimiento del plugin despliegue-odoo
+
+Infraestructura para que Odoo funcione, se actualice y sobreviva a un desastre. `protocolo-senior.md` fija la forma de pensar. `requisitos-por-version.md` da los requisitos conocidos por versión y la regla de verificarlos en la fuente. `odoo-sh.md` describe la plataforma gestionada de Odoo. `onpremise.md` cubre servidores propios con paquetes, código fuente o contenedores. `actualizacion-version.md` es el método para subir de versión con datos. `seguridad.md` es el endurecimiento mínimo. `respaldos-recuperacion.md` fija la política de respaldos y la prueba de restauración. `rendimiento.md` explica trabajadores, memoria, base de datos y diagnóstico de lentitud. `nube-bajo-costo.md` cubre bases de prueba y demostración en capas gratuitas o de bajo costo. `patrones-infraestructura.md` cataloga lo que se encuentra en servidores reales (D-01 a D-14).
+
+Regla: ningún comando ni requisito se da por válido sin confirmar en la documentación de la versión exacta y en el repositorio oficial; lo verificado se anota en `CAMBIOS.md` del plugin de consultoría con fecha.

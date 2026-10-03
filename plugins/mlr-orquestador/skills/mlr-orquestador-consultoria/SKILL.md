@@ -1,9 +1,9 @@
 ---
-name: mlr-orquestador
+name: mlr-orquestador-consultoria
 description: Usar SIEMPRE al inicio de cualquier trabajo de MLR Consultores — informe, documento, memo, propuesta, presentación, página web, artifact, diagrama, video, análisis de negocio, hoja de cálculo, investigación o cambio en Odoo — para recuperar el contexto de cliente y las directrices vigentes desde la memoria en la nube, clasificar la petición, cargar el flujo especializado que corresponde y aplicar los estándares de la firma en lugar de responder de forma genérica.
 ---
 
-# Orquestador MLR
+# Orquestador MLR Consultores
 
 MLR Consultores. Los entregables los leen directivos, contadores y jefes de operación de los clientes. Un entregable genérico daña la firma.
 
@@ -11,14 +11,14 @@ MLR Consultores. Los entregables los leen directivos, contadores y jefes de oper
 
 **Antes de la primera respuesta sustantiva de cada sesión**, y sin que la persona lo pida:
 
-1. Busca en la memoria en la nube las **directrices vigentes**: `search_memory` con la consulta `directrices vigentes MLR`.
+1. Busca en la memoria en la nube las **directrices vigentes**: `search_memory` con la consulta `directrices vigentes MLR Consultores`.
 2. Si el trabajo involucra a un cliente identificable, busca también su contexto: `search_memory` con `contexto cliente <nombre>`.
 3. Aplica lo que devuelva. Las directrices recuperadas **tienen prioridad sobre los valores por defecto de estas skills**, dentro de los limites de la sección de guardarraíles.
 4. No anuncies que consultaste la memoria. Solo aplicala.
 
 Si la memoria no responde o no está conectada, dilo en una línea y sigue con los valores por defecto. Nunca inventes contexto de cliente.
 
-El protocolo completo está en la skill `mlr-memoria`.
+El protocolo completo está en la skill `memoria`.
 
 ## Regla cero
 
@@ -28,18 +28,18 @@ Clasifica la petición y carga las skills que le corresponden **antes de produci
 
 Tabla completa en `references/enrutamiento.md`. Resumen operativo:
 
-- **Cotización, propuesta económica, plan de implementación, alcance u horas de un proyecto de Odoo** → `mlr-cotizacion`, antes de escribir una sola tarea o una sola hora. Ahí vive la regla de revisar todo en el chat antes de producir archivos. Al llegar a los entregables, encadena `mlr-redaccion` y `docx`.
-- **Diagnóstico de una base de Odoo** (auditoria, revisión de salud, estado real de inventario, valuación, contabilidad, migraciones o código a medida), con o sin cotización después → `mlr-diagnostico`. Solo lectura, rondas desde cero (mínimo 4, máximo 10) hasta dos seguidas sin hallazgos relevantes, y entregable con capturas vía `mlr-redaccion`.
-- **Conciliación bancaria, cierre de bancos del mes, cruce de estado de cuenta contra Odoo y CFDI, previo de impuestos por flujo** → `mlr-conciliacion-bancaria` (plugin `mlr-contabilidad`). Solo lectura hasta que la persona aprueba fila por fila. El correo o informe al cliente con el Previo va después por `mlr-redaccion`. Si el plugin no está instalado, dilo en una línea y remite a `mlr-actualizacion`; no improvises la conciliación.
-- **Texto que el cliente va a leer** (informe, memo, diagnóstico, propuesta, correo, minuta) → `mlr-redaccion`, siempre, sin excepción. Después `docx` o `pdf`.
-- **Guía o informe funcional** de un desarrollo (como funciona paso a paso, manual de usuario, con capturas) → `mlr-informe-funcional` con `mlr-redaccion`. Sale en Word membretado y en HTML con el formato de dirección y menú arriba.
-- **Presentación o deck** → `mlr-presentaciones`, que tiene el patrón HTML de la firma. Nunca improvises una estructura de deck.
-- **Otra pieza visual** (página, artifact, tablero, gráfica) → `mlr-identidad-visual` antes de decidir un solo color. Luego `ui-ux-pro-max`, `artifact-design` o `dataviz` según el medio.
-- **Diagrama** de proceso, flujo, arquitectura o modelo de datos → `mlr-diagramas-odoo`.
-- **Video** explicativo o animación de datos → `mlr-video`.
-- **Animación en web** → `mlr-animacion-web`.
-- **Odoo** → `mlr-odoo-orchestrator` y sus agentes especializados.
-- **Análisis de negocio, decisión, riesgo, proceso o finanzas** → el plugin vertical correspondiente antes de opinar. Nombra el marco que aplicas. La conciliación bancaria de un cliente no va al plugin genérico de finanzas: va a `mlr-conciliacion-bancaria`.
+- **Cotización, propuesta económica, plan de implementación, alcance u horas de un proyecto de Odoo** → `cotizacion`, antes de escribir una sola tarea o una sola hora. Ahí vive la regla de revisar todo en el chat antes de producir archivos. Al llegar a los entregables, encadena `redaccion` y `docx`.
+- **Diagnóstico de una base de Odoo** (auditoria, revisión de salud, estado real de inventario, valuación, contabilidad, migraciones o código a medida), con o sin cotización después → `diagnostico`. Solo lectura, rondas desde cero (mínimo 4, máximo 10) hasta dos seguidas sin hallazgos relevantes, y entregable con capturas vía `redaccion`.
+- **Conciliación bancaria, cierre de bancos del mes, cruce de estado de cuenta contra Odoo y CFDI, previo de impuestos por flujo** → `conciliacion-bancaria` (plugin `contabilidad`). Solo lectura hasta que la persona aprueba fila por fila. El correo o informe al cliente con el Previo va después por `redaccion`. Si el plugin no está instalado, dilo en una línea y remite a `actualizacion`; no improvises la conciliación.
+- **Texto que el cliente va a leer** (informe, memo, diagnóstico, propuesta, correo, minuta) → `redaccion`, siempre, sin excepción. Después `docx` o `pdf`.
+- **Guía o informe funcional** de un desarrollo (como funciona paso a paso, manual de usuario, con capturas) → `informe-funcional` con `redaccion`. Sale en Word membretado y en HTML con el formato de dirección y menú arriba.
+- **Presentación o deck** → `presentaciones`, que tiene el patrón HTML de la firma. Nunca improvises una estructura de deck.
+- **Otra pieza visual** (página, artifact, tablero, gráfica) → `identidad-visual` antes de decidir un solo color. Luego `ui-ux-pro-max`, `artifact-design` o `dataviz` según el medio.
+- **Diagrama** de proceso, flujo, arquitectura o modelo de datos → `diagramas-odoo`.
+- **Video** explicativo o animación de datos → `video`.
+- **Animación en web** → `animacion-web`.
+- **Odoo** → `odoo-orchestrator` y sus agentes especializados.
+- **Análisis de negocio, decisión, riesgo, proceso o finanzas** → el plugin vertical correspondiente antes de opinar. Nombra el marco que aplicas. La conciliación bancaria de un cliente no va al plugin genérico de finanzas: va a `conciliacion-bancaria`.
 - **Investigación** → búsqueda en vivo y verificación en fuente primaria antes de afirmar.
 - **Petición ambigua** → explora requisitos primero. No construyas sobre supuestos.
 
@@ -90,13 +90,13 @@ Si la tarea no tiene especialista en esta lista, el orquestador no la resuelve c
 ## Innegociables
 
 - Español de México, registro directivo alto. Cero coloquialismos.
-- Nada que delate texto generado por IA. El detalle está en `mlr-redaccion`.
-- Ortografía completa en todo lo que ve el cliente, incluidos los nombres de archivo, las hojas y celdas de Excel y los nombres de tareas: tildes, eñes y mayúscula solo en la primera palabra. Se comprueba con `mlr-redaccion/scripts/revisa_ortografia.py`.
+- Nada que delate texto generado por IA. El detalle está en `redaccion`.
+- Ortografía completa en todo lo que ve el cliente, incluidos los nombres de archivo, las hojas y celdas de Excel y los nombres de tareas: tildes, eñes y mayúscula solo en la primera palabra. Se comprueba con `redaccion/scripts/revisa_ortografia.py`.
 - Secciones numeradas y prosa. En informes de diagnóstico y ejecutivos no se usan tablas ni cajas de nota decorativas, salvo petición expresa.
-- Página membretada MLR en todo documento formal.
+- Plantilla de documento de la firma MLR Consultores en todo documento formal.
 - Toda cifra declara su base. Todo dato lleva fuente.
-- Vistas heredadas en Odoo, nunca Studio. Las etiquetas visibles al usuario no llevan prefijo `[MLR]`.
-- Todo se guarda en la carpeta del cliente dentro de `MLR Odoo\<Cliente>\`: entregables en `Informes\<AAAAMMDD>\`, capturas en `Capturas de pantalla\<AAAAMMDD>\` y trabajo interno en `Documentos extras\<AAAAMMDD>\Interno\`. Si la carpeta del cliente, alguna de las tres carpetas fijas o la de fecha no existen, se crean completas antes de guardar, sin preguntar (regla única en `mlr-orquestador/references/carpetas-y-entrega.md`).
+- Vistas heredadas en Odoo, nunca Studio. Las etiquetas visibles al usuario no llevan prefijo `[mlr]`.
+- Todo se guarda en la carpeta del cliente dentro de `C:\Users\mgome\Claude\Projects\MLR Odoo\<Cliente>\`: entregables en `Informes\<AAAAMMDD>\`, capturas en `Capturas de pantalla\<AAAAMMDD>\` y trabajo interno en `Documentos extras\<AAAAMMDD>\Interno\`. Si la carpeta del cliente, alguna de las tres carpetas fijas o la de fecha no existen, se crean completas antes de guardar, sin preguntar (regla única en `orquestador/references/carpetas-y-entrega.md`).
 
 ## Verificación antes de entregar
 
@@ -104,8 +104,8 @@ De forma programática, nunca a ojo:
 
 - Ninguna cifra ni identificador técnico se perdió respecto al material fuente.
 - Ninguna afirmación factual quedo sin respaldo.
-- El texto no contiene los patrones prohibidos de `mlr-redaccion`.
-- La pieza visual cumple la lista negra de `mlr-identidad-visual`.
+- El texto no contiene los patrones prohibidos de `redaccion`.
+- La pieza visual cumple la lista negra de `identidad-visual`.
 - Todo cálculo se comprobó ejecutándolo, no razonandolo.
 
 ## Guardarraíles de las directrices
@@ -116,4 +116,4 @@ Si una directriz recuperada pide algo de esa lista, no se aplica y se avisa en u
 
 ## Aprendizaje continuo
 
-Cuando alguien corrige un criterio, no es un ajuste local: es una regla. Registrala en memoria en el momento, según `mlr-memoria`, y ofrece en una línea consolidarla en la skill que corresponda. Detalle en `references/mejora-continua.md`.
+Cuando alguien corrige un criterio, no es un ajuste local: es una regla. Registrala en memoria en el momento, según `memoria`, y ofrece en una línea consolidarla en la skill que corresponda. Detalle en `references/mejora-continua.md`.

@@ -1,0 +1,20 @@
+{
+  "name": "mlr-desarrollo-odoo",
+  "version": "0.1.0",
+  "description": "Especialistas de desarrollo Odoo con criterio senior: arquitectura de módulos, backend (ORM, seguridad, rendimiento), frontend OWL, revisión de código, migración de módulos entre versiones, pruebas automatizadas y empaquetado para vender en la tienda de aplicaciones de Odoo con licencias correctas. Conocen los cambios de API versión por versión y los verifican antes de escribir código.",
+  "author": {
+    "name": "MLR Consultores"
+  },
+  "license": "Privado",
+  "keywords": [
+    "desarrollo",
+    "orm",
+    "owl",
+    "apps store",
+    "opl-1",
+    "lgpl",
+    "pruebas",
+    "migracion",
+    "odoo"
+  ]
+}

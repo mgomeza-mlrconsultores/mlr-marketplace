@@ -1,0 +1,59 @@
+proyecto: "Nombre del proyecto"
+cliente: "Nombre del cliente"
+version_odoo: "19.0"
+edicion: "Enterprise"
+responsable_firma: "Marcos"
+patrocinador_cliente: "Nombre y cargo"
+fecha_inicio: 2026-01-15
+fecha_salida_prevista: 2026-04-01
+esquema_pago: "B"
+tarifa_hora: "900 MXN"
+horas_cotizadas_total: 320
+horas_consumidas_total: 0
+estado_general: "verde"   # verde, amarillo, rojo
+hitos:
+  - id: H1
+    nombre: "Descubrimiento y requerimientos"
+    fecha: 2026-01-31
+    estado: "pendiente"   # pendiente, en curso, cerrado
+    acta: ""
+    factura: ""           # folio y fecha
+tareas:
+  - id: T01
+    app: "Ventas"
+    nombre: "Configurar flujo de cotización a pedido"
+    horas_cotizadas: 8
+    horas_consumidas: 0
+    avance: 0             # porcentaje
+    estado: "pendiente"
+    semaforo: "verde"
+pendientes_cliente:
+  - id: PC01
+    descripcion: "Entregar constancia de situación fiscal"
+    responsable: "Nombre"
+    fecha_limite: 2026-01-20
+    estado: "abierto"
+    efecto_si_no: "Retrasa configuración general"
+pendientes_firma:
+  - id: PF01
+    descripcion: "Enviar guion de pruebas de ventas"
+    responsable: "Marcos"
+    fecha_limite: 2026-02-10
+    estado: "abierto"
+riesgos:
+  - id: R01
+    descripcion: "Usuario clave de compras sin disponibilidad"
+    probabilidad: "media"
+    impacto: "alto"
+    senal: "Dos sesiones canceladas"
+    mitigacion: "Escalar al patrocinador; sesiones grabadas"
+    dueno: "Marcos"
+cambios_alcance:
+  - id: CA01
+    descripcion: "Reporte adicional de comisiones"
+    horas: 12
+    estado: "cotizado"    # cotizado, aprobado, rechazado, ejecutado
+    fecha: 2026-02-15
+bitacora:
+  - fecha: 2026-01-15
+    nota: "Reunión de arranque; acuerdos: ..."

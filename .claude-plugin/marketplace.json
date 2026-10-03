@@ -44,6 +44,69 @@
       "author": {
         "name": "MLR Consultores"
       }
+    },
+    {
+      "name": "mlr-desarrollo-odoo",
+      "source": "./plugins/mlr-desarrollo-odoo",
+      "version": "0.1.0",
+      "description": "Especialistas de desarrollo Odoo con criterio senior: arquitectura de módulos, backend (ORM, seguridad, rendimiento), frontend OWL, revisión de código, migración de módulos entre versiones, pruebas automatizadas y empaquetado para vender en la tienda de aplicaciones de Odoo con licencias correctas. Conocen los cambios de API versión por versión y los verifican antes de escribir código.",
+      "author": {
+        "name": "MLR Consultores"
+      }
+    },
+    {
+      "name": "mlr-despliegue-odoo",
+      "source": "./plugins/mlr-despliegue-odoo",
+      "version": "0.1.0",
+      "description": "Especialistas de infraestructura para Odoo: arquitectura de despliegue, Odoo.sh, servidores propios en Linux y contenedores, actualización de versión, endurecimiento de seguridad, respaldos y recuperación, rendimiento y bases de prueba en nube de bajo costo. Decisiones con requisitos por versión verificados y procedimientos reproducibles.",
+      "author": {
+        "name": "MLR Consultores"
+      }
+    },
+    {
+      "name": "mlr-fiscal-mexico",
+      "source": "./plugins/mlr-fiscal-mexico",
+      "version": "0.1.0",
+      "description": "Especialistas fiscales de México para consultoría Odoo: CFDI 4.0 y complementos, ISR, IVA e IEPS, pagos provisionales, DIOT y contabilidad electrónica, perspectiva de la autoridad (SAT), opinión de cumplimiento, comercio exterior y vigilancia de reformas. Parámetros 2026 con fuente y fecha; preparan y calculan, la opinión la firma un contador público.",
+      "author": {
+        "name": "MLR Consultores"
+      }
+    },
+    {
+      "name": "mlr-legal-mexico",
+      "source": "./plugins/mlr-legal-mexico",
+      "version": "0.1.0",
+      "description": "Especialistas legales de México para proyectos Odoo: contratos de tecnología y propiedad intelectual, protección de datos personales (ley de 2025), derecho laboral aplicado a la operación, derecho mercantil y corporativo, consumidor y comercio electrónico, y vigilancia de reformas. Estructuran, detectan riesgos y preparan expedientes; la opinión legal la emite un abogado titulado.",
+      "author": {
+        "name": "MLR Consultores"
+      }
+    },
+    {
+      "name": "mlr-nomina-mexico",
+      "source": "./plugins/mlr-nomina-mexico",
+      "version": "0.1.0",
+      "description": "Especialistas de nómina mexicana para consultoría Odoo: cálculo de ISR y subsidio, IMSS e INFONAVIT, prestaciones y finiquitos conforme a la LFT, CFDI de nómina 1.2, configuración y auditoría de la nómina en Odoo (localización mexicana y nóminas externas), cumplimiento laboral (REPSE, jornada, NOM-035/037) y vigilancia de cambios. Parámetros 2026 con fuente; el cálculo se valida por un contador o especialista en nómina antes de pagar.",
+      "author": {
+        "name": "MLR Consultores"
+      }
+    },
+    {
+      "name": "mlr-practica-contable",
+      "source": "./plugins/mlr-practica-contable",
+      "version": "0.1.0",
+      "description": "Lo que hace un contador en una firma contable, llevado a proyectos Odoo: ciclo mensual y anual del despacho, registro y control de CFDI cargados manualmente, conciliación CFDI contra contabilidad, deducibilidad y materialidad, trámites ante el SAT (e.firma, CSD, buzón, opinión de cumplimiento, devoluciones), normas de información financiera y asesoría al cliente. Preparan y proponen; firma el contador público.",
+      "author": {
+        "name": "MLR Consultores"
+      }
+    },
+    {
+      "name": "mlr-seguimiento-clientes",
+      "source": "./plugins/mlr-seguimiento-clientes",
+      "version": "0.1.0",
+      "description": "Seguimiento de proyectos y clientes para una consultoría Odoo: estado por proyecto en un archivo versionado, control de horas y alcance contra lo cotizado, reporte semanal al cliente, seguimiento interno diario, cambios de alcance, hitos de pago y cobranza anticipada, y cierre. Lo que no está en el archivo de estado no existe.",
+      "author": {
+        "name": "MLR Consultores"
+      }
     }
   ]
 }
