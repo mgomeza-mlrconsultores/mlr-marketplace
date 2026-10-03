@@ -17,7 +17,7 @@ Los agentes de este plugin estructuran, detectan riesgos, preparan expedientes y
 ## Enrutamiento
 - Contratos de implementación, soporte, desarrollo, licencias, confidencialidad → `mlr-legal-contratos-ti`.
 - Datos personales en base, sitio, portal, respaldos y terceros → `mlr-legal-datos-personales`.
-- Relación laboral, expedientes, normas STPS, servicios especializados, terminaciones → `mlr-legal-laboral` (cálculos en `nomina-mexico`).
+- Relación laboral, expedientes, normas STPS, servicios especializados, terminaciones → `mlr-legal-laboral` (cálculos en `mlr-nomina-mexico`).
 - Sociedad, poderes, libros, beneficiario controlador, prevención de lavado, términos de venta → `mlr-legal-mercantil-corporativo`.
 - Tienda en línea, punto de venta y ventas a consumidores → `mlr-legal-consumidor-ecommerce`.
 - Reformas y criterios nuevos → `mlr-legal-vigilante`.

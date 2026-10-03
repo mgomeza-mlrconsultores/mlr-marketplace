@@ -47,7 +47,7 @@ Tabla completa en `references/enrutamiento.md`. Resumen operativo:
 Cada etapa y cada tipo de salida tiene un especialista y un revisor distinto del que produce; el orquestador los invoca en este orden y no entrega nada sin la segunda lectura. Consulta `conocimiento/etapas/README.md` y `conocimiento/revision-cruzada.md`.
 
 - **Descubrimiento y requerimientos** → `mlr-analista-descubrimiento`, después `mlr-levantamiento-requerimientos`; diseño con `mlr-arquitecto-solucion`.
-- **Diagnóstico** → `mlr-diagnostico` (rondas con `auditor-*`, `app-*` por aplicación y los auditores de `fiscal-mexico`, `nomina-mexico` y `mlr-practica-contable`); verificación con `mlr-verificador-hallazgos`.
+- **Diagnóstico** → `mlr-diagnostico` (rondas con `auditor-*`, `app-*` por aplicación y los auditores de `mlr-fiscal-mexico`, `mlr-nomina-mexico` y `mlr-practica-contable`); verificación con `mlr-verificador-hallazgos`.
 - **Cotización** → `mlr-cotizador`, revisión con `mlr-revisor-cotizaciones`; lectura de mercado con `mlr-analista-mercado-precios` y efecto de herramientas con `mlr-evaluador-ia-aplicada`.
 - **Configuración** → `mlr-configurador-general` primero, después `app-*` por aplicación; revisión con `mlr-revisor-configuracion`.
 - **Personalizaciones y código** → plugin `mlr-personalizacion-odoo` y plugin `mlr-desarrollo-odoo` (`mlr-arquitecto-modulos`, `mlr-desarrollador-backend`, `mlr-desarrollador-frontend-owl`, `mlr-qa-pruebas`); revisión con `mlr-revisor-codigo-senior`; venta con `mlr-empaquetador-apps-store`.
@@ -56,15 +56,15 @@ Cada etapa y cada tipo de salida tiene un especialista y un revisor distinto del
 - **Pruebas de aceptación** → `mlr-pruebas-aceptacion`. **Capacitación** → `mlr-capacitador`, revisión con `mlr-revisor-capacitacion-presentaciones`.
 - **Salida a producción** → `mlr-salida-produccion`; **soporte intensivo** → `mlr-soporte-hipercuidado`; **cierre** → `mlr-lecciones-aprendidas`.
 - **Infraestructura** → plugin `mlr-despliegue-odoo` (`mlr-arquitecto-infraestructura`, `mlr-odoo-sh-especialista`, `mlr-onpremise-linux`, `mlr-upgrade-version`, `mlr-seguridad-hardening`, `mlr-respaldo-recuperacion`, `mlr-rendimiento-odoo`); cambio de versión de módulos con `mlr-migrador-16-a-17`, `mlr-migrador-17-a-18`, `mlr-migrador-18-a-19` y `mlr-migrador-modulos`.
-- **Fiscal, nómina y práctica contable** → plugins `fiscal-mexico`, `nomina-mexico` y `mlr-practica-contable` (contador de despacho, CFDI manuales, trámites ante la autoridad, cierre anual, NIF).
-- **Legal** → plugin `legal-mexico` (contratos, datos personales, laboral, corporativo, consumidor).
+- **Fiscal, nómina y práctica contable** → plugins `mlr-fiscal-mexico`, `mlr-nomina-mexico` y `mlr-practica-contable` (contador de despacho, CFDI manuales, trámites ante la autoridad, cierre anual, NIF).
+- **Legal** → plugin `mlr-legal-mexico` (contratos, datos personales, laboral, corporativo, consumidor).
 - **Diagramas** → `mlr-disenador-diagramas`, revisión con `mlr-revisor-diagramas`. **Documentos** → `mlr-redactor-entregables`, revisión con `mlr-verificador-entregables`.
 - **Seguimiento y cobranza** → plugin `mlr-seguimiento-clientes`; riesgos con `mlr-gestor-riesgos-proyecto`.
 - **Reuniones difíciles** → `mlr-simulador-cliente`. **Coherencia del conocimiento** → `mlr-gestor-conocimiento`. **Antes de publicar en la versión genérica** → `mlr-revisor-confidencialidad`.
 - **Novedades y vigencia** → `mlr-investigador-odoo`, `mlr-fiscal-vigilante`, `mlr-nomina-vigilante`, `mlr-legal-vigilante` y la rutina `mlr-mejora-continua-semanal` con `mlr-curador-mejora-continua`.
 - **Aplicaciones (configuración y diagnóstico por app)** → `mlr-app-ventas-crm`, `mlr-app-compras`, `mlr-app-inventario`, `mlr-app-fabricacion`, `mlr-app-contabilidad`, `mlr-app-punto-de-venta`, `mlr-app-proyectos-hojas-horas`, `mlr-app-rrhh`, `mlr-app-sitio-web-ecommerce`, `mlr-app-documentos-firma-helpdesk`, `mlr-app-studio-automatizaciones`, `mlr-app-marketing-eventos`.
 - **Auditores del diagnóstico** → `mlr-auditor-inventario-valuacion`, `mlr-auditor-contable`, `mlr-auditor-configuracion-seguridad`, `mlr-auditor-codigo-personalizaciones`.
-- **Conciliación bancaria y cierre mensual** → plugin `contabilidad-odoo` (`mlr-conciliador-bancario`, `mlr-cierre-mensual`).
+- **Conciliación bancaria y cierre mensual** → plugin `mlr-contabilidad` (`mlr-conciliador-bancario`, `mlr-cierre-mensual`).
 - **Personalización por piezas** → plugin `mlr-personalizacion-odoo` (`mlr-odoo-orchestrator`, `mlr-field-creator`, `mlr-model-creator`, `mlr-view-modifier`, `mlr-server-action`, `mlr-odoo-workflow`, `mlr-report-writer`, `mlr-self-improvement`).
 - **Capacitación de usuarios muy básicos (profesores por aplicación)** → `mlr-profesor-ventas-crm`, `mlr-profesor-compras`, `mlr-profesor-inventario`, `mlr-profesor-fabricacion`, `mlr-profesor-contabilidad`, `mlr-profesor-punto-de-venta`, `mlr-profesor-proyectos-hojas-horas`, `mlr-profesor-rrhh`, `mlr-profesor-sitio-web-ecommerce`, `mlr-profesor-documentos-firma-helpdesk`, `mlr-profesor-studio-automatizaciones`, `mlr-profesor-marketing-eventos`; el `mlr-capacitador` coordina el programa y el `mlr-revisor-capacitacion-presentaciones` revisa el material.
 - **Procesos de la empresa y diagramas funcionales** → `mlr-mapeador-procesos-empresa` antes de requerimientos y cotización; dibujo con `mlr-disenador-diagramas`.
