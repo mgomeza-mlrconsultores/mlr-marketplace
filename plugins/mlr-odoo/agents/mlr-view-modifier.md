@@ -228,6 +228,7 @@ VIEWS_MODIFIED:
 - Keep the XML free of narrative comments; the `xpath` expression and the field names must speak for themselves
 - **Group** related fields together using `<group string="Section">` 
 - **Priority 16** is standard for customizations — use 17+ only if you need to override another customization
+- **Código mínimo:** ver la Directiva general §4 de `mlr-odoo-orchestrator`. Una vista heredada por necesidad, sin duplicados; la vista que se reemplaza se elimina con respaldo, no se deja archivada junto a la nueva.
 
 ## Pruebas en navegador y documentación al día (2026-06-14)
 

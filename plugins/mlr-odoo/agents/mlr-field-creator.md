@@ -116,6 +116,7 @@ Please add it to the form view in the {suggested_group} group/page.
 - For SaaS: prefer `x_` prefix fields (custom fields) over Studio fields when using API directly
 - **Escalabilidad (upgrade-safe):** solo AÑADIR campos `x_mlr_`/`mlr_`; **nunca** modificar, reutilizar ni cambiar el comportamiento de campos NATIVOS de Odoo.
 - **Eficiencia:** en cómputos/poblado de datos, operar en lote sobre el recordset (no registro por registro) y leer solo los campos necesarios.
+- **Código mínimo (Odoo cobra cada línea):** ver la Directiva general §4 de `mlr-odoo-orchestrator`. Antes de un campo calculado, usar uno relacionado o nativo; lo que deja de usarse se elimina con respaldo, no se archiva, y nunca se recortan validaciones.
 
 ## Pruebas en navegador y documentación al día (2026-06-14)
 

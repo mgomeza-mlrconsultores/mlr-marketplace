@@ -1,7 +1,7 @@
 {
   "name": "mlr-odoo",
-  "version": "1.2.1",
-  "description": "Agentes y flujo MLR para personalizacion de Odoo: reunir contexto, ejecutar cambios (campos/modelos/vistas/acciones), verificar en navegador con captura, Context7 e informe en espanol. Directiva general: etiquetas visibles sin prefijo [MLR] y codigo sin comentarios narrativos. Archivos siempre en C:/Users/mgome/Claude/Projects/MLR Odoo con la organizacion por cliente y desarrollo.",
+  "version": "1.3.0",
+  "description": "Agentes y flujo MLR para personalizacion de Odoo: reunir contexto, ejecutar cambios (campos/modelos/vistas/acciones), verificar en navegador con captura, Context7 e informe en espanol. Directiva general: etiquetas visibles sin prefijo [MLR] y codigo sin comentarios narrativos. Codigo minimo porque Odoo cobra el mantenimiento por cada 100 lineas: lo nativo primero y lo obsoleto se elimina con respaldo, no se archiva. Archivos siempre en C:/Users/mgome/Claude/Projects/MLR Odoo con la organizacion por cliente y desarrollo.",
   "author": {
     "name": "MLR Consultores"
   }

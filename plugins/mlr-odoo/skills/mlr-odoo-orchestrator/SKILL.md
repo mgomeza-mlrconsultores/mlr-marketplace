@@ -1,4 +1,4 @@
-﻿---
+---
 name: mlr-odoo-orchestrator
 description: Flujo MLR para personalizar Odoo en Cowork. Usar ante cualquier pedido de personalizacion de Odoo (campos, modelos, vistas, acciones de servidor, automatizaciones). Reune contexto, ejecuta el cambio, verifica en navegador con captura, consulta Context7 y documenta en informe en espanol.
 ---
@@ -71,3 +71,43 @@ Reglas:
 - Si un desarrollo ya existe, se **amplia** su carpeta y su README; no se crea una nueva.
 - Carpetas conectadas: si la carpeta no esta conectada a la sesion, se pide acceso con
   `device_request_folder_access` sobre `<carpeta local de proyectos MLR>`.
+
+### 4. Código mínimo: Odoo cobra cada línea (obligatorio)
+Odoo cobra al cliente el mantenimiento del código a medida por cada 100 líneas
+(1,440 por cada 100 líneas, dato de Marcos del 3-oct-2026). Cada línea que queda en
+la base es un costo recurrente para el cliente, así que el código se limita al mínimo
+que resuelve el requisito, sin quitar ninguna protección.
+
+Qué cuenta (medido en Acretex, saas~19.3, 3-oct-2026):
+- Las líneas de código Python de acciones de servidor (incluidas las de
+  automatizaciones y crones) y de campos calculados. Aparecen como `odoo/studio` en el
+  conteo de mantenimiento. Los comentarios y las líneas en blanco NO cuentan
+  (probado: 2 líneas de código + 4 comentarios + 2 en blanco sumaron 2).
+- Las acciones de servidor no tienen archivado: aunque su automatización esté
+  archivada, sus líneas se siguen cobrando. Lo que ya no se usa se ELIMINA, no se
+  archiva, después de respaldar su código en `Documentos extras/<fecha>/Interno/` y en
+  el bundle del desarrollo.
+- No se ha medido si cuentan las vistas heredadas; se mantienen igual de mínimas.
+- Cómo medir: crear una acción temporal con
+  `raise UserError(repr(env['publisher_warranty.contract']._get_message()['maintenance']))`,
+  ejecutarla, leer `odoo/studio` y borrarla en el acto (mientras existe, su propia
+  línea cuenta). Se mide antes y después de cada entrega y la diferencia va en el
+  informe.
+
+Reglas:
+- Primero lo nativo y la configuración (campos relacionados, valores por defecto,
+  dominios, reglas de registro, vistas heredadas, acciones de ventana); el código es el
+  último recurso.
+- Una sola acción por responsabilidad. Al reemplazar una acción, la anterior se elimina
+  en el mismo cambio, cuando la nueva ya pasó sus pruebas; nada de versiones paralelas
+  (v1 archivada junto a v2 activa).
+- Sin código muerto, sin ramas que nunca se ejecutan, sin validaciones que ya hace
+  Odoo, sin variables intermedias que no aportan.
+- Compacto pero legible: se junta lo que se lee igual de claro; no se comprime hasta
+  volverlo críptico.
+- A prueba de fallos no se negocia: las validaciones que protegen datos (`UserError`
+  antes de escribir, cuadres, idempotencia) se quedan aunque sumen líneas. Se recorta
+  lo superfluo, nunca la seguridad.
+- Pruebas, diagnósticos y migraciones corren por API desde fuera, nunca como acciones
+  guardadas en la base del cliente; cualquier acción temporal se borra en la misma
+  sesión.

@@ -148,6 +148,7 @@ MODEL_CREATED:
 - **Sequence**: Add `x_mlr_sequence` integer field for user-defined ordering
 - **Never** create a model without access rights — it will be inaccessible
 - **Escalabilidad (upgrade-safe):** los modelos MLR son NUEVOS y aditivos (`mlr.`/`x_mlr_`). **Nunca** alterar la definición de un modelo nativo; para añadirle campos o lógica, usar herencia (`_inherit`) o campos `x_mlr_`, sin modificar su base.
+- **Código mínimo (Odoo cobra cada línea):** ver la Directiva general §4 de `mlr-odoo-orchestrator`. Un modelo nuevo solo si lo nativo no alcanza; sus campos calculados y acciones, con el menor código posible y sin recortar validaciones.
 
 ## Pruebas en navegador y documentación al día (2026-06-14)
 

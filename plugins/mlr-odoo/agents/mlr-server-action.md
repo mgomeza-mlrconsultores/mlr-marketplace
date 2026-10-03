@@ -206,6 +206,7 @@ ACTIONS_CREATED:
 - **Always** use `record.message_post()` for audit trail on state changes
 - **Never** use `sudo()` unless absolutely necessary
 - **Batch** operations when possible — avoid looping with individual writes
+- **Código mínimo (Odoo cobra cada línea):** ver la Directiva general §4 de `mlr-odoo-orchestrator`. Una acción por responsabilidad; al reemplazar una acción o automatización, la anterior se elimina con respaldo en el mismo cambio (archivarla no detiene el cobro); pruebas y diagnósticos corren por API, nunca como acciones guardadas; las validaciones que protegen datos no se recortan.
 
 ## Pruebas en navegador y documentación al día (2026-06-14)
 

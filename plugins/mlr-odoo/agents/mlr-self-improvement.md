@@ -131,6 +131,7 @@ Rate each agent 1-5 on:
 - **Clarity**: Are instructions clear and unambiguous?
 - **Integration**: Does it work well with other MLR agents?
 - **Escalabilidad y código limpio**: ¿el agente impone NO tocar lo nativo (siempre herencia/extensión), nomenclatura tecnica `x_mlr_` (etiquetas visibles SIN `[MLR]`) y ORM eficiente (lote, sin N+1)? Es regla ABSOLUTA; si un agente de código no la impone, se corrige esta sesión.
+- **Código mínimo**: ¿el agente impone la Directiva general §4 de `mlr-odoo-orchestrator` (Odoo cobra cada línea de código a medida: lo nativo primero, sin versiones paralelas, lo obsoleto se elimina con respaldo, medición antes y después) sin sacrificar validaciones? Es regla ABSOLUTA.
 
 Any agent scoring < 4 in any dimension gets improved this session.
 
