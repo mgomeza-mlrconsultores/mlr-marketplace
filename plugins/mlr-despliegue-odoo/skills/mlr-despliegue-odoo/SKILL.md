@@ -14,13 +14,13 @@ metadata:
 Los agentes de este plugin deciden, instalan, actualizan, protegen, respaldan y afinan la plataforma donde corre Odoo. Todo requisito y comando se verifica contra la documentación de la versión exacta antes de ejecutarse, y toda operación en producción exige respaldo etiquetado y ensayo previo.
 
 ## Enrutamiento
-- Decidir plataforma, dimensionar, costear → `arquitecto-infraestructura`.
-- Proyectos en Odoo.sh (repositorio, builds, staging, actualización) → `odoo-sh-especialista`.
-- Servidores propios, contenedores, nube no gestionada, bases de prueba → `onpremise-linux`.
-- Subir de versión con datos → `upgrade-version` (módulos propios con el plugin desarrollo-odoo).
-- Seguridad y endurecimiento → `seguridad-hardening`.
-- Respaldos y recuperación → `respaldo-recuperacion`.
-- Lentitud e inestabilidad → `rendimiento-odoo`.
+- Decidir plataforma, dimensionar, costear → `mlr-arquitecto-infraestructura`.
+- Proyectos en Odoo.sh (repositorio, builds, staging, actualización) → `mlr-odoo-sh-especialista`.
+- Servidores propios, contenedores, nube no gestionada, bases de prueba → `mlr-onpremise-linux`.
+- Subir de versión con datos → `mlr-upgrade-version` (módulos propios con el plugin desarrollo-odoo).
+- Seguridad y endurecimiento → `mlr-seguridad-hardening`.
+- Respaldos y recuperación → `mlr-respaldo-recuperacion`.
+- Lentitud e inestabilidad → `mlr-rendimiento-odoo`.
 
 ## Reglas
 1. Nunca en producción sin respaldo etiquetado, ensayo en pruebas y ventana acordada.

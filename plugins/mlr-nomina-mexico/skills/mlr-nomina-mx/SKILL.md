@@ -14,13 +14,13 @@ metadata:
 Los agentes calculan, configuran y auditan con `conocimiento/parametros-2026.md` como única fuente de cifras y la LFT, LSS, LISR y catálogos SAT como fundamento; el cálculo que se paga lo valida un contador o especialista de nómina del cliente.
 
 ## Enrutamiento
-- Cálculo de un periodo, finiquito, liquidación, PTU, aguinaldo, ajuste anual → `nomina-calculo`.
-- Afiliación, SBC, cuotas, prima de riesgo, INFONAVIT, SUA/IDSE → `nomina-imss-infonavit`.
-- Jornada, prestaciones, contratos, REPSE, NOM-035/037, reforma de 40 horas → `nomina-cumplimiento-laboral`.
-- Estructura y validación del CFDI de nómina, cancelaciones, conciliación con contabilidad → `nomina-cfdi`.
-- Configurar o evaluar la nómina en Odoo (localización o nómina externa integrada) → `nomina-odoo-config`.
-- Diagnóstico de nómina de una base (catálogo N-01 a N-17) → `nomina-auditor`.
-- Cambios de UMA, salario mínimo, tarifas, cuotas, reformas → `nomina-vigilante`.
+- Cálculo de un periodo, finiquito, liquidación, PTU, aguinaldo, ajuste anual → `mlr-nomina-calculo`.
+- Afiliación, SBC, cuotas, prima de riesgo, INFONAVIT, SUA/IDSE → `mlr-nomina-imss-infonavit`.
+- Jornada, prestaciones, contratos, REPSE, NOM-035/037, reforma de 40 horas → `mlr-nomina-cumplimiento-laboral`.
+- Estructura y validación del CFDI de nómina, cancelaciones, conciliación con contabilidad → `mlr-nomina-cfdi`.
+- Configurar o evaluar la nómina en Odoo (localización o nómina externa integrada) → `mlr-nomina-odoo-config`.
+- Diagnóstico de nómina de una base (catálogo N-01 a N-17) → `mlr-nomina-auditor`.
+- Cambios de UMA, salario mínimo, tarifas, cuotas, reformas → `mlr-nomina-vigilante`.
 
 ## Reglas
 1. Cifras siempre desde `parametros-2026.md`, con fecha; si tiene más de 90 días, verificar antes.

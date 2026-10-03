@@ -14,11 +14,11 @@ metadata:
 El archivo de estado por proyecto es la única fuente de verdad; todo reporte, control y cobranza se produce desde él y cada actualización se versiona.
 
 ## Enrutamiento
-- Registro diario, semáforos, revisión interna semanal → `seguimiento-proyectos`.
-- Horas contra cotizado, desviaciones, cambios de alcance → `control-alcance-horas`.
-- Reporte semanal al cliente → `reporte-cliente`.
-- Facturación de hitos, recordatorios, mora → `cobranza-hitos`.
-- Riesgos y lecciones → agentes `gestor-riesgos-proyecto` y `lecciones-aprendidas` del plugin de consultoría.
+- Registro diario, semáforos, revisión interna semanal → `mlr-seguimiento-proyectos`.
+- Horas contra cotizado, desviaciones, cambios de alcance → `mlr-control-alcance-horas`.
+- Reporte semanal al cliente → `mlr-reporte-cliente`.
+- Facturación de hitos, recordatorios, mora → `mlr-cobranza-hitos`.
+- Riesgos y lecciones → agentes `mlr-gestor-riesgos-proyecto` y `mlr-lecciones-aprendidas` del plugin de consultoría.
 
 ## Reglas
 1. Lo que no está en el archivo de estado no existe; se actualiza el mismo día.

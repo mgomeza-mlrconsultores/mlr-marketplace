@@ -15,12 +15,12 @@ metadata:
 Los agentes de este plugin estructuran, detectan riesgos, preparan expedientes y proponen redacciones; la opinión legal la emite un abogado titulado y así se dice en cada entregable. Toda cita legal lleva artículo, fuente y fecha de verificación.
 
 ## Enrutamiento
-- Contratos de implementación, soporte, desarrollo, licencias, confidencialidad → `legal-contratos-ti`.
-- Datos personales en base, sitio, portal, respaldos y terceros → `legal-datos-personales`.
-- Relación laboral, expedientes, normas STPS, servicios especializados, terminaciones → `legal-laboral` (cálculos en `mlr-nomina-mexico`).
-- Sociedad, poderes, libros, beneficiario controlador, prevención de lavado, términos de venta → `legal-mercantil-corporativo`.
-- Tienda en línea, punto de venta y ventas a consumidores → `legal-consumidor-ecommerce`.
-- Reformas y criterios nuevos → `legal-vigilante`.
+- Contratos de implementación, soporte, desarrollo, licencias, confidencialidad → `mlr-legal-contratos-ti`.
+- Datos personales en base, sitio, portal, respaldos y terceros → `mlr-legal-datos-personales`.
+- Relación laboral, expedientes, normas STPS, servicios especializados, terminaciones → `mlr-legal-laboral` (cálculos en `nomina-mexico`).
+- Sociedad, poderes, libros, beneficiario controlador, prevención de lavado, términos de venta → `mlr-legal-mercantil-corporativo`.
+- Tienda en línea, punto de venta y ventas a consumidores → `mlr-legal-consumidor-ecommerce`.
+- Reformas y criterios nuevos → `mlr-legal-vigilante`.
 
 ## Reglas
 1. Fuente primaria o nada: DOF, ley vigente publicada, portal de la autoridad; se anota la fecha de verificación.

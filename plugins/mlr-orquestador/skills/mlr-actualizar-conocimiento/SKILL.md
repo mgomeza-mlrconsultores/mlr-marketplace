@@ -15,7 +15,7 @@ Los agentes valen lo que vale su conocimiento. Esta rutina lo mantiene al día s
 
 ## Rutina
 1. Leer `conocimiento/CAMBIOS.md` para saber qué se revisó la vez anterior y hasta qué fecha.
-2. Lanzar `investigador-odoo` con estas búsquedas, en este orden, verificando en fuente primaria antes de registrar:
+2. Lanzar `mlr-investigador-odoo` con estas búsquedas, en este orden, verificando en fuente primaria antes de registrar:
    - Notas de la versión vigente y de la siguiente: cambios en inventario, valuación, contabilidad, fabricación, punto de venta, API externa y Studio.
    - Repositorio `odoo/odoo`: commits recientes en `stock_account`, `account`, `stock`, `mrp`, `purchase`, `sale` de la rama vigente que cambien comportamiento.
    - Repositorios OCA del dominio: módulos migrados a la versión vigente, módulos nuevos relevantes, cambios en guías de contribución y migración.

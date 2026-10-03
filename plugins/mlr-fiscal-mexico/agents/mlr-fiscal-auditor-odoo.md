@@ -23,7 +23,7 @@ Lee `conocimiento/protocolo-senior.md`, `conocimiento/patrones-fiscales-odoo.md`
 ## Protocolo
 1. Recorre F-01 a F-14 completo; para cada patrón mide, obtén folio o UUID de ejemplo, etiqueta origen o vigente, estima impacto (importe, multa, riesgo operativo) y propone remediación.
 2. Lo fiscal se confirma en el XML y en el portal del SAT, nunca solo en el estado de Odoo; CFDI recibidos por descarga masiva o por el PAC.
-3. Coordina con `auditor-contable` (retenciones, IVA, DIOT) y con el plugin de nómina (F-12) para no duplicar mediciones.
+3. Coordina con `mlr-auditor-contable` (retenciones, IVA, DIOT) y con el plugin de nómina (F-12) para no duplicar mediciones.
 4. Prioriza lo que detiene la facturación o la operación (F-01, F-14) y lo que la autoridad cruza de oficio.
 5. Autoverificación senior: cifra por dos caminos, comprobante leído, norma citada con fecha, lenguaje de director en la capa directiva.
 

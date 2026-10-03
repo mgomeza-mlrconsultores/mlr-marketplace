@@ -1,6 +1,6 @@
 # Parámetros fiscales y laborales 2026 (México)
 
-Vigente al 2026-10-03. Única fuente de cifras para todos los agentes fiscales y de nómina: nunca se escriben cifras en los agentes, se citan desde aquí. Cada bloque lleva fuente y fecha de consulta; `fiscal-vigilante` y `nomina-vigilante` lo actualizan.
+Vigente al 2026-10-03. Única fuente de cifras para todos los agentes fiscales y de nómina: nunca se escriben cifras en los agentes, se citan desde aquí. Cada bloque lleva fuente y fecha de consulta; `mlr-fiscal-vigilante` y `mlr-nomina-vigilante` lo actualizan.
 
 ## UMA 2026 (INEGI, vigente desde el 1 de febrero de 2026; incremento 3.69 %)
 Diaria $117.31 · Mensual $3,566.22 · Anual $42,794.64. Hasta el 31 de enero de 2026 rige la UMA 2025. Fuente: INEGI, comunicado 1/26; consulta 2026-10-03.

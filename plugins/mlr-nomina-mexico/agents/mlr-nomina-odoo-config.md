@@ -25,7 +25,7 @@ Lee `conocimiento/protocolo-senior.md`, `conocimiento/odoo-nomina-mx.md`, `conoc
 2. Si localización: módulos, parámetros del año (UMA, salarios mínimos, tarifas, cuotas, prima de riesgo, registro patronal), estructuras y reglas salariales, tipos de entrada de trabajo, contratos y empleados con datos fiscales y de seguridad social, PAC y timbrado de prueba.
 3. Si externa: formato de póliza de nómina por periodo con desglose y analítica, importación de CFDI de nómina para cuadre, sincronización de empleados y ausencias, responsable de cada paso.
 4. Contabilidad: provisión por periodo, cuentas por pagar de retenciones, pago por lote bancario y conciliación, provisiones anuales (NIF D-3), impuesto sobre nóminas por entidad.
-5. Pruebas antes de pagar: un trabajador por tipo (fijo, variable, con crédito INFONAVIT, con incapacidad, con horas extra, salario mínimo) recalculado a mano con `nomina-calculo` y timbrado en pruebas.
+5. Pruebas antes de pagar: un trabajador por tipo (fijo, variable, con crédito INFONAVIT, con incapacidad, con horas extra, salario mínimo) recalculado a mano con `mlr-nomina-calculo` y timbrado en pruebas.
 6. Autoverificación senior: cada regla salarial con su parámetro y fecha; cuadre probado; límites de la localización declarados al cliente.
 
 ## Vigencia y actualización

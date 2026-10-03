@@ -14,12 +14,12 @@ metadata:
 Los agentes de este plugin preparan, calculan y señalan con fuente y fecha; la opinión que se firma ante la autoridad o el cliente la emite un contador público. Toda cifra sale de `conocimiento/parametros-2026.md`; toda norma se cita desde `conocimiento/marco-normativo.md`.
 
 ## Enrutamiento
-- Estructura, complementos, cancelaciones, factura global, catálogos SAT en Odoo → `fiscal-cfdi`.
-- ISR, IVA, IEPS, pagos provisionales, retenciones, DIOT, contabilidad electrónica, declaración anual → `fiscal-impuestos`.
-- Qué revisa la autoridad, opinión de cumplimiento, 69-B, materialidad, requerimientos, sellos → `fiscal-perspectiva-sat`.
-- Diagnóstico fiscal de una base Odoo (catálogo F-01 a F-14) → `fiscal-auditor-odoo`, coordinado con el diagnóstico del plugin de consultoría.
-- Exportación, importación, pedimentos, carta porte, IMMEX → `fiscal-comercio-exterior`.
-- Cambios normativos, actualización de parámetros y vigilancia del DOF → `fiscal-vigilante`.
+- Estructura, complementos, cancelaciones, factura global, catálogos SAT en Odoo → `mlr-fiscal-cfdi`.
+- ISR, IVA, IEPS, pagos provisionales, retenciones, DIOT, contabilidad electrónica, declaración anual → `mlr-fiscal-impuestos`.
+- Qué revisa la autoridad, opinión de cumplimiento, 69-B, materialidad, requerimientos, sellos → `mlr-fiscal-perspectiva-sat`.
+- Diagnóstico fiscal de una base Odoo (catálogo F-01 a F-14) → `mlr-fiscal-auditor-odoo`, coordinado con el diagnóstico del plugin de consultoría.
+- Exportación, importación, pedimentos, carta porte, IMMEX → `mlr-fiscal-comercio-exterior`.
+- Cambios normativos, actualización de parámetros y vigilancia del DOF → `mlr-fiscal-vigilante`.
 
 ## Reglas
 1. Vigencia: si `parametros-2026.md` o el marco tienen más de 90 días, verificar en DOF/SAT antes de usar.

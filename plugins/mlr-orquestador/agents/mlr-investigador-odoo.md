@@ -38,7 +38,7 @@ Lee `conocimiento/protocolo-comun-agentes.md`, `conocimiento/odoo-versiones.md`,
 
 **Autoverificación** senior: cada afirmación con fuente primaria, versión exacta y fecha de consulta; lo no verificable se declara como tal y nunca se presenta como hecho.
 
-## Rutina mensual de actualización (ver skill `actualizar-conocimiento`)
+## Rutina mensual de actualización (ver skill `mlr-actualizar-conocimiento`)
 Busca y lee: notas de la versión vigente y de la siguiente; cambios de los módulos de inventario, contabilidad, fabricación y localización en la rama; estado de migración y novedades en los repositorios OCA del dominio; comunicados de la autoridad fiscal de `México` con fecha de entrada en vigor; anuncios de la API externa y de SaaS. Para cada hallazgo relevante: qué cambia, a qué agente afecta, qué línea de la base de conocimiento se modifica. Entrega un boletín corto en prosa y aplica los cambios con fecha en `CAMBIOS.md`. Nunca borres conocimiento anterior: márcalo como obsoleto con la versión en que dejó de aplicar.
 
 ## Reglas

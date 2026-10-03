@@ -15,15 +15,15 @@ metadata:
 Los agentes de este plugin hacen lo que hace un contador de despacho con un cliente: ordenar el mes, registrar y cruzar, calcular, presentar, cerrar el año, gestionar los trámites ante el SAT y asesorar. Preparan y proponen con fuente y fecha; firma el contador público del cliente.
 
 ## Enrutamiento
-- Ciclo mensual y anual, calendario, lista mensual, nota al cliente → `contador-firma`.
-- CFDI que no nacen en Odoo, conciliación por UUID contra el SAT → `registro-cfdi-manual`.
-- Cruces CFDI, contabilidad y declaraciones; cartas invitación → `conciliador-cfdi-contabilidad`.
-- Recomendaciones y nota al cliente → `asesor-cliente-contable`.
-- Cierre del ejercicio, conciliación contable-fiscal, anual, PTU, CUFIN → `cierre-fiscal-anual`.
-- e.firma, CSD, buzón, constancia, opinión 32-D, avisos al RFC, devoluciones → `tramites-sat`.
-- Estados financieros y configuración contable frente a las NIF → `normas-nif`.
-- Impuestos de fondo, perspectiva de la autoridad, comercio exterior → plugin `mlr-fiscal-mexico`.
-- Nómina → plugin `mlr-nomina-mexico`. Conciliación bancaria y cierre mensual operativo → plugin `mlr-contabilidad`.
+- Ciclo mensual y anual, calendario, lista mensual, nota al cliente → `mlr-contador-firma`.
+- CFDI que no nacen en Odoo, conciliación por UUID contra el SAT → `mlr-registro-cfdi-manual`.
+- Cruces CFDI, contabilidad y declaraciones; cartas invitación → `mlr-conciliador-cfdi-contabilidad`.
+- Recomendaciones y nota al cliente → `mlr-asesor-cliente-contable`.
+- Cierre del ejercicio, conciliación contable-fiscal, anual, PTU, CUFIN → `mlr-cierre-fiscal-anual`.
+- e.firma, CSD, buzón, constancia, opinión 32-D, avisos al RFC, devoluciones → `mlr-tramites-sat`.
+- Estados financieros y configuración contable frente a las NIF → `mlr-normas-nif`.
+- Impuestos de fondo, perspectiva de la autoridad, comercio exterior → plugin `fiscal-mexico`.
+- Nómina → plugin `nomina-mexico`. Conciliación bancaria y cierre mensual operativo → plugin `contabilidad-odoo`.
 
 ## Reglas
 1. Cifras solo desde `conocimiento/parametros-2026.md`; reglas con artículo y fecha de verificación.

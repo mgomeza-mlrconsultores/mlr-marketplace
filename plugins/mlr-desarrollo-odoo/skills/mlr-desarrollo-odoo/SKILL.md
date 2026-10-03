@@ -14,13 +14,13 @@ metadata:
 Los agentes de este plugin diseñan, programan, revisan, migran, prueban y empaquetan módulos. Toda firma de API se verifica en la rama exacta de la versión antes de escribir código; todo módulo nace con seguridad y pruebas; lo genérico se separa de lo específico del cliente para que pueda reutilizarse y venderse.
 
 ## Enrutamiento
-- Antes de programar: alternativas, modelo, seguridad, plan → `arquitecto-modulos`.
-- Python, modelos, lógica, informes, controladores → `desarrollador-backend`.
-- Cliente web, OWL, punto de venta, sitio web → `desarrollador-frontend-owl`.
-- Revisar código propio o de terceros → `revisor-codigo-senior`.
-- Publicar y vender en la tienda → `empaquetador-apps-store`.
-- Migrar módulos entre versiones → `migrador-modulos` (la base con datos la actualiza el plugin despliegue-odoo).
-- Pruebas, reproducción de errores, aceptación → `qa-pruebas`.
+- Antes de programar: alternativas, modelo, seguridad, plan → `mlr-arquitecto-modulos`.
+- Python, modelos, lógica, informes, controladores → `mlr-desarrollador-backend`.
+- Cliente web, OWL, punto de venta, sitio web → `mlr-desarrollador-frontend-owl`.
+- Revisar código propio o de terceros → `mlr-revisor-codigo-senior`.
+- Publicar y vender en la tienda → `mlr-empaquetador-apps-store`.
+- Migrar módulos entre versiones → `mlr-migrador-modulos` (la base con datos la actualiza el plugin despliegue-odoo).
+- Pruebas, reproducción de errores, aceptación → `mlr-qa-pruebas`.
 
 ## Reglas
 1. Configuración antes que herencia, herencia antes que módulo nuevo; la decisión queda escrita.

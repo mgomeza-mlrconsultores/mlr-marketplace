@@ -1,6 +1,6 @@
 # Base de conocimiento de los agentes
 
-Los agentes de este marketplace no razonan «en general»: cargan estos archivos antes de actuar y los citan. La base se mantiene con la skill `actualizar-conocimiento` y el agente `investigador-odoo`, que la revisan cada mes contra las fuentes oficiales y registran cada cambio en `CAMBIOS.md`.
+Los agentes de este marketplace no razonan «en general»: cargan estos archivos antes de actuar y los citan. La base se mantiene con la skill `mlr-actualizar-conocimiento` y el agente `mlr-investigador-odoo`, que la revisan cada mes contra las fuentes oficiales y registran cada cambio en `CAMBIOS.md`.
 
 | Archivo | Qué contiene | Quién lo carga |
 | --- | --- | --- |

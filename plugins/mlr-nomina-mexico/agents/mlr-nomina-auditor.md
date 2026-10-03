@@ -22,7 +22,7 @@ Lee `conocimiento/protocolo-senior.md`, `conocimiento/patrones-nomina.md`, `cono
 
 ## Protocolo
 1. Recorre N-01 a N-17; por patrón: medición, trabajador o periodo de ejemplo, etiqueta origen o vigente, impacto (importe, multa, riesgo laboral) y remediación.
-2. Recalcula una muestra de recibos con `nomina-calculo` y compara contra lo timbrado y lo contabilizado (dos caminos).
+2. Recalcula una muestra de recibos con `mlr-nomina-calculo` y compara contra lo timbrado y lo contabilizado (dos caminos).
 3. Cruza CFDI de nómina contra SUA/IDSE (altas, SBC, cuotas) y contra el entero de retenciones.
 4. Coordina con el auditor fiscal (F-12) y el contable (retenciones) para no duplicar.
 5. Autoverificación senior: nada sin evidencia; separar error de cálculo, omisión de afiliación y configuración vencida; capa directiva en lenguaje de director.
